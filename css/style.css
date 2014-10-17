@@ -28,18 +28,20 @@ header {
 	background: white;
 	padding-right: 5%;
 	padding-left: 5%;
-	height: 100px;
+	overflow: hidden;
 	width: 100%;
 }
 
 .left {
- 	overflow: hidden;
- 	display: inline;
  	float: left;
  }
 
+.right {
+ 	float: right;
+ }
+
 /* logo */
-.left img{
+#logo {
  	margin: 20px;
  	margin-top: 25px;
  	margin-left: 50px;
@@ -49,10 +51,9 @@ header {
  } 
 
 /* recherche + connexion */
-#right ul li {
+#menu ul li {
  	margin-left: 50px;
  	margin-top: 40px;
- 	display: inline;
  	float: right;
  }
 

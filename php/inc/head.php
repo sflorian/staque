@@ -2,9 +2,9 @@
 	<header>
 		<section>
 			<div class="left">
-				<img src="img/logo/<!-- IMAGE DU LOGO -->" id="<!-- LOGO DU SITE -->">
+				<img src="img/logo/<!-- IMAGE DU LOGO -->" id="logo">
 			</div>
-			<div id="right">
+			<div id="menu">
 				<ul>
 					<li><input type="text" name="recherche" id="inputrecherche" placeholder="Recherche" size="10" maxlength="8" />
 						<img src="../img/barre_Recherche/Search.png" id="recherche"></li>
