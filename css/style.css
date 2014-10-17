@@ -24,7 +24,7 @@ body {
  *********************** HEADER ************************
  *******************************************************/
 
-header {
+#sectionHeader {
 	background: white;
 	padding-right: 5%;
 	padding-left: 5%;
@@ -51,11 +51,29 @@ header {
  } 
 
 /* recherche + connexion */
+#menu ul {
+	overflow: hidden;
+}
+
 #menu ul li {
- 	margin-left: 50px;
- 	margin-top: 40px;
  	float: right;
- }
+ 	margin: 50px 10px 0px;
+}
+
+#menu li.boutonMenu {
+	background-color: #000;
+	border-radius: 2px;
+	color: #fff;
+	cursor: pointer;
+	display: inline-block;
+	margin: 40px 5px;
+	padding: 10px;
+}
+
+#menu ul li a {
+	color: #fff;
+	text-decoration: none;
+}
 
 /* recherche */
 #inputrecherche{
@@ -70,11 +88,18 @@ header {
 	border-left-width: 3px;
 	border-left-color: #e2e1e1;
 	z-index: 1;
+	padding-left: 10px;
 }
 
 #recherche{
 	position: relative;
 	top: -15px;
+}
+
+#menu ul li.session {
+	color: #00f;
+	font-size: 1.2em;
+	margin: 48px 10px 0;
 }
 
 /*******************************************************
@@ -190,4 +215,79 @@ footer div {
 	margin-top: 50px;
 	margin-left: 90px;
 	margin-right: 200px;
+}
+
+
+
+
+/* ___________________________________________________________________________________________________________ */
+
+/***************************************************************************************************************
+ ********************************************* CREER COMPTE ****************************************************
+ ***************************************************************************************************************/
+
+/* ___________________________________________________________________________________________________________ */
+
+.containerCompte {
+	padding: 20px;
+}
+
+#formCreerUnCompte {
+	background: #000;
+	margin: auto;
+	padding: 20px;
+	width: 80%; /*950px;*/
+}	
+
+.formTitre {
+	color: #D6CBCB;
+	font-size: 1.5em;
+	/*margin-left: 10%;*/ /*120px;*/
+	padding-bottom: 20px;
+	text-align: center;
+}
+
+#formCreerUnCompte #prenom {
+	margin: 5px 5px 5px 80px;
+	padding: 5px;
+	width: 19%;/*190px;*/
+}
+
+#formCreerUnCompte #nom {
+	margin-right: 5px;
+	padding: 5px;
+	width: 20%; /*200px;*/
+}
+
+#formCreerUnCompte #pseudo,
+#formCreerUnCompte #email,
+#formCreerUnCompte #password,
+#formCreerUnCompte #password2,
+#formCreerUnCompte #pays,
+#formCreerUnCompte #langue,
+#formCreerUnCompte #metier,
+#formCreerUnCompte #lien {
+	margin: 5px 5px 5px 80px;
+	padding: 5px;
+	width: 40%; /*400px;*/
+
+}
+
+
+#formCreerUnCompte #submitCreer {
+	background: #505E5E;
+	border-radius: 5px;
+	color: #fff;
+	cursor: pointer;
+	margin: 15px 5px 15px 80px;
+	padding: 5px;
+	width: 20%; /*200px;*/
+}
+
+.errors {
+	color: #f00;
+}
+
+.validates {
+	color: #0f0;
 }

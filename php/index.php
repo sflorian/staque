@@ -17,9 +17,11 @@
 	if (file_exists($path)) {
 		include($path);
 	}
-	/*else {
-		die("404");
-	}*/
+
+	else {
+		goHome();
+	}
+
 
 
 	include("inc/footer.php");
