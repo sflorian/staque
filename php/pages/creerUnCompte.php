@@ -203,7 +203,7 @@
 		<main id="main" class="container"> 
 			<form action="?page=creerUnCompte" id="formCreerUnCompte" method="POST" novalidate>
 				<!-- <input type="text" visibility="hidden" name="form_creerUnCompte" /> -->
-				<div class="formTitre">CREER UN COMPTE ff</div>
+				<div class="formTitre">CREER UN COMPTE</div>
 				<div>
 					<input type="text" name="prenom" id="prenom" placeHolder="Prénom" value="<?php echo $prenom; ?>"/>
 					<input type="text" name="nom" id="nom" placeHolder="Nom" value="<?php echo $nom; ?>"/>

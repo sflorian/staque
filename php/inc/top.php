@@ -7,7 +7,7 @@
 		<meta name="keywords" content="stackoverflow développement aide question">
 		<meta name="author" content="MC et F">
 		<!-- feuille de style -->
-		<link rel="stylesheet" href="../../css/style.css" />
+		<link rel="stylesheet" href="../css/style.css" />
 		<!-- police -->
 		<link href='http://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
 		
