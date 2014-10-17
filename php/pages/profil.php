@@ -1,7 +1,20 @@
-<?php include("inc/top.php"); 
+		<main>
 
-?>
-	<body>
-		<?= strtoupper($page); ?>
-	</body>
-</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		</main>
