@@ -45,7 +45,7 @@
 
 			// Manipulation de l'image
 			// avec SimpleImage
-			require("SimpleImage.php");
+			require("../SimpleImage.php");
 			$img = new abeautifulsite\SimpleImage($destination);
 			$img->text('IMAGES@MCB', 'AdobeArabic-Regular.otf', 32, '#000', 'top', 0, 20)->save("img/uploads/copyright/" . $filename);
 			$img->thumbnail(300,300)->save("img/uploads/thumbs/" . $filename);
@@ -57,18 +57,23 @@
 ?>
 
 
-<!DOCTYPE HTML>
-<html>
-	<head>
-		<meta charset="utf8" />
-		<title>Back-Office du Portfolio</title>
-		<meta name="description" content="PHP: Hypertext Preprocessor">
-		<link rel="stylesheet" href="../admin/css/styleAdm.css" />
-		<script src="../js/jquery.js"></script>
-	</head>
+<?php include("inc/top.php"); ?>
 
 	<body>
-
+<!-- 		<header id="header" class="fond">
+			<nav id="nav">
+				<div id="Menu" class="container">
+					<ul id="navListe">
+						<li><a href="../php/index.php">HOME</a></li>
+					</ul>
+				</div>
+				<div id="reglog" class="session">
+				< ?php if(!empty($_SESSION['user'])) {
+					echo "Hey " . $_SESSION['user']['username'];
+				} ?>
+				</div>
+			</nav>
+		</header> -->
 		<form enctype="multipart/form-data" method="POST">
 			<div>
 				<label for="image">Image à uploader</label><br />

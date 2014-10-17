@@ -1,82 +1,71 @@
 <?php
 
-	/*if(!empty($_POST)) {
-		print_r($_POST);
+
+		// Fonction qui redirige vers l'accueil
+	function goUpload() {
+		header("Location: upload.php");
+		die(); 
 	}
 
-	echo '<pre>';
-	print_r($_FILES);
-	echo '</pre>';*/
+		// Fonction qui vérifie si un pseudo existe déjà dans la BDD
+	function pseudoExists($pseudo) {
+		$result = false;
 
-
-	if (!empty($_FILES)) {
-
-		$accepted = array("image/jpeg", "image/jpg", "image/gif", "image/png");
-
-		$tmp_name = $_FILES['image']['tmp_name'];
-
-		// Vérifier le type du fichier uploadé
-		//getimagesize($tmp_name);
-
-		// Retourne le type mime
-		$finfo = finfo_open(FILEINFO_MIME_TYPE); // Retourne le type mime à la extension mimetype
-		$mime = finfo_file($finfo, $tmp_name);
-		finfo_close($finfo);
-		//echo $mime; 
-
-		// Semble mieux pour des images de récupérer l'extension sur le mime et non sur le nom !
-		// Mais ne fonctionne pas pour tout : ex mime JS est javascript alors que l'extension est .js
-		$parts = explode(".", $_FILES['image']['name']);
-		$extension = end($parts);
-
-		//$parts = explode("/", $mime);
-		//$extension = end($parts);
-
-		// uniqid() donne une chaîne hexadécimale unique
-		$filename = uniqid() . "." . $extension;
-
-		$destination = "img/uploads/" . $filename;	
-		echo $destination;
-		die();	
-
-		// Le déplace dans notre sous-dossier upload si mime reconnu
-		if (in_array($mime, $accepted)) {
-			move_uploaded_file($tmp_name, $destination);
-
-			// Manipulation de l'image
-			// avec SimpleImage
-			require("SimpleImage.php");
-			$img = new abeautifulsite\SimpleImage($destination);
-			$img->text('IMAGES@MCB', 'AdobeArabic-Regular.otf', 32, '#000', 'top', 0, 20)->save("img/uploads/copyright/" . $filename);
-			$img->thumbnail(300,300)->save("img/uploads/thumbs/" . $filename);
-			$img->best_fit(500, 500)->save("img/uploads/resize500/" . $filename);
-			$img->desaturate()->sepia()->save("img/uploads/blackandwhite/" . $filename);
+		global $dbh;
+		$sql = "SELECT COUNT(pseudo) AS nb
+				FROM utilisateur
+				WHERE pseudo = :pseudo";
+		$stmt = $dbh->prepare( $sql );  
+		$stmt->bindValue(":pseudo", $pseudo);
+		$stmt->execute();
+		$nb_pseudo = $stmt->fetch();
+		if ($nb_pseudo['nb'] != 0) {
+			$result = true;
 		}
+		return $result;
 	}
 
-?>
+
+		// Fonction qui vérifie si un email existe déjà dans la BDD
+	function emailExists($email) {
+		$result = false;
+
+		global $dbh;
+		$sql = "SELECT COUNT(email) AS nbe
+				FROM utilisateur
+				WHERE email = :email";
+		$stmt = $dbh->prepare( $sql );  
+		$stmt->bindValue(":email", $email);
+		$stmt->execute();
+		$nb_email = $stmt->fetch();
+
+		if ($nb_email['nbe'] != 0) {
+			$result = true;
+		}
+		return $result;
+	}
 
 
-<!DOCTYPE HTML>
-<html>
-	<head>
-		<meta charset="utf8" />
-		<title>Back-Office du Portfolio</title>
-		<meta name="description" content="PHP: Hypertext Preprocessor">
-		<link rel="stylesheet" href="../admin/css/styleAdm.css" />
-		<script src="../js/jquery.js"></script>
-	</head>
 
-	<body>
-
-		<form enctype="multipart/form-data" method="POST">
-			<div>
-				<label for="image">Image à uploader</label><br />
-				<input type="file" name="image" id="image"/>
-			</div>
-			<input type="submit" value="UPLOAD"/>
-		</form>
+		// Fonction qui génère aléatoirement une chaine de caractères (par défaut de 50 caractères)
+	function randomString($length = 50) {
+		$chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+		$string = "";
+		for ($i=0; $i<$length;$i++) {
+			$num = mt_rand(0, strlen($chars)-1);
+			$string .= $chars[$num];
+		}
+		return $string;
+	}
 
 
-	</body>
-</html>
+
+		// Fonction qui hache les mots de passe
+	function hashPassword($password, $salt) {
+		$pepper = "I2akzodw8xztMnn6RjjTE9x0IQTo91J0yW2NokMFu2pPRTVIuc";
+		$hashedPassword = hash('sha512', $password);
+		for ($i=0; $i<5000; $i++) {
+			$hashedPassword = hash('sha512', $pepper . $password .$salt);
+		}
+		return $hashedPassword;
+	}
