@@ -14,3 +14,16 @@
 			</div>
 		</section>
 	</header>
+	<nav>
+		<section>
+			<div class="right">
+				<ul>
+					<li><a href="<!-- Lien de l'onglet 1 -->"></a>Questions</li>
+					<li><a href="<!-- Lien de l'onglet 2 -->"></a>Tags</li>
+					<li><a href="<!-- Lien de l'onglet 3 -->"></a>Utilisateurs</li>
+					<li><a href="<!-- Lien de l'onglet 4 -->"></a>Badges</li>
+					<li><a href="<!-- Lien de l'onglet 5 -->"></a>Poser une question</li>
+				</ul>
+			</div>
+		</section>
+	</nav>

@@ -17,9 +17,9 @@
 	if (file_exists($path)) {
 		include($path);
 	}
-	else {
+	/*else {
 		die("404");
-	}
+	}*/
 
 
 	include("inc/footer.php");

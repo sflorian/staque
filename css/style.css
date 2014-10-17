@@ -41,8 +41,7 @@ header {
  }
 
 /* logo */
-
-#logo{
+#logo {
  	margin: 20px;
  	margin-top: 25px;
  	margin-left: 50px;
@@ -56,7 +55,7 @@ header {
  	margin-left: 50px;
  	margin-top: 40px;
  	float: right;
-}
+ }
 
 /* recherche */
 #inputrecherche{
@@ -78,11 +77,95 @@ header {
 	top: -15px;
 }
 
+/*******************************************************
+ ************************* NAV *************************
+ *******************************************************/
+
+nav {
+	background: white;
+}
+
+nav section{
+	overflow: hidden;
+}
+
+nav li {
+	float: left;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	margin-right: 50px;
+	padding: 5px;
+	border-style: solid;
+	border-width: 2px;
+	border-color: grey;
+	border-radius: 10px;
+	background: grey;
+}
+
 
 /*******************************************************
  ************************ MAIN *************************
  *******************************************************/
 
+.question{
+	margin: 20px;
+}
+
+
+/* COMPTEUR */
+
+.compteur {
+	width: 30%;
+	margin-top: 15px;
+}
+
+.votes {
+	height: 100px;
+	width: 100px;
+	text-align: center;
+	font-size: 150%;
+}
+
+.reponses {
+	height: 100px;
+	width: 100px;
+	text-align: center;
+	font-size: 150%;
+}
+
+.vues {
+	height: 100px;
+	width: 100px;
+	text-align: center;
+	font-size: 150%;
+}
+
+.count {
+	font-size: 150%;
+}
+
+/* CONTENU QUESTION */
+.titrequest {
+	float: left;
+	font-size: 250%;
+	width: 68%
+}
+
+
+.tag {
+	font-size: 50%
+}
+
+.tagname {
+	background: #67D8CA;
+	border-radius: 10px;
+	margin-right: 20px;
+	padding: 3px 5px 3px 5px;
+}
+
+.clear {
+	clear: both;
+}
 
 /*******************************************************
  ********************** SIDEBAR ************************
@@ -93,7 +176,7 @@ header {
  *********************** FOOTER *************************
  *******************************************************/
 footer {
-	background: white;
+background: white;
 	position: relative; 
 	bottom: 0;
 	padding-right: 5%;
@@ -105,6 +188,6 @@ footer {
 footer div {
 	float: left;
 	margin-top: 50px;
-	margin-left: 100px;
+	margin-left: 90px;
 	margin-right: 200px;
 }
