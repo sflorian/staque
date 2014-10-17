@@ -1,0 +1,63 @@
+utilisateur :
+- id
+- pseudo
+- nom
+- email
+- password
+- salt
+- token
+- photo
+- pays
+- langue
+- metier
+- lien
+- score
+- dateCreated
+- dateModified
+- dateLogged
+- published //booleen true par def
+
+quest :
+- id
+- titre
+- contenu
+- user_id
+- scorequest
+- vues
+- dateCreated
+- dateModified
+- published //booleen true par def
+
+rep :
+- id
+- quest_id
+- user_id
+- contenu
+- scoreRep
+- dateCreated
+- dateModified
+- published //booleen true par def
+- best // booleen false par def
+
+comment :
+- id
+- foreign_id
+- foreign_table
+- user_id
+- contenu
+- dateCreated
+- dateModified
+- published // booleen true par def
+
+tag :
+- id
+- tagname
+- dateCreated
+
+tag_quest :
+- tag_id
+- tag_question
+
+hasvoted :
+- user_id
+- reponse_id
