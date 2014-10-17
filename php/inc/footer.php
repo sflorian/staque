@@ -1,24 +1,4 @@
-<?php
-include("top.php");
-include("head.php");
-?>
-	<pre>
-		
 
-
-
-
-
-
-
-
-
-
-
-
-
-		
-	</pre>
 	<footer>
 		<section>
 			<div>
@@ -45,6 +25,3 @@ include("head.php");
 			</div>
 		</section>
 	</footer>
-<?php
-include("script.php");
-?>
