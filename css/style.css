@@ -291,3 +291,49 @@ footer div {
 .validates {
 	color: #0f0;
 }
+
+
+
+/***************************************************************************************************************
+ ************************************************ CONNEXION ****************************************************
+ ***************************************************************************************************************/
+
+#formConnexion {
+	background: #000;
+	margin: auto;
+	padding: 20px;
+	width: 40%; 
+}	
+
+#formConnexion #passwordConnex,
+#formConnexion #pseudoEmailConnex {
+	margin: 5px 0;
+	padding: 5px;
+	width: 80%; 
+}
+
+
+#formConnexion #submitConnex {
+	background: #505E5E;
+	border-radius: 5px;
+	color: #fff;
+	cursor: pointer;
+	margin: 15px 0;
+	padding: 5px;
+	width: 40%; 
+}
+
+#oubliConnex a {
+	color: #fff;
+	display: inline-block;
+	margin: 5px 0 15px 0;
+}
+
+#formConnexion div.center {
+	margin: auto;
+	text-align: center;
+}
+
+#formConnexion div.center p.errors {
+	min-height: 20px;
+}
