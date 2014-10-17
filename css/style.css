@@ -36,7 +36,12 @@ header {
  	float: left;
  }
 
+.right {
+ 	float: right;
+ }
+
 /* logo */
+
 #logo{
  	margin: 20px;
  	margin-top: 25px;
@@ -47,11 +52,11 @@ header {
  } 
 
 /* recherche + connexion */
-#right ul li {
+#menu ul li {
  	margin-left: 50px;
  	margin-top: 40px;
-  	float: right;
- }
+ 	float: right;
+}
 
 /* recherche */
 #inputrecherche{
