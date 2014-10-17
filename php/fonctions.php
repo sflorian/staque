@@ -129,3 +129,63 @@
 		header("Location: upload.php");
 		die(); 
 	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+		// Fonction qui récupère l'utilisateur par son pseudo ou email
+	function getUserByPseudoOrEmail($pseudoEmail) {
+		global $dbh;
+		$sql = "SELECT *
+				FROM utilisateur
+				WHERE email = :pseudoEmail OR pseudo = :pseudoEmail";
+		$stmt = $dbh->prepare( $sql );  
+		$stmt->bindValue(":pseudoEmail", $pseudoEmail);
+		$stmt->execute();
+		$utilisateur = $stmt->fetch();
+
+		return $utilisateur;
+	}
+
+
+		// Fonction qui récupère un utilisateur par son email dans la BDD
+	function getUserByEmail($email) {
+		global $dbh;
+		$sql = "SELECT *
+				FROM utilisateur
+				WHERE email = :email";
+		$stmt = $dbh->prepare( $sql );  
+		$stmt->bindValue(":email", $email);
+		$stmt->execute();
+		$utilisateur = $stmt->fetch();
+
+		return $utilisateur;		
+	}
+
+
+
+
+		// Fonction qui vérifie si l'email et le token match dans la BDD
+	function foundUser($email, $token) {
+
+		global $dbh;
+		$sql = "SELECT *
+				FROM utilisateur
+				WHERE email = :email AND token = :token";
+		$stmt = $dbh->prepare( $sql );  
+		$stmt->bindValue(":email", $email);
+		$stmt->bindValue(":token", $token);
+		$stmt->execute();
+		$foundUser = $stmt->fetch();
+
+		return $foundUser;
+	}
