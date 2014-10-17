@@ -1,1 +1,97 @@
 @import "reset.css";
+
+body {
+	text-decoration: none;
+	background: grey;
+	margin-right: 20%;
+	margin-left: 20%;
+	width: 60%;
+	position: relative;
+}
+
+/*******************************************************
+ *********************** HEADER ************************
+ *******************************************************/
+
+header {
+	background: white;
+	padding-right: 5%;
+	padding-left: 5%;
+	height: 100px;
+	width: 100%;
+}
+
+.left {
+ 	overflow: hidden;
+ 	display: inline;
+ 	float: left;
+ }
+
+/* logo */
+.left img{
+ 	margin: 20px;
+ 	margin-top: 25px;
+ 	margin-left: 50px;
+ 	height: 50px;
+ 	width: 150px;
+
+ } 
+
+/* recherche + connexion */
+#right ul li {
+ 	margin-left: 50px;
+ 	margin-top: 40px;
+ 	display: inline;
+ 	float: right;
+ }
+
+/* recherche */
+#inputrecherche{
+	height: 23px;
+	width: 95px;
+	position: relative;
+	right: -150px;
+	top: -35px;
+	margin-left: -100px;
+	border-style: none;
+	border-left-style: solid;
+	border-left-width: 3px;
+	border-left-color: #e2e1e1;
+	z-index: 1;
+}
+
+#recherche{
+	position: relative;
+	top: -15px;
+}
+
+
+/*******************************************************
+ ************************ MAIN *************************
+ *******************************************************/
+
+
+/*******************************************************
+ ********************** SIDEBAR ************************
+ *******************************************************/
+
+
+ /*******************************************************
+ *********************** FOOTER *************************
+ *******************************************************/
+footer {
+	background: white;
+	position: relative; 
+	bottom: 0;
+	padding-right: 5%;
+	padding-left: 5%;
+	height: 250px;
+	width: 100%;
+}
+
+footer div {
+	float: left;
+	margin-top: 50px;
+	margin-left: 100px;
+	margin-right: 200px;
+}

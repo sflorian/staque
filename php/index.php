@@ -2,7 +2,6 @@
 
 	session_start();
 	include("db.php");
-	include("requetes.php");
 	include("fonctions.php");
 
 	$page = "home";

@@ -1,4 +1,7 @@
-<?php include("inc/top.php"); 
+<?php 
+
+include("inc/top.php"); 
+include("inc/header.php")
 
 ?>
 	<body>
