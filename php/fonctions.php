@@ -2,10 +2,31 @@
 
 
 		// Fonction qui redirige vers l'accueil
-	function goUpload() {
-		header("Location: upload.php");
+	function goHome() {
+		header("Location: ?page=accueil");
 		die(); 
 	}
+
+
+		// Fonction qui récupère pays et langue(s) officielle(s)
+	function getPaysLangue() {
+
+		global $dbh;
+		$sql = "SELECT country.name AS pays, countrylanguage.language AS langue, country.code AS code
+				FROM country 
+				JOIN countrylanguage ON countrylanguage.countryCode = country.code 
+				WHERE countrylanguage.isOfficial = :param
+				GROUP BY country.code
+				ORDER BY country.name ASC";  
+		$stmt = $dbh->prepare( $sql ); 
+		$stmt->bindValue(":param", "T");
+		$stmt->execute();
+		$ps = $stmt->fetchAll();
+
+		return $ps;
+	}
+
+
 
 		// Fonction qui vérifie si un pseudo existe déjà dans la BDD
 	function pseudoExists($pseudo) {
@@ -70,3 +91,41 @@
 		return $hashedPassword;
 	}
 
+
+
+		// Fonction qui récupère un utilisateur par ID
+	function getUserById($id) {
+
+		global $dbh;
+
+		$sql = "SELECT * FROM utilisateur  
+				WHERE id = :id";  
+		$stmt = $dbh->prepare( $sql ); 
+		$stmt->bindValue(":id", $id);
+		$stmt->execute();
+		$utilisateur = $stmt->fetch();
+
+		return $utilisateur;
+	}
+
+
+		// Fonction qui vérifie connexion ou non
+	function userIsLogged() {
+		if(!empty($_SESSION['utilisateur'])) {
+			return true;
+		}
+		return false;
+	}
+
+		// Fonction qui connect un utilisateur par son ID
+	function connectUser($utilisateur) {
+		$_SESSION['utilisateurTrouve'] = true;
+		$_SESSION['utilisateur'] = $utilisateur;
+	}
+
+
+		// Fonction qui redirige vers l'accueil
+	function goUpload() {
+		header("Location: upload.php");
+		die(); 
+	}

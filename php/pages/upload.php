@@ -1,14 +1,5 @@
 <?php
 
-	/*if(!empty($_POST)) {
-		print_r($_POST);
-	}
-
-	echo '<pre>';
-	print_r($_FILES);
-	echo '</pre>';*/
-
-
 	if (!empty($_FILES)) {
 
 		$accepted = array("image/jpeg", "image/jpg", "image/gif", "image/png");
@@ -55,33 +46,14 @@
 	}
 
 ?>
-
-
-<?php include("inc/top.php"); ?>
-
-	<body>
-<!-- 		<header id="header" class="fond">
-			<nav id="nav">
-				<div id="Menu" class="container">
-					<ul id="navListe">
-						<li><a href="../php/index.php">HOME</a></li>
-					</ul>
-				</div>
-				<div id="reglog" class="session">
-				< ?php if(!empty($_SESSION['user'])) {
-					echo "Hey " . $_SESSION['user']['username'];
-				} ?>
-				</div>
-			</nav>
-		</header> -->
+	
+	<main>
 		<form enctype="multipart/form-data" method="POST">
 			<div>
-				<label for="image">Image à uploader</label><br />
+				<label for="image">Image de votre profil ?</label><br />
 				<input type="file" name="image" id="image"/>
 			</div>
 			<input type="submit" value="UPLOAD"/>
 		</form>
+	</main>
 
-
-	</body>
-</html>

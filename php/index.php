@@ -18,7 +18,7 @@
 		include($path);
 	}
 	else {
-		die("404");
+		goHome();
 	}
 
 
