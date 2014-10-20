@@ -36,7 +36,7 @@
 
 			// Manipulation de l'image
 			// avec SimpleImage
-			require("../SimpleImage.php");
+			require("SimpleImage.php");
 			$img = new abeautifulsite\SimpleImage($destination);
 			$img->text('IMAGES@MCB', 'AdobeArabic-Regular.otf', 32, '#000', 'top', 0, 20)->save("img/uploads/copyright/" . $filename);
 			$img->thumbnail(300,300)->save("img/uploads/thumbs/" . $filename);

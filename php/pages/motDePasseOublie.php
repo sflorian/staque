@@ -6,15 +6,16 @@
 *************************************************************************/
 	// Initialisation des variables
 		// contiendra nos éventuels messages d'erreur de validation du formulaire
-	$errors = array();
+	$errors = array(
+		"emailOubli" => "",
+		"envoi" => ""
+	);
 	$validate = "";
 
 		// variables des attributs "value" du formulaire
 	$emailOubli = "";
 
-		// variable utilisateur trouvé et validation formulaire
-	$_SESSION['utilisateurTrouve'] = false;
-	$formIsValid = true;
+		// variable validation formulaire
 	$mailSent = false;
 
 	// si le formulaire a été soumis...
@@ -27,28 +28,30 @@
 
 		// ---------------- MAIL ----------------
 		if (empty($emailOubli)) {
-			$errors[] = "Renseignez votre email !";
+			$errors["emailOubli"] = "<br />Renseignez votre email !";
 		}
 		else if ( !filter_var($emailOubli, FILTER_VALIDATE_EMAIL) ) {
-			$errors[] = "Votre email n'est pas valide!";
+			$errors["emailOubli"] = "<br />Votre email n'est pas valide!";
 		}
 		// S'agit-il d'un nouvel utilisateur ?
 		else if (!emailExists($emailOubli)) {
-			$errors[] = 'Email inconnu<br /> Corrigez le ou SVP<br /><a href="?page=creerUnCompte" class="signup">Créez un compte !</a>';
+			$errors["emailOubli"] = 'Email inconnu<br /> Corrigez le ou SVP<br /><a href="?page=creerUnCompte" class="signup">Créez un compte !</a>';
 		}
 		/*__________________ Fin de la validation ____________________*/
 		
 		// si le formulaire est valide
-		if ($formIsValid) {
+		if (empty($errors["emailOubli"])) {
 			
 			$utilisateur = getUserByEmail($emailOubli);
+			//print_r($utilisateur);
+			//die();
 				// Si l'utilisateur existe
 
 			$email = $utilisateur['email'];
-			$prenomNom = $utilisateur['prenom'] . " " . $utilisateur['nom'];
+			$pseudo = $utilisateur['pseudo'];
 			$token = $utilisateur['token'];
 			// envoit le message
-			include("../mail.php");                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         
+			include("mail.php");                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         
 
 
 			//$mailSent = true; // fait dans mail.php
@@ -68,11 +71,12 @@
 				<div class="formTitre">Nouveau mot de passe ?</div>
 				<div class="center">
 					<input type="text" name="emailOubli" id="emailOubli" placeHolder="Votre email ?" value="<?php echo $emailOubli; ?>"/>
-					<p class="errors"><?= $error['emailOubli']; ?><p>
+					<p class="errors"><?= $errors['emailOubli']; ?><p>
 				</div>
 				<div class="center">
 					<input type="submit" id="submitOubli" value="ENVOYER"/>
-					<span class="validates"><?= $validate; ?><span>
+					<p class="validates"><?php if ($mailSent) { echo $validate; } ?><p>
+					<p class="errorEnvoi"><?= $errors['envoi']; ?><p>
 				</div>
 			</form>
 		</main>
