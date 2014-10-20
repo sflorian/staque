@@ -180,12 +180,12 @@
 
 		return $foundUser;
 	}
-	
+
 
 	function getRecentQuestions($nb = 3) {
 
 		global $dbh;
-		$sql = "SELECT quest.id AS id, quest.titre AS titre, quest.user_id AS user_id, quest.scorequest AS scorequest, quest.vues AS vues, quest.dateModified AS dateModified, rep.dateModified, utilisateur.score 
+		$sql = "SELECT quest.id AS id, quest.titre AS titre, quest.user_id AS user_id, quest.scorequest AS scorequest, quest.vues AS vues, quest.dateCreated AS dateCreated, quest.dateModified AS dateModified, rep.dateModified, utilisateur.score 
 				FROM quest
 				LEFT JOIN rep ON rep.quest_id = quest.id
 				JOIN utilisateur ON quest.user_id = utilisateur.id
@@ -233,7 +233,7 @@
 
 	function getTagsByIdQuestion($quest_id) {
 		global $dbh;
-		$sql = "SELECT tag.tagname AS tagname
+		$sql = "SELECT tag.tagname AS tagname, tag.id AS id
 				FROM tag
 				JOIN tag_quest ON tag_quest.tag_id = tag.id
 				WHERE tag_quest.quest_id = :quest_id";
@@ -243,4 +243,11 @@
 		$tags = $stmt->fetchAll();
 
 		return $tags;		
+	}
+
+
+	function dateFr($date) {
+
+		$dateFr = date('d-m-Y', strtotime($date));
+		return $dateFr;
 	}

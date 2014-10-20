@@ -219,6 +219,7 @@ h1 {
 }
 
 #listeQuestion div.theone {
+	background: #75845c;
 	color: #e1e818;
 }
 
@@ -246,12 +247,29 @@ h1 {
 	margin: 10px 0px;
 }
 
+#listeQuestion div.tag a {
+	color: #000;
+}
+
 #listeQuestion span.tagname {
 	background: #67D8CA;
 	border-radius: 2px;
 	display: inline-block;
 	margin: 0px 5px;
 	padding: 5px;
+}
+
+#listeQuestion span.tagname:hover {
+	background: #9CF0E5;
+}
+
+#listeQuestion a.lienProfil {
+	color: #00f;
+	text-decoration: none;
+}
+
+#listeQuestion a.lienProfil:hover {
+	text-decoration: underline;
 }
 
 
