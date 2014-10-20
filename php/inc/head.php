@@ -17,7 +17,7 @@
 					<?php } ?>
 					<li class="session">
 						<?php if(userIsLogged()) {
-							echo "Bonjour " . $_SESSION['utilisateur']['pseudo'];
+							echo "<a href='?page=profil'>Bonjour " . $_SESSION['utilisateur']['pseudo'] . "</a>";
 						} ?>
 					</li>
 				</ul>	
