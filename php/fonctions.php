@@ -2,8 +2,8 @@
 
 
 		// Fonction qui redirige vers l'accueil
-	function goHome() {
-		header("Location: ?page=accueil");
+	function goHome($message) {
+		header("Location: ?page=accueil" . $message);
 		die(); 
 	}
 
@@ -129,15 +129,6 @@
 		header("Location: upload.php");
 		die(); 
 	}
-
-
-
-
-
-
-
-
-
 
 
 

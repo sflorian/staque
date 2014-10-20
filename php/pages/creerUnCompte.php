@@ -165,7 +165,7 @@
 		// ---------------- LIEN ----------------
 		if(!empty($lien)) {
 			if(!preg_match("#^http://www\.[a-zA-Z0-9_-]+\.[a-zA-Z]+$#", $lien)) {
-				$errors['lien'] = "Votre url n'est pas au bon format (http://www.votre-url.domain) !";
+				$errors['lien'] = "Mauvais format d'url (http://www.votre-url.domain) !";
 				$formIsValid = false;
 			}
 		}

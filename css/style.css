@@ -393,6 +393,7 @@ footer div {
 	min-height: 20px;
 }
 
+
 /* ___________________________________________________________________________________________________________ */
 
 /***************************************************************************************************************
@@ -431,3 +432,52 @@ footer div {
 .info {
 	margin-left: 100px;
 }
+
+
+
+
+/***************************************************************************************************************
+ ************************************************ MotDePasseOublie ****************************************************
+ ***************************************************************************************************************/
+
+#formMotDePasseEnvoi {
+	background: #000;
+	margin: auto;
+	padding: 20px;
+	width: 60%; 
+}	
+
+#formMotDePasseEnvoi #passwordOubli2,
+#formMotDePasseEnvoi #password2Oubli2 {
+	margin: 5px 0;
+	padding: 5px;
+	width: 60%; 
+}
+
+
+#formMotDePasseEnvoi #submitOubli2 {
+	background: #505E5E;
+	border-radius: 5px;
+	color: #fff;
+	cursor: pointer;
+	margin: 15px 0;
+	padding: 5px;
+	width: 30%; 
+}
+
+#formMotDePasseEnvoi div.center {
+	margin: auto;
+	text-align: center;
+}
+
+#formMotDePasseEnvoi div.errors {
+	color: #f00;
+	min-height: 20px;
+	text-align: center;
+}
+
+#formMotDePasseEnvoi div.validates {
+	color: #0f0;
+	text-align: center;
+}
+
