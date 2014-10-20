@@ -28,11 +28,11 @@
 		<section>
 			<div class="right">
 				<ul>
-					<li><a href="<!-- Lien de l'onglet 1 -->"></a>Questions</li>
-					<li><a href="<!-- Lien de l'onglet 2 -->"></a>Tags</li>
-					<li><a href="<!-- Lien de l'onglet 3 -->"></a>Utilisateurs</li>
-					<li><a href="<!-- Lien de l'onglet 4 -->"></a>Badges</li>
-					<li><a href="<!-- Lien de l'onglet 5 -->"></a>Poser une question</li>
+					<li><a href="?page=accueil">Questions</a></li>
+					<li><a href="<!-- Lien de l'onglet 2 -->">Tags</a></li>
+					<li><a href="<!-- Lien de l'onglet 3 -->">Utilisateurs</a></li>
+					<li><a href="<!-- Lien de l'onglet 4 -->">Badges</a></li>
+					<li><a href="?page=poserQuestion">Poser une question</a></li>
 				</ul>
 			</div>
 		</section>
