@@ -23,7 +23,6 @@ app = {
 	chargement: function(){
 
 		console.log("app.chargement")
-
 	}
 
 }

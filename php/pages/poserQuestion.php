@@ -1,26 +1,14 @@
-		<main>
-			<container>
-				<h1><?= $pseudo;?></h1>
-
+		<main id="mainPoserQuestion">
+			<form>
 				<div>
-					<div><img src=""></div>
-					<div></div>
-					
+					<label>Titre de votre question</label>
+					<input type="text" name="titreQuestion" placeholder="Titre de votre question">
+				</div>
+				<div>
+					<label>Votre question</label>
+					<textarea name="contenuQuestion">Ecrivez l'intégral de votre question ainsi que le code à l'aide des fonctions de l'éditeur de texte.</textarea>
 				</div>
 
-				<div>
-					<div></div>
-					<div></div>
-					<div></div>
-					<div></div>
-					<div></div>
-				</div>
 
-			</container>
-			<container>
-			
-			<!-- STATS AVEC LIENS VERS LES QUESTIONS ETC -->
-
-			</container>
-
+			</form>
 		</main>
