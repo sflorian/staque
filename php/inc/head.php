@@ -7,7 +7,7 @@
 			<div id="menu">
 				<ul>
 					<li><input type="text" name="recherche" id="inputrecherche" placeholder="Recherche" size="10" maxlength="8" />
-						<img src="../img/barre_Recherche/Search.png" id="recherche"></li>
+						<img src="../img/apparences/Search.png" id="recherche"></li>
 					<?php if(!userIsLogged()) { ?>
 					<li class="boutonMenu"><a href="?page=connexion">Connexion</a></li>
 					<li class="boutonMenu"><a href="?page=creerUnCompte">Nouveau ?</a></li>
