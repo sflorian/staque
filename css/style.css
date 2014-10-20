@@ -20,6 +20,30 @@ body {
 	position: relative;
 }
 
+h1 {
+	font-size: 1.5em;
+	font-weight: 700;
+	padding: 20px 10px;
+}
+
+.left {
+	float: left;
+}
+
+.right {
+	float: right;
+}
+
+.clear {
+	clear: both;
+}
+
+
+
+
+
+
+
 /*******************************************************
  *********************** HEADER ************************
  *******************************************************/
@@ -32,23 +56,13 @@ body {
 	width: 100%;
 }
 
-.left {
- 	float: left;
- }
-
-.right {
- 	float: right;
- }
-
-/* logo */
 #logo {
  	margin: 20px;
  	margin-top: 25px;
  	margin-left: 50px;
- 	height: 50px;
- 	width: 150px;
-
- } 
+ 	height: 130px;
+ 	width: 200px;
+} 
 
 /* recherche + connexion */
 #menu ul {
@@ -106,116 +120,211 @@ body {
  ************************* NAV *************************
  *******************************************************/
 
-nav {
+#nav {
 	background: white;
 }
 
-nav section{
+#nav #sectionNav {
 	overflow: hidden;
 }
 
-nav li {
-	float: left;
-	margin-top: 20px;
-	margin-bottom: 20px;
-	margin-right: 50px;
-	padding: 5px;
+#listeNav {
+	margin-right: 75px;
+}
+
+#listeNav li {
+	background: grey;
 	border-style: solid;
 	border-width: 2px;
 	border-color: grey;
-	border-radius: 10px;
-	background: grey;
+	border-radius: 2px;
+	float: left;
+	list-style: none;
+	margin: 0 0 20px 10px;
+	min-width: 100px;
+	padding: 5px;
+	text-align: center;
 }
+
+#listeNav li a {
+	color: #000;
+	text-decoration: none;
+}
+
+#nav li.active {
+	background: orange;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /*******************************************************
  ************************ MAIN *************************
  *******************************************************/
 
-.question{
-	margin: 20px;
+#listeQuestion {
+	background-color: #fff;
+	margin: 10px 0;
+	overflow: hidden;
+	padding-bottom: 30px;
 }
 
+#listeQuestion div.question{
+	border-style: solid;
+	border-width: 2px 0;
+	border-color: #000;
+	overflow: hidden;
+	padding: 20px;
+}
 
-/* COMPTEUR */
-
-.compteur {
+#listeQuestion div.compteur {
 	width: 30%;
-	margin-top: 15px;
 }
 
-.votes {
-	height: 100px;
-	width: 100px;
+#listeQuestion div.votes,
+#listeQuestion div.reponses,
+#listeQuestion div.vues {
+	padding: 5px;
 	text-align: center;
-	font-size: 150%;
+	width: 33%;
 }
 
-.reponses {
-	height: 100px;
-	width: 100px;
-	text-align: center;
-	font-size: 150%;
+#listeQuestion div.reponses {
+	color: #9A4444;
 }
 
-.vues {
-	height: 100px;
-	width: 100px;
-	text-align: center;
-	font-size: 150%;
+#listeQuestion div.repondu {
+	background: #75845c;
+	color: #fff;
 }
 
-.count {
-	font-size: 150%;
+#listeQuestion div.theone {
+	color: #e1e818;
+}
+
+#listeQuestion div.vues {
+	color: #999;
+}
+
+#listeQuestion span.count {
+	font-size: 1.5em;
+	font-weight: 700;
 }
 
 /* CONTENU QUESTION */
-.titrequest {
-	float: left;
-	font-size: 250%;
-	width: 68%
+#listeQuestion div.detailquest {
+	width: 70%
 }
 
-
-.tag {
-	font-size: 50%
+#listeQuestion div.titrequestion {
+	color: #00f;
+	font-size: 1.5em;
+	font-weight: 700;
 }
 
-.tagname {
+#listeQuestion div.tag {
+	margin: 10px 0px;
+}
+
+#listeQuestion span.tagname {
 	background: #67D8CA;
-	border-radius: 10px;
-	margin-right: 20px;
-	padding: 3px 5px 3px 5px;
+	border-radius: 2px;
+	display: inline-block;
+	margin: 0px 5px;
+	padding: 5px;
 }
 
-.clear {
-	clear: both;
-}
 
 /*******************************************************
  ********************** SIDEBAR ************************
  *******************************************************/
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
  /*******************************************************
  *********************** FOOTER *************************
  *******************************************************/
-footer {
-background: white;
-	position: relative; 
-	bottom: 0;
-	padding-right: 5%;
-	padding-left: 5%;
-	height: 250px;
+#footer {
+	background: white;
+	padding: 50px;
+	text-align: center;
 	width: 100%;
 }
 
-footer div {
-	float: left;
-	margin-top: 50px;
-	margin-left: 90px;
-	margin-right: 200px;
+#copyright {
+	font-size: 1.2em;
+	font-weight: 700;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

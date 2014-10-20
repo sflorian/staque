@@ -2,7 +2,7 @@
 	<header>
 		<section id="sectionHeader">
 			<div class="left">
-				<img src="img/logo/<!-- IMAGE DU LOGO -->" id="logo">
+				<img src="../img/apparences/logo.png" id="logo">
 			</div>
 			<div id="menu">
 				<ul>
@@ -23,17 +23,16 @@
 				</ul>	
 			</div>
 		</section>
+		<nav id="nav">
+			<section id="sectionNav">
+				<div id="listeNav" class="right">
+						<li <?php if($_SERVER['QUERY_STRING']== "page=accueil") {echo 'class="active"';} ?>><a href="?page=accueil">Questions</a></li>
+						<li><a href="?page=accueil">Tags</a></li>
+						<li><a href="?page=accueil">Utilisateurs</a></li>
+						<li><a href="?page=accueil">Badges</a></li>
+						<li <?php if($_SERVER['QUERY_STRING']== "page=poserQuestion") {echo 'class="active"';} ?>><a href="?page=poserQuestion">Poser une question</a></li>
+				</div>
+			</section>
+		</nav>
 	</header>
-	<nav>
-		<section>
-			<div class="right">
-				<ul>
-					<li><a href="?page=accueil">Questions</a></li>
-					<li><a href="<!-- Lien de l'onglet 2 -->">Tags</a></li>
-					<li><a href="<!-- Lien de l'onglet 3 -->">Utilisateurs</a></li>
-					<li><a href="<!-- Lien de l'onglet 4 -->">Badges</a></li>
-					<li><a href="?page=poserQuestion">Poser une question</a></li>
-				</ul>
-			</div>
-		</section>
-	</nav>
+

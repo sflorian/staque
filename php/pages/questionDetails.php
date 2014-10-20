@@ -1,4 +1,14 @@
-		<main id="mainquestion">
+<?php
+
+	if(!empty($_GET['id'])) {
+		$id = $_GET['id'];
+	}
+
+
+?>	
+
+
+		<main id="mainQuestionDetails">
 
 			<h1><?php echo $retourbdd["titre"]; ?></h1>
 
