@@ -7,26 +7,18 @@
 
     //INFOS DE CONNEXION
     $mail->isSMTP();                                    //On utilise SMTP
-    $mail->Username = "mandrillformation@gmail.com"; //nom d'utilisateur // perso : mandrillformation@gmail.com
-    $mail->Password = "b_qSvk4PBN3LTrNsNUw1tQ";         //mot de passe      // perso : mandrill333formation
+    $mail->Username = "mandrillformation@gmail.com"; //nom d'utilisateur
+    $mail->Password = "b_qSvk4PBN3LTrNsNUw1tQ";         //mot de passe  
     $mail->Host = 'smtp.mandrillapp.com';               //smtp.gmail.com pour gmail
     $mail->Port = 587;                                  //Le numéro de port
     $mail->SMTPAuth = true;                             //On utilise l'authentification SMTP ?
     //$mail->SMTPSecure = 'tls';                        //décommenter pour gmail
 
     //CONFIGURATION DES PERSONNES
-    $mail->setFrom($email, $name);                   //qui envoie ce message ? (email, noms)
-    $mail->addReplyTo('sweetformation@yahoo.fr', 'SweetRetour');             //à qui répondre si on clique sur "reply" (email, noms)
-    $mail->addAddress('sweetformation@yahoo.fr', 'Sweet');   //destinataire
-    
+    $mail->setFrom('adminstaque@staque.com', 'adminstaque@staque.com');                   //qui envoie ce message ? (email, noms)
+    $mail->addReplyTo('sweetformation@yahoo.fr', 'AdminStaque');             //à qui répondre si on clique sur "reply" (email, noms)
+    $mail->addAddress($email, $nom);   //destinataire
 
-    // EMAIL POUR FORMATION
-        //sweetformation@gmail.com (Fake3333)
-        //sweetformation@yahoo.fr (Fake3333)
-
-    // Compte MANDRILL
-        //mandrillformation@gmail.com (mandrill333formation)
-        // API Key = b_qSvk4PBN3LTrNsNUw1tQ
 
     //CONFIGURATION DU MESSAGE
     $mail->isHTML(true);                                // Contenu du message au format HTML
