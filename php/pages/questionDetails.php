@@ -1,81 +1,44 @@
 <?php
 
-	if(!empty($_GET['id'])) {
-		$id = $_GET['id'];
+		// Vérification qu'on a bien un id sinon ACCUEIL
+	if (empty($_GET['id']) && $_GET['id'] != 0) { 
+		goHome();
 	}
+	
+		// récupère le paramètre d'url "id"
+	$id = $_GET['id'];
 
+	$question = getQuestionById($id);
+	$tags = getTagsByIdQuestion($id);
+	$questionComments = getCommentsByIdQuestion($id);
+	$reponses = getReponsesByIdQuestion($id);
+	//$reponseComments = getCommentsByIdReponse($rep_id);
 
 ?>	
 
 
 		<main id="mainQuestionDetails">
 
-			<h1><?php echo $retourbdd["titre"]; ?></h1>
+			<h1 class="borderBottom"><?= $question["titre"]; ?></h1>
 
-			<container id="questioncadre">
-				<div class="left">
-					<div>+</div>
-					<div><?php echo $retourbdd["score"];?></div>
-					<div>-</div>
+			<div id="questionDetails">
+				<div class="left sidebar">
+					<div class="votePlus">+</div>
+					<div calss="scorequest"><?= $question["scorequest"];?></div>
+					<div class="voteMoins">-</div>
 					<div>favoris</div>
 				</div>
-				<div class="left">
-					<div><?php echo $retourbdd["contenu"];?></div>
-				</div>
-					<div class="tag">
-						<div class="left">
+				<div class="left details">
+					<div><?= $question["contenu"];?></div>
+					<div class="tag left">
 							<?php 
-							//foreach ($tags as $tag){
-							//	echo "<span class='tagname'>" . $tag["tagname"] . "</span>";
-							//}
-							?>
-						</div>
+							foreach ($tags as $tag) { ?>
+								<a href="?page=questionParTag&amp;id=<?= $tag['id']; ?>"><span class='tagname'><?= $tag['tagname'] ?></span></a>
+							<?php } ?>
 					</div>
-					//PROFIL
-					<div class="right">
-						<div></div>
-						<div></div>
-						<div></div>
-						<div></div>
-					</div>
-				<div id="commentaire"></div>
-			</container>
-			<container>
-				<?php 
-				foreach ($commentaires as $commentaire) {
-				?>
-				
-				<div class="left">
-					<div>+</div>
-					<div><?php echo $retourbdd["score"];?></div>
-					<div>-</div>
-					<div>favoris</div>
+					<div class="commentaire"></div>
 				</div>
-				<div class="left">
-					<div><?php echo $retourbdd["contenu"];?></div>
-				</div>
-					<div class="tag">
-						<div class="left">
-							<?php 
-							//foreach ($tags as $tag){
-							//	echo "<span class='tagname'>" . $tag["tagname"] . "</span>";
-							//}
-							?>
-						</div>
-					</div>
-					//PROFIL
-					<div class="right">
-						<div></div>
-						<div></div>
-						<div></div>
-						<div></div>
-					</div>
-				<div class="commentaire"></div>
-				
-				<?php
-				}
-				?>
-			</container>
-<!-- A TERMINER !!!!!!!!!!!!!!!!!!!!!!! -->
+			</div>
+
 
 		</main>

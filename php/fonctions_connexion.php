@@ -1,13 +1,6 @@
 <?php
 
 
-		// Fonction qui redirige vers l'accueil
-	function goHome($message) {
-		header("Location: ?page=accueil" . $message);
-		die(); 
-	}
-
-
 		// Fonction qui récupère pays et langue(s) officielle(s)
 	function getPaysLangue() {
 
@@ -124,14 +117,6 @@
 	}
 
 
-		// Fonction qui redirige vers l'accueil
-	function goUpload() {
-		header("Location: upload.php");
-		die(); 
-	}
-
-
-
 
 		// Fonction qui récupère l'utilisateur par son pseudo ou email
 	function getUserByPseudoOrEmail($pseudoEmail) {
@@ -179,123 +164,4 @@
 		$foundUser = $stmt->fetch();
 
 		return $foundUser;
-	}
-
-
-	function getRecentQuestions($nb = 3) {
-
-		global $dbh;
-		$sql = "SELECT quest.id AS id, quest.titre AS titre, quest.user_id AS user_id, quest.scorequest AS scorequest, quest.vues AS vues, quest.dateCreated AS dateCreated, quest.dateModified AS dateModified, rep.dateModified AS repDateModified, utilisateur.score AS utilisateurScore, utilisateur.pseudo AS utilisateurPseudo 
-				FROM quest
-				LEFT JOIN rep ON rep.quest_id = quest.id
-				JOIN utilisateur ON quest.user_id = utilisateur.id
-				WHERE quest.published = 1
-				LIMIT :nbQuestions";
-		$stmt = $dbh->prepare( $sql );  
-		$stmt->bindValue(":nbQuestions", $nb,  PDO::PARAM_INT); // pdo 3eme param pour integer au lieu de string 
-		$stmt->execute();
-		$questions = $stmt->fetchAll();
-
-		return $questions;
-
-	}
-
-
-	function getNbReponsesByIdQuestion($quest_id) {
-		global $dbh;
-		$sql = "SELECT COUNT(id) FROM rep
-				WHERE quest_id = :quest_id";
-		$stmt = $dbh->prepare( $sql );  
-		$stmt->bindValue(":quest_id", $quest_id);
-		$stmt->execute();
-		$nbRep = $stmt->fetchColumn();
-
-		return $nbRep;
-	}
-
-
-	function isThereTheGoodAnswer($quest_id) {
-		global $dbh;
-		$sql = "SELECT best FROM rep
-				WHERE quest_id = :quest_id";
-		$stmt = $dbh->prepare( $sql );  
-		$stmt->bindValue(":quest_id", $quest_id);
-		$stmt->execute();
-		$verify = $stmt->fetch();
-
-		if ($verify['best'] == 1) {
-			return true;		
-		}
-		return false;
-	}
-
-
-	function getTagsByIdQuestion($quest_id) {
-		global $dbh;
-		$sql = "SELECT tag.tagname AS tagname, tag.id AS id
-				FROM tag
-				JOIN tag_quest ON tag_quest.tag_id = tag.id
-				WHERE tag_quest.quest_id = :quest_id";
-		$stmt = $dbh->prepare( $sql );  
-		$stmt->bindValue(":quest_id", $quest_id);
-		$stmt->execute();
-		$tags = $stmt->fetchAll();
-
-		return $tags;		
-	}
-
-
-
-	function dateFr($date) {
-
-		$dateFr = date('d-m-Y', strtotime($date));
-		return $dateFr;
-	}
-
-
-			// Fonction qui vérifie si un tag existe déjà dans la BDD
-	function tagExists($tag) {
-		$result = false;
-
-		global $dbh;
-		$sql = "SELECT COUNT(tagname) AS nbtag
-				FROM tag
-				WHERE tagname = :tagname";
-		$stmt = $dbh->prepare( $sql );  
-		$stmt->bindValue(":tagname", $tag);
-		$stmt->execute();
-		$nb_tag = $stmt->fetch();
-
-		if ($nb_tag['nbtag'] != 0) {
-			$result = true;
-		}
-		return $result;
-	}
-
-
-			// Fonction 
-	function getIdExistantTag($tagname) {
-
-		global $dbh;
-		$sql = "SELECT tagname, id FROM tag
-				WHERE tagname = :tagname";
-		$stmt = $dbh->prepare( $sql );  
-		$stmt->bindValue(":tagname", $tagname);
-		$stmt->execute();
-		$tag = $stmt->fetch();
-
-		return $tag["id"];
-	}
-
-
-	function insertTag_quest($id_tag, $id_question) {
-
-		global $dbh;
-		$sql = "INSERT INTO tag_quest (tag_id, quest_id)
-				VALUES (:tag_id, :quest_id)";
-		$stmt = $dbh->prepare($sql);
-		$stmt->bindValue(":tag_id", $id_tag);
-		$stmt->bindValue(":quest_id", $id_question);
-		$stmt->execute();
-
 	}

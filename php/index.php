@@ -2,7 +2,13 @@
 
 	session_start();
 	include("db.php");
-	include("fonctions.php");
+	include("fonctions_connexion.php");
+	include("fonctions_redirection.php");
+	include("fonctions_question.php");
+	include("fonctions_tag.php");
+	include("fonctions_utiles.php");
+	include("fonctions_reponse.php");
+	include("fonctions_comment.php");
 
 	$page = "home";
 	if (!empty($_GET['page'])) {
