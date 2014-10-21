@@ -193,21 +193,28 @@ h1 {
 	padding-bottom: 30px;
 }
 
+#listeQuestion h1.borderBottom{
+	border-style: solid;
+	border-width: 0 0 2px 0;
+	border-color: #000;
+}
+
 #listeQuestion div.question{
 	border-style: solid;
-	border-width: 2px 0;
+	border-width: 0 0 2px 0;
 	border-color: #000;
 	overflow: hidden;
 	padding: 20px;
 }
 
 #listeQuestion div.compteur {
-	width: 30%;
+	width: 20%;
 }
 
 #listeQuestion div.votes,
 #listeQuestion div.reponses,
 #listeQuestion div.vues {
+	/*cursor: pointer;*/
 	padding: 5px;
 	text-align: center;
 	width: 33%;
@@ -238,13 +245,21 @@ h1 {
 
 /* CONTENU QUESTION */
 #listeQuestion div.detailquest {
-	width: 70%
+	width: 80%
 }
 
 #listeQuestion div.titrequestion {
-	color: #00f;
 	font-size: 1.5em;
 	font-weight: 700;
+}
+
+#listeQuestion div.titrequestion a {
+	color: #00f;
+	text-decoration: none;
+}
+
+#listeQuestion div.titrequestion a:hover {
+	text-decoration: underline;
 }
 
 #listeQuestion div.tag {
@@ -265,6 +280,10 @@ h1 {
 
 #listeQuestion span.tagname:hover {
 	background: #9CF0E5;
+}
+
+#listeQuestion span.actiontemps {
+	color: #999;
 }
 
 #listeQuestion a.lienProfil {

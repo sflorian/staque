@@ -185,14 +185,14 @@
 	function getRecentQuestions($nb = 3) {
 
 		global $dbh;
-		$sql = "SELECT quest.id AS id, quest.titre AS titre, quest.user_id AS user_id, quest.scorequest AS scorequest, quest.vues AS vues, quest.dateCreated AS dateCreated, quest.dateModified AS dateModified, rep.dateModified AS repDateModified, utilisateur.score AS utilisateurScore 
+		$sql = "SELECT quest.id AS id, quest.titre AS titre, quest.user_id AS user_id, quest.scorequest AS scorequest, quest.vues AS vues, quest.dateCreated AS dateCreated, quest.dateModified AS dateModified, rep.dateModified AS repDateModified, utilisateur.score AS utilisateurScore, utilisateur.pseudo AS utilisateurPseudo 
 				FROM quest
 				LEFT JOIN rep ON rep.quest_id = quest.id
 				JOIN utilisateur ON quest.user_id = utilisateur.id
 				WHERE quest.published = 1
 				LIMIT :nbQuestions";
 		$stmt = $dbh->prepare( $sql );  
-		$stmt->bindValue(":nbQuestions", $nb); // pdo 3eme param pour integer au lieu de string
+		$stmt->bindValue(":nbQuestions", $nb,  PDO::PARAM_INT); // pdo 3eme param pour integer au lieu de string 
 		$stmt->execute();
 		$questions = $stmt->fetchAll();
 
