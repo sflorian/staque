@@ -462,6 +462,71 @@ h1 {
 
 
 
+/* ___________________________________________________________________________________________________________ */
+
+/***************************************************************************************************************
+ ********************************************* MODIF COMPTE ****************************************************
+ ***************************************************************************************************************/
+
+/* ___________________________________________________________________________________________________________ */
+
+.containerModifCompte {
+	padding: 20px;
+}
+
+#formModifUnCompte {
+	background: #000;
+	margin: auto;
+	padding: 20px;
+	width: 80%; /*950px;*/
+}	
+
+.modifFormTitre {
+	color: #D6CBCB;
+	font-size: 1.5em;
+	/*margin-left: 10%;*/ /*120px;*/
+	padding-bottom: 20px;
+	text-align: center;
+}
+
+#formModifUnCompte #prenomModif {
+	margin: 5px 5px 5px 80px;
+	padding: 5px;
+	width: 19%;/*190px;*/
+}
+
+#formModifUnCompte #nomModif {
+	margin-right: 5px;
+	padding: 5px;
+	width: 20%; /*200px;*/
+}
+
+#formModifUnCompte #pseudoModif,
+#formModifUnCompte #emailModif,
+#formModifUnCompte #passwordModif,
+#formModifUnCompte #password2Modif,
+#formModifUnCompte #paysModif,
+#formModifUnCompte #langueModif,
+#formModifUnCompte #metierModif,
+#formModifUnCompte #lienModif {
+	margin: 5px 5px 5px 80px;
+	padding: 5px;
+	width: 40%; /*400px;*/
+
+}
+
+
+#formModifUnCompte #submitModif {
+	background: #505E5E;
+	border-radius: 5px;
+	color: #fff;
+	cursor: pointer;
+	margin: 15px 5px 15px 80px;
+	padding: 5px;
+	width: 30%; /*200px;*/
+}
+
+
 /***************************************************************************************************************
  ************************************************ CONNEXION ****************************************************
  ***************************************************************************************************************/

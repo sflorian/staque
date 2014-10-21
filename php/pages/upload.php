@@ -1,5 +1,6 @@
 <?php
 
+
 	if (!empty($_FILES)) {
 
 		$accepted = array("image/jpeg", "image/jpg", "image/gif", "image/png");
@@ -27,20 +28,21 @@
 		$filename = uniqid() . "." . $extension;
 
 		$destination = "img/uploads/" . $filename;	
-		echo $destination;
-		die();	
+		//echo $destination;
+		echo $filename;
+		//die();	
 
 		// Le déplace dans notre sous-dossier upload si mime reconnu
 		if (in_array($mime, $accepted)) {
-			move_uploaded_file($tmp_name, $destination);
+			move_uploaded_file($filname, $destination);
 
 			// Manipulation de l'image
 			// avec SimpleImage
 			require("SimpleImage.php");
 			$img = new abeautifulsite\SimpleImage($destination);
 			$img->text('IMAGES@MCB', 'AdobeArabic-Regular.otf', 32, '#000', 'top', 0, 20)->save("img/uploads/copyright/" . $filename);
-			$img->thumbnail(300,300)->save("img/uploads/thumbs/" . $filename);
-			$img->best_fit(500, 500)->save("img/uploads/resize500/" . $filename);
+			$img->thumbnail(128,128)->save("img/uploads/thumbs/" . $filename);
+			$img->best_fit(128, 128)->save("img/uploads/resize128/" . $filename);
 			$img->desaturate()->sepia()->save("img/uploads/blackandwhite/" . $filename);
 		}
 	}

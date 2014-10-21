@@ -146,7 +146,7 @@
 			<form action="?page=poserQuestion" method="POST" novalidate>
 				<div>
 					<label for="titreQuestion">Titre de votre question</label>
-					<input type="text" name="titre" id="titreQuestion" placeholder="Titre de votre question" value="<?= $titre;?>">
+					<input type="text" name="titre" id="titreQuestion" placeholder="Titre de votre question" style="width:500px; height:40px;" value="<?= $titre;?>">
 					<span class="errors"><?= $error['titre']?></span>
 				</div>
 				<div>
@@ -156,7 +156,7 @@
 				</div>
 				<div>
 					<label for="tagsQuestion">Vos tags (de 1 à 5)</label>
-					<input type="text" name="tags" id="tagsQuestion" placeholder="Ecrivez ici vos tags en les séparant par des virgules." value="<?= $tags;?>">
+					<input type="text" name="tags" id="tagsQuestion" placeholder="Ecrivez ici vos tags en les séparant par des virgules." style="width:500px; height:40px;" value="<?= $tags;?>">
 					<span class="errors"><?= $error['tags']?></span>
 				</div>
 				<input type="submit" value="Posez votre question">
