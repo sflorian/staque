@@ -111,12 +111,23 @@
 	}
 
 		// Fonction qui connect un utilisateur par son ID
-	function connectUser($utilisateur) {
+	function connectUser(array $utilisateur) {
 		$_SESSION['utilisateurTrouve'] = true;
 		$_SESSION['utilisateur'] = $utilisateur;
+		updateDateLogged($utilisateur['id']);
+		
 	}
 
-
+		// Fonction qui ajoute la date de loggin à la BDD
+	function updateDateLogged($id) {
+		global $dbh;
+		$sql = "UPDATE utilisateur
+				SET dateLogged = NOW()
+				WHERE id = :id";
+		$stmt = $dbh->prepare( $sql );
+		$stmt->bindValue(":id", $id);
+		$stmt->execute();
+	}
 
 		// Fonction qui récupère l'utilisateur par son pseudo ou email
 	function getUserByPseudoOrEmail($pseudoEmail) {

@@ -1,14 +1,11 @@
 <?php
 
-	if(!empty($_GET['id'])) {
-		$id = $_GET['id'];
-	$sql = "SELECT * FROM utilisateur
-			WHERE id = :id";
-	$stmt = $dbh->prepare( $sql ); 
-	$stmt->bindValue(":id", $id);
-	$stmt->execute();
-	$utilisateur = $stmt->fetch();
+	if(empty($_GET['id'])) {
+		goHome();
 	}
+	
+	$id = $_GET['id'];
+	$utilisateur = getUserById($id);
 ?>
 
 
@@ -20,11 +17,13 @@
 			<container>
 				<h1><?= $utilisateur['pseudo'];?></h1>
 
+					<a href="?page=modifierUnePhoto&id=<?= $utilisateur['id'];?>">Modifier votre photo</a>
 				<div>
 					<div id="containerPhoto" class="left">
 						<img src="../img/uploads/<?= $utilisateur['photo'];?>" id="profilePic">
 						<a href="#score"><?= $utilisateur['score'];?><br>score</a>
 					</div>
+					<a href="?page=modifierUnCompte&id=<?= $utilisateur['id'];?>">Modifier votre profil</a>
 					<div id="containerInfo" class="left">
 						<div class="labelOfLabel">bio
 							<div class="infoLabel">langue : <?= $utilisateur['langue'];?></div>

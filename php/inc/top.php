@@ -6,6 +6,8 @@
 		<meta name="description" content="StackOverflow French touch">
 		<meta name="keywords" content="stackoverflow développement aide question">
 		<meta name="author" content="MC et F">
+		<!-- redirection après un temps donné en secondes -->
+		<!-- <meta http-equiv="refresh" content="10;index.php" /> -->
 		<!-- feuille de style -->
 		<link rel="stylesheet" href="../css/style.css" />
 		<!-- police -->
