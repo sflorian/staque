@@ -47,7 +47,7 @@
 	if (!empty($_POST) && $id_utilisateur ) {
 
 		// récupère les données dans nos variables
-		$contenu = htmlspecialchars($_POST["contenu"]);
+		$contenu = $_POST["contenu"];
 
 		/*_________________ Début de la validation ____________________*/
 
@@ -140,9 +140,9 @@
 							?>
 						</div>
 						<?php endforeach; }	 ?>
-						<div class="borderTop"></div>
+						<!-- <div class="borderTop"></div>
 						<div class="comment">Commentaire 1</div>
-						<div class="comment">Commentaire 2</div>
+						<div class="comment">Commentaire 2</div> -->
 					</div>
 					<div class="left ajoutComment">Ajouter un commentaire</div>
 				</div>
@@ -201,41 +201,39 @@
 								?>
 							</div>
 							<?php endforeach; }	 ?>
-							<div class="borderTop"></div>
-							<div class="comment">Commentaire 1</div>
-							<div class="comment">Commentaire 2</div>
 						</div>
 						<div class="left ajoutComment">Ajouter un commentaire</div>
 					</div>
 				</div>
 				<?php endforeach; ?>
 			</div>
-		<?php endif; ?>
+			<div class="borderBottom"></div>
+			<?php endif; ?>
 
-		<div id="votreReponse">
-			<h1 class="borderBottom">Votre réponse</h1>
-			<form action="?page=questionDetails" id="formReponse" method="POST" novalidate>
-				<div>
-					<textarea name="contenu" id="contenuReponse"><?= $contenu;?></textarea>
-					<span class="errors"><?= $error['contenu']?></span>
-				</div>
-				<div>
-					<input type="submit" id="submitReponse" value="Postez votre réponse">
-					<span class="errors"><?= $error['submit']?></span>
-					<span class="validates"><?= $validate; ?><span>
-				</div>
-			</form>
-		</div>
+			<div id="votreReponse">
+				<h1>Votre réponse</h1>
+				<form action="?<?= $_SERVER['QUERY_STRING']; ?>" id="formReponse" method="POST" novalidate>
+					<div>
+						<textarea name="contenu" id="contenuReponse"><?= $contenu;?></textarea>
+						<span class="errors"><?= $error['contenu']?></span>
+					</div>
+					<div>
+						<input type="submit" id="submitReponse" value="Postez votre réponse">
+						<span class="errors"><?= $error['submit']?></span>
+						<span class="validates"><?= $validate; ?><span>
+					</div>
+				</form>
+			</div>
 
-		<div id="remarques">
-			<p>Il n'y a pas la réponse que vous cherchiez ? Regardez les autres questions taguées 
-			<span class="tag">
-				<?php 
-				foreach ($tags as $tag) { ?>
-					<a href="?page=questionParTag&amp;id=<?= $tag['id']; ?>"><span class='tagname'><?= $tag['tagname'] ?></span></a>
-				<?php } ?>
-			</span>
-			<br />ou <a href="?page=poserQuestion">posez vous-même votre question</a>.</p>
-		</div>
+			<div id="remarques">
+				<p>Il n'y a pas la réponse que vous cherchiez ? Regardez les autres questions taguées 
+				<span class="tag">
+					<?php 
+					foreach ($tags as $tag) { ?>
+						<a href="?page=questionParTag&amp;id=<?= $tag['id']; ?>"><span class='tagname'><?= $tag['tagname'] ?></span></a>
+					<?php } ?>
+				</span>
+				<br />ou <a href="?page=poserQuestion">posez vous-même votre question</a>.</p>
+			</div>
 
 		</main>

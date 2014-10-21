@@ -9,6 +9,7 @@
 				LEFT JOIN rep ON rep.quest_id = quest.id
 				JOIN utilisateur ON quest.user_id = utilisateur.id
 				WHERE quest.published = 1
+				ORDER BY quest.dateModified DESC
 				LIMIT :nbQuestions";
 		$stmt = $dbh->prepare( $sql );  
 		$stmt->bindValue(":nbQuestions", $nb,  PDO::PARAM_INT); // pdo 3eme param pour integer au lieu de string 
@@ -17,19 +18,6 @@
 
 		return $questions;
 
-	}
-
-
-	function getNbReponsesByIdQuestion($quest_id) {
-		global $dbh;
-		$sql = "SELECT COUNT(id) FROM rep
-				WHERE quest_id = :quest_id";
-		$stmt = $dbh->prepare( $sql );  
-		$stmt->bindValue(":quest_id", $quest_id);
-		$stmt->execute();
-		$nbRep = $stmt->fetchColumn();
-
-		return $nbRep;
 	}
 
 

@@ -11,7 +11,7 @@
 
 		// Fonction qui redirige vers la page de chargement photo profil
 	function goUpload() {
-		header("Location: upload.php");
+		header("Location: ?page=upload");
 		die(); 
 	}
 

@@ -10,8 +10,10 @@
 		<!-- <meta http-equiv="refresh" content="10;index.php" /> -->
 		<!-- feuille de style -->
 		<link rel="stylesheet" href="../css/style.css" />
+		<link rel="stylesheet" href="../js/tinymce/plugins/sh4tinymce/style/style.css" />
 		<!-- police -->
 		<link href='http://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+
 		
 		<!-- Jquery -->
 		<!-- NE PAS OUBLIER D'ACTIVER LES SCRIPTS DANS LE FICHIER SCRIPT.PHP -->

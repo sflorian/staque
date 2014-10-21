@@ -217,7 +217,7 @@
 
 			connectUser($utilisateur);
 
-			//goUpload();
+			goUpload();
 		}
 
 	} // fin du if formulaire soumis ?

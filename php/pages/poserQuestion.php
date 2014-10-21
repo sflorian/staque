@@ -20,22 +20,17 @@
 		$error['submit'] = "Connectez-vous non?!";
 	}
 
-
-
 	$id_utilisateur = "";
 	if (!empty($_SESSION['utilisateur'])) {
 		$id_utilisateur = $_SESSION['utilisateur']["id"];
 	}
 	
-
-
-
-		// variables des attributs "value" du formulaire
+	// variables des attributs "value" du formulaire
 	$titre = "";
 	$contenu = "";
 	$tags = "";
 
-		// variable utilisateur trouvé
+	// variable utilisateur trouvé
 	$formIsValid = true;
 
 	// si le formulaire a été soumis...
@@ -43,7 +38,7 @@
 
 		// récupère les données dans nos variables
 		$titre = trim( strip_tags( $_POST["titre"] ) );
-		$contenu = htmlspecialchars($_POST["contenu"]);
+		$contenu = $_POST["contenu"];
 		$tags = trim( strip_tags( $_POST["tags"]) );
 
 		/*_________________ Début de la validation ____________________*/
@@ -64,20 +59,24 @@
 			$error['tags'] = "De quoi la question parle-t-elle?";
 			$formIsValid = false;
 		}
+		if (!empty($tags)) {
+			$arraytags = explode(",", $tags);
+			if (count($arraytags)>5) {
+				$error['tags'] = "Maximum 5 tags !";
+				$formIsValid = false;
+			}
+		}
 		/*__________________ Fin de la validation ____________________*/
 		
 		// si le formulaire est valide
 		if ($formIsValid) {
-			$arraytags = explode(",", $tags);
-			foreach ($arraytags as $tag) {
-				if (empty($tag)) {
-					unset($tag);
+			for($i = 0; $i<count($arraytags); $i++) {
+				$arraytags[$i] = trim($arraytags[$i]);
+				if ($arraytags[$i] == "") {
+					unset($arraytags[$i]);
+					$arraytags = array_values($arraytags);
 				}
-				$tag = trim($tag);
 			}
-			//print_r($arraytags);
-			//die();
-
 
 			// Connexion à la base
 			global $dbh;
@@ -97,6 +96,19 @@
 			$sql = "INSERT INTO tag (tagname, dateCreated)
 					VALUES (:tagname, NOW())";
 			$stmt = $dbh->prepare($sql);
+			/*for($i = 0; $i<count($arraytags); $i++) {
+				if (!tagExists($arraytags[$i])) {
+					$stmt->bindValue(":tagname", $arraytags[$i]);
+					if($stmt->execute()) {
+						$id_tag = $dbh->lastInsertId();
+						insertTag_quest($id_tag, $id_question);
+					}
+				}
+				elseif(tagExists($arraytags[$i])) {
+					$id_tag = getIdExistantTag($arraytags[$i]);
+					insertTag_quest($id_tag, $id_question);
+				}
+			}*/
 			foreach ($arraytags as $tag) {
 				if (!tagExists($tag)) {
 					$stmt->bindValue(":tagname", $tag);
@@ -142,24 +154,22 @@
 
 
 		<main id="mainPoserQuestion">
-				<h1>La question que tout le monde se pose :</h1>
-			<form action="?page=poserQuestion" method="POST" novalidate>
+			<h1 class="borderBottom">La question que tout le monde se pose :</h1>
+			<form action="?page=poserQuestion" id="formPoserQuestion" method="POST" novalidate>
 				<div>
-					<label for="titreQuestion">Titre de votre question</label>
-					<input type="text" name="titre" id="titreQuestion" placeholder="Titre de votre question" style="width:500px; height:40px;" value="<?= $titre;?>">
+					<input type="text" name="titre" id="titreQuestion" placeholder="Titre clair de votre question" value="<?= $titre;?>">
 					<span class="errors"><?= $error['titre']?></span>
 				</div>
 				<div>
-					<label for="contenuQuestion">Votre question</label>
+					<label for="contenuQuestion">Votre question :</label>
 					<textarea name="contenu" id="contenuQuestion"><?= $contenu;?></textarea>
 					<span class="errors"><?= $error['contenu']?></span>
 				</div>
 				<div>
-					<label for="tagsQuestion">Vos tags (de 1 à 5)</label>
-					<input type="text" name="tags" id="tagsQuestion" placeholder="Ecrivez ici vos tags en les séparant par des virgules." style="width:500px; height:40px;" value="<?= $tags;?>">
+					<input type="text" name="tags" id="tagsQuestion" placeholder="Ecrivez ici vos tags en les séparant par des virgules (minimum 1 tag, maximum 5 tags)" value="<?= $tags;?>">
 					<span class="errors"><?= $error['tags']?></span>
 				</div>
-				<input type="submit" value="Posez votre question">
+				<input type="submit" id="submitPoserQuestion" value="Posez votre question">
 				<span class="errors"><?= $error['submit']?></span>
 			</form>
 		</main>
