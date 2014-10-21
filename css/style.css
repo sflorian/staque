@@ -23,7 +23,7 @@ body {
 h1 {
 	font-size: 1.5em;
 	font-weight: 700;
-	padding: 20px 10px;
+	padding: 20px;
 }
 
 .left {
@@ -36,6 +36,12 @@ h1 {
 
 .clear {
 	clear: both;
+}
+
+h1.borderBottom{
+	border-style: solid;
+	border-width: 0 0 2px 0;
+	border-color: #000;
 }
 
 
@@ -193,12 +199,6 @@ h1 {
 	padding-bottom: 30px;
 }
 
-#listeQuestion h1.borderBottom{
-	border-style: solid;
-	border-width: 0 0 2px 0;
-	border-color: #000;
-}
-
 #listeQuestion div.question{
 	border-style: solid;
 	border-width: 0 0 2px 0;
@@ -304,31 +304,214 @@ h1 {
 
 /* ___________________________________________________________________________________________________________ */
 
+#mainQuestionDetails{
+	background-color: #fff;
+	margin: 10px 0;
+}
 
+#questionDetails {
+	overflow: hidden;
+	padding: 20px 20px 0 20px;
+}
 
-#questionDetails div.sidebar {
+#questionDetails div.sidebar,
+.reponse div.sidebar {
+	text-align: center;
 	width: 10%;
 }
 
-#questionDetails div.details {
+#questionDetails div.details,
+.reponse div.details {
+	padding: 20px 0;
 	width: 90%;
 }
 
 #questionDetails div.votePlus,
-#questionDetails div.voteMoins {
+#questionDetails div.voteMoins,
+.reponse div.votePlus,
+.reponse div.voteMoins {
+	cursor: pointer;
 	font-size: 2em;
 	font-weight: 700;
+	margin: 10px 30px;
+}
+
+#questionDetails div.votePlus,
+.reponse div.votePlus {
+	border-color: transparent transparent #999;
+	border-style: solid;
+	border-width: 25px;
+}
+
+#questionDetails div.voteMoins,
+.reponse div.voteMoins {
+	border-color: #999 transparent transparent;
+	border-style: solid;
+	border-width: 25px;
 }
 
 #questionDetails div.scorequest {
-
+	color: #999;
+	font-size: 2em;
+	font-weight: 700;
+	margin: 10px 30px;
+	padding: 5px 0;
 }
 
+.reponse div.scorerep {
+	color: #999;
+	font-size: 2em;
+	font-weight: 700;
+	margin: 10px 30px;
+	padding: 5px 0;
+}
 
+#questionDetails div.tag {
+	margin: 20px 0px;
+}
 
+#questionDetails div.tag a {
+	color: #000;
+}
 
+#questionDetails span.tagname {
+	background: #67D8CA;
+	border-radius: 2px;
+	display: inline-block;
+	margin: 0px 5px;
+	padding: 5px;
+}
 
+#questionDetails span.tagname:hover {
+	background: #9CF0E5;
+}
 
+#questionDetails div.who,
+.reponse div.who {
+	text-align: center;
+	width: 30%;
+}
+
+#questionDetails span.actiontemps,
+.reponse span.actiontemps {
+	color: #999;
+}
+
+#questionDetails a.lienProfil,
+.reponse a.lienProfil {
+	color: #00f;
+	text-decoration: none;
+}
+
+#questionDetails a.lienProfil:hover,
+.reponse a.lienProfil:hover {
+	text-decoration: underline;
+}
+
+#questionDetails div.borderTop,
+.reponse div.borderTop {
+	border-style: dotted;
+	border-width: 2px 0 0 0;
+	border-color: #999;
+}
+
+#questionDetails div.zoneComment,
+.reponse div.zoneComment {
+	margin: 20px 0;
+}
+
+#questionDetails div.comment,
+.reponse div.comment {
+	border-style: dotted;
+	border-width: 0 0 2px 0;
+	border-color: #999;
+	padding: 5px 20px;
+}
+
+#questionDetails div.ajoutComment,
+.reponse div.ajoutComment {
+	border-radius: 2px;
+	color: #999;
+	padding: 5px 10px;
+}
+
+#questionDetails div.ajoutComment:hover,
+.reponse div.ajoutComment:hover {
+	background-color: #777;
+	color: #fff;
+	cursor: pointer;
+}
+
+/* ___________________________________________________________________________________________________________ */
+/*--------------------------------         REPONSES         ------------------------------------*/
+/* ___________________________________________________________________________________________________________ */
+
+#reponseDetails {
+	overflow: hidden;
+	padding: 0 20px;
+}
+
+#votreReponse {
+	padding: 0 20px 20px 20px;
+}
+
+#formReponse {
+	margin: 20px 0 20px 20px;
+	width: 80%;
+}
+
+#contenuReponse {
+	min-height: 200px;
+}
+
+#submitReponse {
+	background: #505E5E;
+	border-radius: 5px;
+	color: #fff;
+	cursor: pointer;
+	font-weight: 700;
+	margin: 15px 5px 15px 20px;
+	padding: 5px 10px;
+	text-transform: uppercase; 
+}
+
+#remarques {
+	padding: 20px 0 80px 40px;
+}
+
+#remarques span.tag {
+	margin: 20px 0px;
+}
+
+#remarques span.tag a {
+	color: #000;
+}
+
+#remarques span.tagname {
+	background: #67D8CA;
+	border-radius: 2px;
+	display: inline-block;
+	margin: 0px 5px;
+	padding: 5px;
+}
+
+#remarques span.tagname:hover {
+	background: #9CF0E5;
+}
+
+#remarques p {
+	font-size: 1.2em;
+	font-weight: 700;
+}
+
+#remarques p a {
+	color: #00f;
+	text-decoration: none;
+}
+
+#remarques p a:hover {
+	text-decoration: underline;
+}
 
 
 

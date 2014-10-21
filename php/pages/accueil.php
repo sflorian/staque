@@ -11,6 +11,8 @@
 	$questions = getRecentQuestions();
 	//print_r($questions);
 	//die();
+	$arrayTags = getTagsByIdQuestion($question['id']);
+	//print_r($arrayTags);
 
 ?>
 		<main id="mainacceuil">
@@ -53,8 +55,6 @@
 						<!-- <div class="titrequestion"><a href="">Titre question</a></div>   --> 
 						<div class="tag left">
 							<?php 
-							$arrayTags = getTagsByIdQuestion($question['id']);
-							//print_r($arrayTags);
 							foreach ($arrayTags as $tag) { ?>
 								<a href="?page=questionParTag&amp;id=<?= $tag['id']; ?>"><span class='tagname'><?= $tag['tagname'] ?></span></a>
 							<?php } ?>
