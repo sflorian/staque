@@ -316,7 +316,8 @@ h1 {
 
 #questionDetails div.votePlus,
 #questionDetails div.voteMoins {
-
+	font-size: 2em;
+	font-weight: 700;
 }
 
 #questionDetails div.scorequest {
