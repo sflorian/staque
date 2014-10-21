@@ -129,6 +129,18 @@
 		$stmt->execute();
 	}
 
+		// Fonction qui modifie le nom de l'image dans la BDD
+	function updateImageProfil($id, $filename) {
+		global $dbh;
+		$sql = "UPDATE utilisateur
+				SET photo = :filename
+				WHERE id = :id";
+		$stmt = $dbh->prepare( $sql );
+		$stmt->bindValue(":filename", $filename);
+		$stmt->bindValue(":id", $id);
+		$stmt->execute();
+	}
+
 		// Fonction qui récupère l'utilisateur par son pseudo ou email
 	function getUserByPseudoOrEmail($pseudoEmail) {
 		global $dbh;

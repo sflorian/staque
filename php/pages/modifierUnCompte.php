@@ -5,13 +5,11 @@ if(empty($_GET['id'])) {
 	}
 
 	if(!userIsLogged()){
-		$interdit = true;
-		die("VOUS N'AVEZ PAS LE DROIT D'ACCÉDER À CETTE PAGE SANS ÊTRE CONNECTÉ À CE COMPTE!<br>VOUS SEREZ REDIRIGÉ VERS LA PAGE D'ACCUEIL DANS 10 SECONDES.");
+		forbidden();
 	}
 
 	if($_SESSION["utilisateur"]["id"] != $_GET["id"]){
-		$interdit = true;
-		die("VOUS N'AVEZ PAS LE DROIT D'ACCÉDER À CETTE PAGE SANS ÊTRE CONNECTÉ À CE COMPTE!<br>VOUS SEREZ REDIRIGÉ VERS LA PAGE D'ACCUEIL DANS 10 SECONDES.");
+		forbidden();
 	}
 
 

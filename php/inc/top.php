@@ -24,5 +24,64 @@
 		<!-- <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jquerymobile/1.4.3/jquery.mobile.min.css" /> -->
 		<!-- JQUERY MOBILE -->
 
+		<script src="../js/syntaxhighlighter/scripts/shCore.js"></script>
+		<link href="../js/syntaxhighlighter/styles/shCoreDefault.css"/>
+		<link href="../js/syntaxhighlighter/styles/shThemeDefault.css"/>
+		<!-- Themes SyntaxHighlighter -->
 		
+
+		<script type="text/javascript" src="../js/syntaxhighlighter/scripts/shBrushAutoloader.js"></script>
+		<!-- SyntaxHighlighter pour Autoloader -->
+
+		<script type="text/javascript" src="../js/syntaxhighlighter/scripts/shBrushJScript.js"></script>
+		<!-- SyntaxHighlighter pour javascript -->
+
+		<script type="text/javascript" src="../js/syntaxhighlighter/scripts/shBrushJScript.js"></script>
+		<!-- SyntaxHighlighter pour javascript -->
+
+		<script type="text/javascript" src="../js/syntaxhighlighter/scripts/shBrushJScript.js"></script>
+		<!-- SyntaxHighlighter pour javascript -->
+
+		<script type="text/javascript" src="../js/syntaxhighlighter/scripts/shBrushJScript.js"></script>
+		<!-- SyntaxHighlighter pour javascript -->
+
+		<script type="text/javascript" src="../js/syntaxhighlighter/scripts/shBrushJScript.js"></script>
+		<!-- SyntaxHighlighter pour javascript -->
+
+		<script type="text/javascript" src="../js/syntaxhighlighter/scripts/shBrushJScript.js"></script>
+		<!-- SyntaxHighlighter pour javascript -->
+
+		<script type="text/javascript" src="../js/syntaxhighlighter/scripts/shBrushJScript.js"></script>
+		<!-- SyntaxHighlighter pour javascript -->
+
+		<script type="text/javascript" src="../js/syntaxhighlighter/scripts/shBrushJScript.js"></script>
+		<!-- SyntaxHighlighter pour javascript -->
+
+		<script type="text/javascript" src="../js/syntaxhighlighter/scripts/shBrushJScript.js"></script>
+		<!-- SyntaxHighlighter pour javascript -->
+
+		<script type="text/javascript" src="../js/syntaxhighlighter/scripts/shBrushJScript.js"></script>
+		<!-- SyntaxHighlighter pour javascript -->
+
+		<script type="text/javascript" src="../js/syntaxhighlighter/scripts/shBrushJScript.js"></script>
+		<!-- SyntaxHighlighter pour javascript -->
+
+		<script type="text/javascript" src="../js/syntaxhighlighter/scripts/shBrushJScript.js"></script>
+		<!-- SyntaxHighlighter pour javascript -->
+
+		<script type="text/javascript" src="../js/syntaxhighlighter/scripts/shBrushJScript.js"></script>
+		<!-- SyntaxHighlighter pour javascript -->
+
+		<script type="text/javascript" src="../js/syntaxhighlighter/scripts/shBrushJScript.js"></script>
+		<!-- SyntaxHighlighter pour javascript -->
+
+		<script type="text/javascript" src="../js/syntaxhighlighter/scripts/shBrushJScript.js"></script>
+		<!-- SyntaxHighlighter pour javascript -->
+
+		<script type="text/javascript" src="../js/syntaxhighlighter/scripts/shBrushJScript.js"></script>
+		<!-- SyntaxHighlighter pour javascript -->
+
+		
+		<script type="text/javascript">SyntaxHighlighter.all();</script>
+		<!-- Lancement de syntaxhighlighter -->
 	</head>

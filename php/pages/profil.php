@@ -20,7 +20,7 @@
 					<a href="?page=modifierUnePhoto&id=<?= $utilisateur['id'];?>">Modifier votre photo</a>
 				<div>
 					<div id="containerPhoto" class="left">
-						<img src="../img/uploads/<?= $utilisateur['photo'];?>" id="profilePic">
+						<img src="../img/uploads/profil128/<?= $utilisateur['photo'];?>" id="profilePic">
 						<a href="#score"><?= $utilisateur['score'];?><br>score</a>
 					</div>
 					<a href="?page=modifierUnCompte&id=<?= $utilisateur['id'];?>">Modifier votre profil</a>
