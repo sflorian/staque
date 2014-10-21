@@ -11,8 +11,6 @@
 	$questions = getRecentQuestions();
 	//print_r($questions);
 	//die();
-	$arrayTags = getTagsByIdQuestion($question['id']);
-	//print_r($arrayTags);
 
 ?>
 		<main id="mainacceuil">
@@ -30,6 +28,8 @@
 							</div>
 						</a>
 						<?php 
+							$arrayTags = getTagsByIdQuestion($question['id']);
+							//print_r($arrayTags);
 							$nbReponses = getNbReponsesByIdQuestion($question['id']); 
 							if (isThereTheGoodAnswer($question['id'])) {
 								$theone = true;
