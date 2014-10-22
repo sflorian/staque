@@ -14,7 +14,7 @@ popup = {
 				top: "0",
 				left: "0",
 				backgroundColor: "#000",
-				display: "none",
+				display: "block",
 				width: "90%",
 				zIndex: 1
 			}
@@ -51,124 +51,29 @@ popup = {
 
 	// Ajouter un contenu et affiche
 	afficher: function(x) {
+		if( $("#formAjouteComment").length ) {
+			$("#formAjouteComment").remove()
+		}
 		$(".popup").append(x).fadeIn()
 	},
 
 	fermer: function() {
 		console.log("popup.fermer")
 		$(".popup").fadeOut({
+			duration: 1500,
 			complete: function() {
 				$(".popup").remove()
+				// rechargement de la page
+				location.reload()
 			}
 		})
 	}
 
 }
-
-vote = {
-
-	ajoute: function() {
-		console.log("vote.ajoute")
-		console.log(this)
-
-	},
-
-	enleve: function() {
-		console.log("vote.enleve")
-		console.log(this)
-		
-
-	}
-
-}
-
-/*commentQ = {
-
-	ajoute: function(e) {
-		e.preventDefault()
-
-		console.log("commentQ.ajoute")
-		
-		// Charger la popup
-		var where = $("#questionDetails .ajoutComment").parent()
-		console.log("div where popup = " +where)
-		popup.init(where)
-
-		// Quelle question ?
-		var id_quest = where.parent().find(".hidden").html()
-		console.log("id_quest = " +id_quest)
-
-		var url = "?page=ajouteComment&id="+id_quest+"&foreign_table=question"
-		console.log("url = " +url)
-
-		$.ajax({
-			url: url, 
-			success: function(server_response) {
-				popup.afficher($(server_response).find("#formAjouteComment"))
-				//popup.fermer()
-				console.log("succès requête ajax dans fonction commentQ.ajoute")
-			},
-			error: function() {
-				console.log("erreur dans fonction commentQ.ajoute")
-			}
-		})
-		console.log("apres lancement ajax dans fonction commentQ.ajoute")
-		// Prevent Default
-		return false
-	}
-
-}
-
-commentR = {
-
-	ajoute: function(e) {
-		e.preventDefault()
-
-		console.log("commentR.ajoute")
-
-		// Charger la popup
-		var where = $(this).parent()
-		console.log("div where popup = " +where)
-		popup.init(where)
-
-		// Quelle question ?
-		var id_quest = where.parent().find(".hidden").html()
-		console.log("id_quest = " +id_quest)
-
-		// Quelle reponse ?
-		var id_rep = where.parent().find(".hidden").html()
-		console.log("id_rep = " +id_rep)
-
-		var url = "?page=ajouteComment&id="+id_quest+"&foreign_table=reponse&id_rep="+id_rep
-		console.log("url = " +url)
-
-		$.ajax({
-			url: url, 
-			success: function(server_response) {
-				popup.afficher($(server_response).find("#formAjouteComment"))
-				//popup.fermer()
-				console.log("succès requête ajax dans fonction commentR.ajoute")
-			},
-			error: function() {
-				console.log("erreur dans fonction commentR.ajoute")
-			}
-
-		})
-
-		console.log("apres lancement ajax dans fonction commentR.ajoute")
-
-		// Prevent Default
-		return false
-
-	}
-
-}*/
-
 
 comment = {
 
-	ajoute: function(e) {
-		e.preventDefault()
+	ajoute: function() {
 
 		console.log("comment.ajoute")
 
@@ -202,17 +107,17 @@ comment = {
 		}
 		
 		if (foreign_table == "question") {
-			var url = "?page=ajouteComment&id="+id_quest+"&foreign_table="+foreign_table
-		}if (foreign_table == "reponse") {
-			var url = "?page=ajouteComment&id="+id_quest+"&foreign_table="+foreign_table+"&id_rep="+id_rep
+			comment.url = "?page=ajouteComment&id="+id_quest+"&foreign_table="+foreign_table   
 		}
-		console.log("url = " +url)
+		if (foreign_table == "reponse") {
+			comment.url = "?page=ajouteComment&id="+id_quest+"&foreign_table="+foreign_table+"&id_rep="+id_rep   
+		}
+		console.log("url = " +comment.url)
 
 		$.ajax({
-			url: url, 
+			url: comment.url, 
 			success: function(server_response) {
 				popup.afficher($(server_response).find("#formAjouteComment"))
-				//popup.fermer()
 				console.log("succès requête ajax dans fonction comment.ajoute")
 			},
 			error: function() {
@@ -220,11 +125,78 @@ comment = {
 			}
 
 		})
-
 		console.log("apres lancement ajax dans fonction comment.ajoute")
-
 		// Prevent Default
 		return false
+
+	},
+
+	check : function() {
+		// Traitement des infos du formulaire
+		var commentaire = $("#comment").val()
+
+		$.ajax({
+			type: "POST",
+			//url: "",
+			url: comment.url, 
+			data: {comment: commentaire},
+			success: function(server_response) {
+				popup.afficher($(server_response).find("#formAjouteComment"))
+				if ( $(".validates").html() != "" ) {
+					popup.fermer()
+				}
+				console.log("succès requête ajax dans fonction comment.check")
+			},
+			error: function() {
+				console.log("erreur dans fonction comment.check")
+			}
+
+		})
+		console.log("apres lancement ajax dans fonction comment.check")
+		// Prevent Default
+		return false
+	},
+
+}
+
+vote = {
+
+	ajoute: function() {
+		console.log("vote.ajoute")
+
+		// Charger la popup
+		var where = $(this).parent().parent().find(".details")
+		popup.init(where)
+
+		var reponse = $(this).parent().parent()
+		console.log("reponse = " +reponse)
+		var id_rep =reponse.find(".hidden").html()
+		console.log("id_rep = " +id_rep)
+		var score =reponse.find(".scorerep").html()
+		console.log("score = " +score)
+
+		var id_rep = 1
+		vote.url = "?page=verifVote&id_rep="+id_rep
+		$.ajax({
+			url: vote.url, 
+			success: function(server_response) {
+				popup.afficher($(server_response).find("#formVote"))
+				console.log("succès requête ajax dans fonction comment.vote")
+			},
+			error: function() {
+				console.log("erreur dans fonction comment.vote")
+			}
+
+		})
+		console.log("apres lancement ajax dans fonction comment.vote")
+		// Prevent Default
+		return false
+	},
+
+	enleve: function() {
+		console.log("vote.enleve")
+		console.log(this)
+		
 
 	}
 
@@ -238,7 +210,7 @@ app = {
 
 	init: function() {
 
-		console.log("app.init")
+		console.log("app.init")	
 
 	},
 
@@ -247,13 +219,10 @@ app = {
 		console.log("app.chargement")
 
 		/* ******** On pose des écouteurs ********** */
-		//$("#questionDetails .ajoutComment").on("click", commentQ.ajoute)
-		//$(document).on("click", "#comment", commentQ.ajoute)
 		$(document).on("click", ".ajoutComment", comment.ajoute)
-		$(document).on("submit", "#submitComment", comment.ajoute)
-		$("#reponseDetails .votePlus").on("click", vote.ajoute)
-		$("#reponseDetails .voteMoins").on("click", vote.enleve)
-		//$("#reponseDetails").on("click", ".ajoutCommentR", commentR.ajoute)
+		$(document).on("submit", "#formAjouteComment", comment.check)
+		$(document).on("click", "#reponseDetails .votePlus", vote.ajoute)
+		$(document).on("click", "#reponseDetails .voteMoins", vote.enleve)
 
 	}
 

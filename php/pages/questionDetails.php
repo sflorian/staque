@@ -124,8 +124,9 @@
 					</div>
 					<div class="clear"></div>
 					<div class="zoneComment">
-						<?php if ($questionComments) {foreach ($questionComments as $questionComment): ?>
+					<?php if ($questionComments): ?>
 						<div class="borderTop"></div>
+						<?php foreach ($questionComments as $questionComment): ?>
 						<div class="comment">
 							<?php $utilisateur = getUserById($questionComment['user_id']); ?>
 							<span><?= $questionComment['contenu'] ?></span>
@@ -140,10 +141,11 @@
 								echo '<span class="actiontemps">' . $temps . " </span>";
 							?>
 						</div>
-						<?php endforeach; }	 ?>
+						<?php endforeach; ?>
 						<!-- <div class="borderTop"></div>
 						<div class="comment">Commentaire 1</div>
 						<div class="comment">Commentaire 2</div> -->
+					<?php endif; ?>
 					</div>
 				</div>
 				<div class="boutonComment">
@@ -189,8 +191,8 @@
 						<div class="clear"></div>
 						<?php $reponseComments = getCommentsByIdReponse($reponse['id']); ?>
 						<div class="zoneComment">
-							<?php if ($reponseComments) {foreach ($reponseComments as $reponseComment): ?>
 							<div class="borderTop"></div>
+							<?php if ($reponseComments) {foreach ($reponseComments as $reponseComment): ?>
 							<div class="comment">
 								<?php $utilisateur = getUserById($reponseComment['user_id']); ?>
 								<span><?= $reponseComment['contenu'] ?></span>
