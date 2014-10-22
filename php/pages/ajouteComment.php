@@ -1,14 +1,19 @@
 <?php
+	
+	//$url = $_GET['urlback'];
+	//die($url);
 
 	if (empty($_GET['id'])){
-		//goBack(?$_SERVER['QUERY_STRING']);
+		//goBack($url);
+		goHome();
 		die("manque id_question");
 	}
 
 	$id_quest = $_GET['id'];
 
 	if (empty($_GET['foreign_table'])){
-		//goBack(?$_SERVER['QUERY_STRING']);
+		//goBack($url);
+		goHome();
 		die("manque foreign_table");
 	}
 
@@ -20,7 +25,8 @@
 
 	if ($foreign_table == "reponse") {
 		if (empty($_GET['id_rep'])){
-			//goBack(?$_SERVER['QUERY_STRING']);
+			//goBack($url);
+			goHome();
 			die("manque id_rep");
 		}
 		$id_rep = $_GET['id_rep'];
@@ -93,9 +99,11 @@
 				$stmt->bindValue(":user_id", $id_utilisateur);
 				$stmt->bindValue(":contenu", $comment);
 				$stmt->bindValue(":published", 1);
-				//$stmt->execute();
+				$stmt->execute();
 
 				$validate = "Votre commentaire est posté !";
+				//goBack($url);
+				//goHome();
 				//die();
 			
 			}
@@ -109,17 +117,17 @@
 
 
 		<main id="mainAjouteComment" class="containerCompte">
-			<form action="?<?= $_SERVER['QUERY_STRING']; ?>" id="formAjouteComment" method="POST" novalidate>
+			<form action="?<?= $_SERVER['QUERY_STRING']; ?>" id="formAjouteComment" method="POST" novalidate>  <!-- < ?= $_SERVER['QUERY_STRING']; ?> -->
 				<div class="ajouteComment">
 					<div class="titreComment">Votre commentaire</div>
 					<!-- <input type="text" name="comment" id="comment" placeHolder="Votre commentaire ?" value="< ?php echo $comment; ?>"/> -->
 					<div><textarea name="comment" id="comment"><?= $comment;?></textarea></div>
 					<div>
 						<input type="submit" id="submitComment" value="Poster !"/>
-						<span class="errors"><?= $error['comment']; ?><span>
-						<span class="errors"><?= $error['submit']; ?><span>
-						<span class="validates"><?= $validate; ?><span>
-					</p>
+						<span class="errors"><?= $error['comment']; ?></span>
+						<span class="errors"><?= $error['submit']; ?></span>
+						<span class="validates"><?= $validate; ?></span>
+					</div>
 				</div>
 			</form>
 		</main>

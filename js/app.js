@@ -51,15 +51,28 @@ popup = {
 
 	// Ajouter un contenu et affiche
 	afficher: function(x) {
+		if( $("#formAjouteComment").length ) {
+			$("#formAjouteComment").remove()
+		}
 		$(".popup").append(x).fadeIn()
 	},
 
 	fermer: function() {
 		console.log("popup.fermer")
 		$(".popup").fadeOut({
+			duration: 2000,
 			complete: function() {
 				$(".popup").remove()
-			}
+				// rechargement de la page
+				location.reload()
+				/*$.ajax({
+					url: window.location.href,
+					success: function(server_response) {
+						console.log($(server_response).find("#mainQuestionDetails"))
+						//$("#mainQuestionDetails").html($(server_response).find("#mainQuestionDetails").html())
+					}
+				})*/
+		}
 		})
 	}
 
@@ -82,95 +95,13 @@ vote = {
 
 }
 
-/*commentQ = {
-
-	ajoute: function(e) {
-		e.preventDefault()
-
-		console.log("commentQ.ajoute")
-		
-		// Charger la popup
-		var where = $("#questionDetails .ajoutComment").parent()
-		console.log("div where popup = " +where)
-		popup.init(where)
-
-		// Quelle question ?
-		var id_quest = where.parent().find(".hidden").html()
-		console.log("id_quest = " +id_quest)
-
-		var url = "?page=ajouteComment&id="+id_quest+"&foreign_table=question"
-		console.log("url = " +url)
-
-		$.ajax({
-			url: url, 
-			success: function(server_response) {
-				popup.afficher($(server_response).find("#formAjouteComment"))
-				//popup.fermer()
-				console.log("succès requête ajax dans fonction commentQ.ajoute")
-			},
-			error: function() {
-				console.log("erreur dans fonction commentQ.ajoute")
-			}
-		})
-		console.log("apres lancement ajax dans fonction commentQ.ajoute")
-		// Prevent Default
-		return false
-	}
-
-}
-
-commentR = {
-
-	ajoute: function(e) {
-		e.preventDefault()
-
-		console.log("commentR.ajoute")
-
-		// Charger la popup
-		var where = $(this).parent()
-		console.log("div where popup = " +where)
-		popup.init(where)
-
-		// Quelle question ?
-		var id_quest = where.parent().find(".hidden").html()
-		console.log("id_quest = " +id_quest)
-
-		// Quelle reponse ?
-		var id_rep = where.parent().find(".hidden").html()
-		console.log("id_rep = " +id_rep)
-
-		var url = "?page=ajouteComment&id="+id_quest+"&foreign_table=reponse&id_rep="+id_rep
-		console.log("url = " +url)
-
-		$.ajax({
-			url: url, 
-			success: function(server_response) {
-				popup.afficher($(server_response).find("#formAjouteComment"))
-				//popup.fermer()
-				console.log("succès requête ajax dans fonction commentR.ajoute")
-			},
-			error: function() {
-				console.log("erreur dans fonction commentR.ajoute")
-			}
-
-		})
-
-		console.log("apres lancement ajax dans fonction commentR.ajoute")
-
-		// Prevent Default
-		return false
-
-	}
-
-}*/
-
-
 comment = {
 
-	ajoute: function(e) {
-		e.preventDefault()
+	ajoute: function() {
 
 		console.log("comment.ajoute")
+		//var urlBack = $("#mainQuestionDetails > .hidden").html()
+		//console.log("urlBack = " +urlBack)
 
 		// Charger la popup
 		var where = $(this).parent()
@@ -202,17 +133,17 @@ comment = {
 		}
 		
 		if (foreign_table == "question") {
-			var url = "?page=ajouteComment&id="+id_quest+"&foreign_table="+foreign_table
-		}if (foreign_table == "reponse") {
-			var url = "?page=ajouteComment&id="+id_quest+"&foreign_table="+foreign_table+"&id_rep="+id_rep
+			comment.url = "?page=ajouteComment&id="+id_quest+"&foreign_table="+foreign_table   //+"&urlback="+urlBack
 		}
-		console.log("url = " +url)
+		if (foreign_table == "reponse") {
+			comment.url = "?page=ajouteComment&id="+id_quest+"&foreign_table="+foreign_table+"&id_rep="+id_rep   //+"&urlback="+urlBack
+		}
+		console.log("url = " +comment.url)
 
 		$.ajax({
-			url: url, 
+			url: comment.url, 
 			success: function(server_response) {
 				popup.afficher($(server_response).find("#formAjouteComment"))
-				//popup.fermer()
 				console.log("succès requête ajax dans fonction comment.ajoute")
 			},
 			error: function() {
@@ -220,13 +151,37 @@ comment = {
 			}
 
 		})
-
 		console.log("apres lancement ajax dans fonction comment.ajoute")
-
 		// Prevent Default
 		return false
 
-	}
+	},
+
+	check : function() {
+		// Traitement des infos du formulaire
+		var commentaire = $("#comment").val()
+
+		$.ajax({
+			type: "POST",
+			//url: "",
+			url: comment.url, 
+			data: {comment: commentaire},
+			success: function(server_response) {
+				popup.afficher($(server_response).find("#formAjouteComment"))
+				if ( $(".validates").html() != "" ) {
+					popup.fermer()
+				}
+				console.log("succès requête ajax dans fonction comment.check")
+			},
+			error: function() {
+				console.log("erreur dans fonction comment.check")
+			}
+
+		})
+		console.log("apres lancement ajax dans fonction comment.check")
+		// Prevent Default
+		return false
+	},
 
 }
 
@@ -247,13 +202,10 @@ app = {
 		console.log("app.chargement")
 
 		/* ******** On pose des écouteurs ********** */
-		//$("#questionDetails .ajoutComment").on("click", commentQ.ajoute)
-		//$(document).on("click", "#comment", commentQ.ajoute)
 		$(document).on("click", ".ajoutComment", comment.ajoute)
-		$(document).on("submit", "#submitComment", comment.ajoute)
+		$(document).on("submit", "#formAjouteComment", comment.check)
 		$("#reponseDetails .votePlus").on("click", vote.ajoute)
 		$("#reponseDetails .voteMoins").on("click", vote.enleve)
-		//$("#reponseDetails").on("click", ".ajoutCommentR", commentR.ajoute)
 
 	}
 

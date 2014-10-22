@@ -86,9 +86,9 @@
 			$stmt->bindValue(":titre", $titre);
 			$stmt->bindValue(":contenu", $contenu);
 			$stmt->bindValue(":user_id", $id_utilisateur);
-			$stmt->bindValue(":scorequest", 0);
-			$stmt->bindValue(":vues", 0);
-			$stmt->bindValue(":published", 1);
+			$stmt->bindValue(":scorequest", 0, PDO::PARAM_INT);
+			$stmt->bindValue(":vues", 0, PDO::PARAM_INT);
+			$stmt->bindValue(":published", 1, PDO::PARAM_INT);
 			$stmt->execute();
 
 			$id_question = $dbh->lastInsertId();
