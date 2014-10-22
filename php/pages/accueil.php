@@ -8,7 +8,7 @@
 	$temps = "";
 
 
-	$questions = getRecentQuestions();
+	$questions = getRecentQuestions(5);
 	//print_r($questions);
 	//die();
 
