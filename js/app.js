@@ -14,7 +14,7 @@ popup = {
 				top: "0",
 				left: "0",
 				backgroundColor: "#000",
-				display: "none",
+				display: "block",
 				width: "90%",
 				zIndex: 1
 			}
@@ -60,37 +60,13 @@ popup = {
 	fermer: function() {
 		console.log("popup.fermer")
 		$(".popup").fadeOut({
-			duration: 2000,
+			duration: 1500,
 			complete: function() {
 				$(".popup").remove()
 				// rechargement de la page
 				location.reload()
-				/*$.ajax({
-					url: window.location.href,
-					success: function(server_response) {
-						console.log($(server_response).find("#mainQuestionDetails"))
-						//$("#mainQuestionDetails").html($(server_response).find("#mainQuestionDetails").html())
-					}
-				})*/
-		}
+			}
 		})
-	}
-
-}
-
-vote = {
-
-	ajoute: function() {
-		console.log("vote.ajoute")
-		console.log(this)
-
-	},
-
-	enleve: function() {
-		console.log("vote.enleve")
-		console.log(this)
-		
-
 	}
 
 }
@@ -100,8 +76,6 @@ comment = {
 	ajoute: function() {
 
 		console.log("comment.ajoute")
-		//var urlBack = $("#mainQuestionDetails > .hidden").html()
-		//console.log("urlBack = " +urlBack)
 
 		// Charger la popup
 		var where = $(this).parent()
@@ -133,10 +107,10 @@ comment = {
 		}
 		
 		if (foreign_table == "question") {
-			comment.url = "?page=ajouteComment&id="+id_quest+"&foreign_table="+foreign_table   //+"&urlback="+urlBack
+			comment.url = "?page=ajouteComment&id="+id_quest+"&foreign_table="+foreign_table   
 		}
 		if (foreign_table == "reponse") {
-			comment.url = "?page=ajouteComment&id="+id_quest+"&foreign_table="+foreign_table+"&id_rep="+id_rep   //+"&urlback="+urlBack
+			comment.url = "?page=ajouteComment&id="+id_quest+"&foreign_table="+foreign_table+"&id_rep="+id_rep   
 		}
 		console.log("url = " +comment.url)
 
@@ -185,6 +159,49 @@ comment = {
 
 }
 
+vote = {
+
+	ajoute: function() {
+		console.log("vote.ajoute")
+
+		// Charger la popup
+		var where = $(this).parent().parent().find(".details")
+		popup.init(where)
+
+		var reponse = $(this).parent().parent()
+		console.log("reponse = " +reponse)
+		var id_rep =reponse.find(".hidden").html()
+		console.log("id_rep = " +id_rep)
+		var score =reponse.find(".scorerep").html()
+		console.log("score = " +score)
+
+		var id_rep = 1
+		vote.url = "?page=verifVote&id_rep="+id_rep
+		$.ajax({
+			url: vote.url, 
+			success: function(server_response) {
+				popup.afficher($(server_response).find("#formVote"))
+				console.log("succès requête ajax dans fonction comment.vote")
+			},
+			error: function() {
+				console.log("erreur dans fonction comment.vote")
+			}
+
+		})
+		console.log("apres lancement ajax dans fonction comment.vote")
+		// Prevent Default
+		return false
+	},
+
+	enleve: function() {
+		console.log("vote.enleve")
+		console.log(this)
+		
+
+	}
+
+}
+
 /************************
  * 	 Objet principal 	*
  ************************/
@@ -193,7 +210,7 @@ app = {
 
 	init: function() {
 
-		console.log("app.init")
+		console.log("app.init")	
 
 	},
 
@@ -204,8 +221,8 @@ app = {
 		/* ******** On pose des écouteurs ********** */
 		$(document).on("click", ".ajoutComment", comment.ajoute)
 		$(document).on("submit", "#formAjouteComment", comment.check)
-		$("#reponseDetails .votePlus").on("click", vote.ajoute)
-		$("#reponseDetails .voteMoins").on("click", vote.enleve)
+		$(document).on("click", "#reponseDetails .votePlus", vote.ajoute)
+		$(document).on("click", "#reponseDetails .voteMoins", vote.enleve)
 
 	}
 

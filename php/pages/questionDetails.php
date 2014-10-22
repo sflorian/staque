@@ -86,7 +86,6 @@
 
 
 		<main id="mainQuestionDetails">
-			<div class="hidden">?<?= $_SERVER['QUERY_STRING']; ?></div>
 
 			<div id="questionDetails">
 				<div class="hidden"><?= $question["id"];?></div>
