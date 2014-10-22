@@ -38,14 +38,19 @@ h1 {
 	clear: both;
 }
 
-h1.borderBottom{
+.borderBottom{
 	border-style: solid;
 	border-width: 0 0 2px 0;
 	border-color: #000;
 }
 
+<<<<<<< HEAD
 #mceu_20{
 	display: none;
+=======
+.hidden {
+	visibility: hidden;
+>>>>>>> origin/master
 }
 
 
@@ -440,7 +445,7 @@ h1.borderBottom{
 }
 
 #questionDetails {
-	overflow: hidden;
+	/*overflow: hidden;*/
 	padding: 20px 20px 0 20px;
 }
 
@@ -450,8 +455,7 @@ h1.borderBottom{
 	width: 10%;
 }
 
-#questionDetails div.details,
-.reponse div.details {
+#questionDetails div.details {
 	padding: 20px 0;
 	width: 90%;
 }
@@ -467,35 +471,32 @@ h1.borderBottom{
 	width: 0;
 }
 
-#questionDetails div.votePlus,
-.reponse div.votePlus {
+#questionDetails div.votePlus {
 	border-color: transparent transparent #999;
 	border-style: solid;
 	border-width: 25px;
+	display: none;
 	width: 20%;
 }
 
-#questionDetails div.voteMoins,
-.reponse div.voteMoins {
+#questionDetails div.voteMoins {
 	border-color: #999 transparent transparent;
 	border-style: solid;
 	border-width: 25px;
+	display: none;
 }
 
 #questionDetails div.scorequest {
 	color: #999;
+	display: none;
 	font-size: 2em;
 	font-weight: 700;
 	margin: 10px auto;
 	padding: 5px 0;
 }
 
-.reponse div.scorerep {
-	color: #999;
-	font-size: 2em;
-	font-weight: 700;
-	margin: 10px auto;
-	padding: 5px 0;
+#questionDetails div.favoris {
+	visibility: hidden;
 }
 
 #questionDetails div.tag {
@@ -560,15 +561,21 @@ h1.borderBottom{
 	padding: 5px 20px;
 }
 
-#questionDetails div.ajoutComment,
-.reponse div.ajoutComment {
+#questionDetails div.boutonComment,
+.reponse div.boutonComment {
+	float: right;
+	/*overflow: hidden;*/
+	padding: 0 20px;
+	width: 90%;
+}
+
+#questionDetails div.ajoutComment {
 	border-radius: 2px;
 	color: #999;
 	padding: 5px 10px;
 }
 
-#questionDetails div.ajoutComment:hover,
-.reponse div.ajoutComment:hover {
+#questionDetails div.ajoutComment:hover {
 	background-color: #777;
 	color: #fff;
 	cursor: pointer;
@@ -579,8 +586,73 @@ h1.borderBottom{
 /* ___________________________________________________________________________________________________________ */
 
 #reponseDetails {
-	overflow: hidden;
+	/*overflow: hidden;*/
 	padding: 0 20px;
+}
+
+.reponse div.details {
+	padding: 20px 0;
+	min-height: 230px;
+	width: 90%;
+}
+
+.reponse div.votePlus {
+	border-color: transparent transparent #999;
+	border-style: solid;
+	border-width: 25px;
+	width: 20%;
+}
+
+.reponse div.voteMoins {
+	border-color: #999 transparent transparent;
+	border-style: solid;
+	border-width: 25px;
+}
+
+/*.reponse div.stop {
+	background-image: url(../img/apparences/coche_invalid.png);
+	background-repeat: no-repeat;
+	background-position: center center;
+	height: 50px;
+	margin: auto;
+	width: 50px;
+	visibility: hidden;
+}*/
+
+.reponse div.scorerep {
+	color: #999;
+	font-size: 2em;
+	font-weight: 700;
+	margin: 10px auto;
+	padding: 5px 0;
+}
+
+.reponse div.favoris {
+	background-image: url(../img/apparences/coche_valid.png);
+	background-repeat: no-repeat;
+	background-position: center center;
+	height: 50px;
+	margin: auto;
+	width: 50px;
+	/*visibility: hidden;*/
+}
+
+.reponse div.ajoutComment {
+	border-radius: 2px;
+	color: #999;
+	padding: 5px 10px;
+}
+
+.reponse div.ajoutComment:hover {
+	background-color: #777;
+	color: #fff;
+	cursor: pointer;
+}
+
+
+#saut {
+	margin: 0 20px;
+	padding: 20px;
 }
 
 #votreReponse {
@@ -651,8 +723,6 @@ h1.borderBottom{
  ************************************************* TAGS ********************************************************
  ***************************************************************************************************************/
 
-/* ___________________________________________________________________________________________________________ */
-
 
 #mainTags{
 	background-color: #fff;
@@ -677,6 +747,35 @@ h1.borderBottom{
 
 #listeTags span.tagname:hover{
 	background: #9CF0E5;
+}
+
+/* ___________________________________________________________________________________________________________ */
+
+/*______________________________________________________ AJOUTE COMMENTAIRE ______________________________________________________*/
+
+.ajouteComment {
+	padding: 20px;
+}
+
+.ajouteComment .titreComment {
+	color: #fff;
+	font-size: 1.2em;
+	padding-bottom: 10px;
+} 
+
+.ajouteComment #comment {
+	min-height: 100px;
+	padding: 5px;
+	width: 100%; 
+}
+
+.ajouteComment #submitComment {
+	background: #505E5E;
+	border-radius: 5px;
+	color: #fff;
+	cursor: pointer;
+	margin-top: 10px;
+	padding: 5px;
 }
 
 /* ___________________________________________________________________________________________________________ */
@@ -1067,9 +1166,6 @@ h1.borderBottom{
 	color: #0f0;
 	text-align: center;
 }
-
-
-
 
 
 

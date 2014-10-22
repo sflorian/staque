@@ -17,7 +17,7 @@
 		<script type="text/javascript" src="../js/tinymce/tinymce.min.js"></script>
 		<script type="text/javascript">
 		tinymce.init({
-		    selector: "textarea", // élément sur lequel appliquer TinyMCE
+		    selector: ".editeur", // élément sur lequel appliquer TinyMCE
 		    menubar : false, // barre de menus cachée
 		    plugins: [ // liste des plugins
 		        "preview sh4tinymce wordcount"

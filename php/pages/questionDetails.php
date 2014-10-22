@@ -88,12 +88,13 @@
 		<main id="mainQuestionDetails">
 
 			<div id="questionDetails">
+				<div class="hidden"><?= $question["id"];?></div>
 				<h1 class="borderBottom"><?= $question["titre"]; ?></h1>
 				<div class="left sidebar">
 					<div class="votePlus"></div>
 					<div class="scorequest"><?= $question["scorequest"];?></div>
 					<div class="voteMoins"></div>
-					<div>favoris</div>
+					<div class="favoris">fav</div>
 				</div>
 				<div class="left details">
 					<div><?= $question["contenu"];?></div>
@@ -144,9 +145,12 @@
 						<div class="comment">Commentaire 1</div>
 						<div class="comment">Commentaire 2</div> -->
 					</div>
+				</div>
+				<div class="boutonComment">
 					<div class="left ajoutComment">Ajouter un commentaire</div>
 				</div>
 			</div>
+			<div class="clear"></div>
 
 			<?php if($reponses): ?>
 			<div id="reponseDetails">
@@ -155,11 +159,12 @@
 
 				<?php foreach ($reponses as $reponse): ?>
 				<div class="reponse">
+					<div class="hidden"><?= $reponse["id"];?></div>
 					<div class="left sidebar">
 						<div class="votePlus"></div>
 						<div class="scorerep"><?= $reponse["scoreRep"];?></div>
 						<div class="voteMoins"></div>
-						<div>favoris</div>
+						<div class="favoris"></div>
 					</div>
 					<div class="left details">
 						<div><?= $reponse["contenu"];?></div>
@@ -202,19 +207,22 @@
 							</div>
 							<?php endforeach; }	 ?>
 						</div>
+					</div>
+					<div class="boutonComment">
 						<div class="left ajoutComment">Ajouter un commentaire</div>
 					</div>
 				</div>
 				<?php endforeach; ?>
 			</div>
-			<div class="borderBottom"></div>
+			<div class="clear"></div>
+			<div id="saut" class="borderBottom"></div>
 			<?php endif; ?>
 
 			<div id="votreReponse">
 				<h1>Votre réponse</h1>
 				<form action="?<?= $_SERVER['QUERY_STRING']; ?>" id="formReponse" method="POST" novalidate>
 					<div>
-						<textarea name="contenu" id="contenuReponse"><?= $contenu;?></textarea>
+						<textarea name="contenu" id="contenuReponse" class="editeur"><?= $contenu;?></textarea>
 						<span class="errors"><?= $error['contenu']?></span>
 					</div>
 					<div>
