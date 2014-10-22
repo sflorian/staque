@@ -93,7 +93,7 @@
 					<div class="votePlus"></div>
 					<div class="scorequest"><?= $question["scorequest"];?></div>
 					<div class="voteMoins"></div>
-					<div>favoris</div>
+					<div class="favoris">favoris</div>
 				</div>
 				<div class="left details">
 					<div><?= $question["contenu"];?></div>
@@ -159,7 +159,7 @@
 						<div class="votePlus"></div>
 						<div class="scorerep"><?= $reponse["scoreRep"];?></div>
 						<div class="voteMoins"></div>
-						<div>favoris</div>
+						<div class="favoris">favoris</div>
 					</div>
 					<div class="left details">
 						<div><?= $reponse["contenu"];?></div>

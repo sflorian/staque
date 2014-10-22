@@ -96,19 +96,6 @@
 			$sql = "INSERT INTO tag (tagname, dateCreated)
 					VALUES (:tagname, NOW())";
 			$stmt = $dbh->prepare($sql);
-			/*for($i = 0; $i<count($arraytags); $i++) {
-				if (!tagExists($arraytags[$i])) {
-					$stmt->bindValue(":tagname", $arraytags[$i]);
-					if($stmt->execute()) {
-						$id_tag = $dbh->lastInsertId();
-						insertTag_quest($id_tag, $id_question);
-					}
-				}
-				elseif(tagExists($arraytags[$i])) {
-					$id_tag = getIdExistantTag($arraytags[$i]);
-					insertTag_quest($id_tag, $id_question);
-				}
-			}*/
 			foreach ($arraytags as $tag) {
 				if (!tagExists($tag)) {
 					$stmt->bindValue(":tagname", $tag);

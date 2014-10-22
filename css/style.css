@@ -337,35 +337,32 @@ h1.borderBottom{
 	width: 0;
 }
 
-#questionDetails div.votePlus,
-.reponse div.votePlus {
+#questionDetails div.votePlus {
 	border-color: transparent transparent #999;
 	border-style: solid;
 	border-width: 25px;
+	display: none;
 	width: 20%;
 }
 
-#questionDetails div.voteMoins,
-.reponse div.voteMoins {
+#questionDetails div.voteMoins {
 	border-color: #999 transparent transparent;
 	border-style: solid;
 	border-width: 25px;
+	display: none;
 }
 
 #questionDetails div.scorequest {
 	color: #999;
+	display: none;
 	font-size: 2em;
 	font-weight: 700;
 	margin: 10px auto;
 	padding: 5px 0;
 }
 
-.reponse div.scorerep {
-	color: #999;
-	font-size: 2em;
-	font-weight: 700;
-	margin: 10px auto;
-	padding: 5px 0;
+#questionDetails div.favoris {
+	visibility: hidden;
 }
 
 #questionDetails div.tag {
@@ -451,6 +448,31 @@ h1.borderBottom{
 #reponseDetails {
 	overflow: hidden;
 	padding: 0 20px;
+}
+
+.reponse div.votePlus {
+	border-color: transparent transparent #999;
+	border-style: solid;
+	border-width: 25px;
+	width: 20%;
+}
+
+.reponse div.voteMoins {
+	border-color: #999 transparent transparent;
+	border-style: solid;
+	border-width: 25px;
+}
+
+.reponse div.scorerep {
+	color: #999;
+	font-size: 2em;
+	font-weight: 700;
+	margin: 10px auto;
+	padding: 5px 0;
+}
+
+.reponse div.favoris {
+	visibility: hidden;
 }
 
 #votreReponse {

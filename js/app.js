@@ -43,7 +43,7 @@ vote = {
 
 	ajoute: function() {
 		console.log("vote.ajoute")
-		if ()
+		
 
 	}
 }
