@@ -33,11 +33,11 @@
 		<script src="../js/syntaxhighlighter/scripts/shCore.js"></script>
 		<!-- Themes SyntaxHighlighter -->		
 
-		<script src="../js/syntaxhighlighterscriptsshBrushAutoloader.js"></script>
+		<script src="../js/syntaxhighlighter/scripts/shAutoloader.js"></script>
 		<!-- SyntaxHighlighter pour Autoloader -->
-		<script src="../js/syntaxhighlighterscriptsshBrushAppleScript.js"></script>
+		<script src="../js/syntaxhighlighter/scripts/shBrushAppleScript.js"></script>
 		<!-- SyntaxHighlighter pour AppleScript -->
-		<script src="../js/syntaxhighlighterscriptsshBrushAS3.js"></script>
+		<script src="../js/syntaxhighlighter/scripts/shBrushAS3.js"></script>
 		<!-- SyntaxHighlighter pour AS3 -->
 		<script src="../js/syntaxhighlighter/scripts/shBrushBash.js"></script>
 		<!-- SyntaxHighlighter pour Bash -->

@@ -12,7 +12,7 @@
 		<link rel="stylesheet" href="../css/style.css" />
 		<link rel="stylesheet" href="../js/tinymce/plugins/sh4tinymce/style/style.css" />
 		<!-- police -->
-		<link href='http://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href='http://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
 
 		
 		<!-- Jquery -->
@@ -24,7 +24,7 @@
 		<!-- <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jquerymobile/1.4.3/jquery.mobile.min.css" /> -->
 		<!-- JQUERY MOBILE -->
 
-		<link href="../js/syntaxhighlighter/styles/shThemeDefault.css"/>
-		<link href="../js/syntaxhighlighter/styles/shCoreDefault.css"/>
+		<link rel="stylesheet" href="../js/syntaxhighlighter/styles/shThemeEclipse.css"/>
+		<link rel="stylesheet" href="../js/syntaxhighlighter/styles/shCoreEclipse.css"/>
 
 	</head>
