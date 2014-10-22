@@ -62,6 +62,7 @@ if(empty($_GET['id'])) {
 			$img->thumbnail(128,128)->save("../img/uploads/profil128/" . $filename);
 			$img->thumbnail(32,32)->save("../img/uploads/profil32/" . $filename);
 			updateImageProfil($id, $filename);
+			goProfil($id);
 		}
 	}
 	else {

@@ -44,6 +44,9 @@ h1.borderBottom{
 	border-color: #000;
 }
 
+#mceu_20{
+	display: none;
+}
 
 
 
@@ -299,6 +302,133 @@ h1.borderBottom{
 /* ___________________________________________________________________________________________________________ */
 
 /***************************************************************************************************************
+ ******************************************* RECHERCHE PAR TAG *************************************************
+ ***************************************************************************************************************/
+
+/* ___________________________________________________________________________________________________________ */
+
+
+#listeQuestionParTag {
+	background-color: #fff;
+	margin: 10px 0;
+	overflow: hidden;
+	padding-bottom: 30px;
+}
+
+#listeQuestionParTag div.question{
+	border-style: solid;
+	border-width: 0 0 2px 0;
+	border-color: #000;
+	overflow: hidden;
+	padding: 20px;
+}
+
+#listeQuestionParTag div.compteur {
+	width: 20%;
+}
+
+#listeQuestionParTag div.votes,
+#listeQuestionParTag div.reponses,
+#listeQuestionParTag div.vues {
+	/*cursor: pointer;*/
+	padding: 5px;
+	text-align: center;
+	width: 33%;
+}
+
+#listeQuestionParTag div.reponses {
+	color: #9A4444;
+}
+
+#listeQuestionParTag div.repondu {
+	background: #75845c;
+	color: #fff;
+}
+
+#listeQuestionParTag div.theone {
+	background: #75845c;
+	color: #e1e818;
+}
+
+#listeQuestionParTag div.vues {
+	color: #999;
+}
+
+#listeQuestionParTag span.count {
+	font-size: 1.5em;
+	font-weight: 700;
+}
+
+/* CONTENU QUESTION */
+#listeQuestionParTag div.detailquest {
+	width: 80%
+}
+
+#listeQuestionParTag div.titrequestion {
+	font-size: 1.5em;
+	font-weight: 700;
+}
+
+#listeQuestionParTag div.titrequestion a {
+	color: #00f;
+	text-decoration: none;
+}
+
+#listeQuestionParTag div.titrequestion a:hover {
+	text-decoration: underline;
+}
+
+#listeQuestionParTag div.tag {
+	margin: 10px 0px;
+}
+
+#listeQuestionParTag div.tag a {
+	color: #000;
+}
+
+#listeQuestionParTag span.tagname {
+	background: #67D8CA;
+	border-radius: 2px;
+	display: inline-block;
+	margin: 0px 5px;
+	padding: 5px;
+}
+
+/* Début du tagname title */
+#listeQuestionParTag span.tag {
+	margin: 10px 0px;
+}
+
+#listeQuestionParTag span.tagname {
+	background: #67D8CA;
+	border-radius: 2px;
+	display: inline-block;
+	margin: 0px 5px;
+	padding: 5px;
+	color: #000;
+}
+
+#listeQuestionParTag span.tagname:hover {
+	background: #9CF0E5;
+}
+/* Fin du tagname title */
+
+#listeQuestionParTag span.actiontemps {
+	color: #999;
+}
+
+#listeQuestionParTag a.lienProfil {
+	color: #00f;
+	text-decoration: none;
+}
+
+#listeQuestionParTag a.lienProfil:hover {
+	text-decoration: underline;
+}
+
+/* ___________________________________________________________________________________________________________ */
+
+/***************************************************************************************************************
  ********************************************* Detail QUESTION ****************************************************
  ***************************************************************************************************************/
 
@@ -515,17 +645,39 @@ h1.borderBottom{
 	text-decoration: underline;
 }
 
+/* ___________________________________________________________________________________________________________ */
+
+/***************************************************************************************************************
+ ************************************************* TAGS ********************************************************
+ ***************************************************************************************************************/
+
+/* ___________________________________________________________________________________________________________ */
 
 
+#mainTags{
+	background-color: #fff;
+	margin: 10px 0;
+	overflow: hidden;
+	padding-bottom: 30px;
+}
 
+#listeTags div#tagcontain{
+	margin-top: 50px;
+	margin-left: 20px;
+}
 
+#listeTags span.tagname {
+	background: #67D8CA;
+	border-radius: 2px;
+	display: inline-block;
+	margin: 0px 5px;
+	padding: 5px;
+	color: #000;
+}
 
-
-
-
-
-
-
+#listeTags span.tagname:hover{
+	background: #9CF0E5;
+}
 
 /* ___________________________________________________________________________________________________________ */
 
