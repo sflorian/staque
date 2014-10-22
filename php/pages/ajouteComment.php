@@ -83,8 +83,6 @@
 				// Si l'utilisateur existe
 			if ($utilisateur) {
 
-				die();
-
 				// Connexion à la base
 				global $dbh;
 				$sql = "INSERT INTO comment (foreign_id, foreign_table, user_id, contenu, dateCreated, dateModified, published)
@@ -97,24 +95,8 @@
 				$stmt->bindValue(":published", 1);
 				//$stmt->execute();
 
-				$id_comment = $dbh->lastInsertId();
-
-				/*$sql = "INSERT INTO tag (tagname, dateCreated)
-						VALUES (:tagname, NOW())";
-				$stmt = $dbh->prepare($sql);
-				foreach ($arraytags as $tag) {
-					if (!tagExists($tag)) {
-						$stmt->bindValue(":tagname", $tag);
-						if($stmt->execute()) {
-							$id_tag = $dbh->lastInsertId();
-							insertTag_quest($id_tag, $id_question);
-						}
-					}
-					elseif(tagExists($tag)) {
-						$id_tag = getIdExistantTag($tag);
-						insertTag_quest($id_tag, $id_question);
-					}
-				}*/
+				$validate = "Votre commentaire est posté !";
+				//die();
 			
 			}
 
