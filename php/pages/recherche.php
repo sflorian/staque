@@ -1,26 +1,22 @@
 <?php
-
-	$tag_id = $_GET['id'];
-	$tagname = $_GET['tagname'];
-	$questions = getQuestionByTags($tag_id);
-
-
+		
+		// Vérification qu'on a bien une recherche sinon ACCUEIL
+	if (empty($_GET['motsclefs'])){ 
+		goHome();
+	}
+	
+		// récupère le paramètre d'url "id"
+	$recherche = $_GET["motsclefs"];
+	$resultRecherche = recherche($recherche);
 
 ?>
+
 
 		<main id="mainQuestionParTag">
 
 			<div id="listeQuestionParTag" >
-				<h1 class="borderBottom tag">Les questions portant votre tag : 
-				<!-- Début du tagname title -->
-					<span id="tagcontain">
-						<span class"tag">
-							<a href="?page=questionParTag&id=<?= $tag_id; ?>&tagname=<?= $tagname; ?>"><span class='tagname'><?= $tagname; ?></span></a>
-						</span>
-					</span>
-				<!-- Fin du tagname title -->
-				</h1>
-				<?php if ($questions) {foreach ($questions as $question): ?>
+				<h1 class="borderBottom tag">Les questions résultants de votre recherche : <?= $recherche;?></h1>
+				<?php if ($resultRecherche) {foreach ($resultRecherche as $question): ?>
 				<div class="question">
 					<div class="left compteur">
 						<a href="?page=questionDetails&amp;id=<?= $question['id']; ?>">
