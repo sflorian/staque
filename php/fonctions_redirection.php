@@ -11,9 +11,15 @@
 
 		// Fonction qui redirige vers la page de chargement photo profil
 	function goUpload() {
-		header("Location: ?page=upload");
+		header("Location: ?page=modifierUnePhoto");
 		die(); 
 	}
+
+	function goProfil($id) {
+		header("Location: ?page=profil&id=" . $id);
+		die(); 
+	}
+
 
 		// Fonction qui redirige vers l'accueil si l'utilisateur veut accéder à une page sensible sans être connecté
 	function forbidden(){

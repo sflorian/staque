@@ -56,7 +56,7 @@
 						<div class="tag left">
 							<?php 
 							foreach ($arrayTags as $tag) { ?>
-								<a href="?page=questionParTag&amp;id=<?= $tag['id']; ?>"><span class='tagname'><?= $tag['tagname'] ?></span></a>
+								<a href="?page=questionParTag&id=<?= $tag['id']; ?>&tagname=<?= $tag['tagname'] ?>"><span class='tagname'><?= $tag['tagname'] ?></span></a>
 							<?php } ?>
 							<!-- <a href=""><span class='tagname'>tag1</span></a>
 							<a href=""><span class='tagname'>tag2</span></a>

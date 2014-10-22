@@ -20,6 +20,34 @@
 
 	}
 
+	function getTags() {
+
+		global $dbh;
+		$sql = "SELECT id, tagname FROM tag
+				ORDER BY tagname DESC";
+		$stmt = $dbh->prepare( $sql );  
+		$stmt->execute();
+		$tags = $stmt->fetchAll();
+
+		return $tags;
+
+	}
+
+	function nbQuestByTag() {
+
+		global $dbh;
+		$sql = "SELECT COUNT(tag_quest.tag_id) 
+		AS tagCounter, tag.id, tag.tagname 
+		FROM tag 
+		LEFT JOIN tag_quest ON tag_quest.tag_id = tag.id
+		GROUP BY tag_quest.tag_id
+		ORDER BY tagname DESC;";
+		$stmt = $dbh->prepare( $sql );  
+		$stmt->execute();
+		$tags = $stmt->fetchAll();
+
+		return $tags;
+	}
 
 	function isThereTheGoodAnswer($quest_id) {
 		global $dbh;
@@ -60,6 +88,35 @@
 		$stmt->bindValue(":id", $id);
 		$stmt->execute();
 		$question = $stmt->fetch();
+
+		return $question;			
+	}
+		// QUADRUPLE JOINTURE, RESPECT !
+	function getQuestionByTags($tag_id) {
+		global $dbh;
+		$sql = "SELECT
+				quest.id AS id, 
+				quest.titre AS titre, 
+				quest.user_id AS user_id, 
+				quest.scorequest AS scorequest, 
+				quest.vues AS vues, 
+				quest.dateCreated AS dateCreated, 
+				quest.dateModified AS dateModified, 
+				rep.dateModified AS repDateModified, 
+				utilisateur.score AS utilisateurScore, 
+				utilisateur.pseudo AS utilisateurPseudo 
+				
+				FROM quest
+				LEFT JOIN tag_quest ON tag_quest.quest_id = quest.id
+				LEFT JOIN tag ON tag_quest.tag_id = tag.id
+				LEFT JOIN utilisateur ON utilisateur.id = quest.user_id
+				LEFT JOIN rep ON rep.quest_id = quest.id
+				WHERE tag.id = :tag_id
+				ORDER BY quest.id DESC";
+		$stmt = $dbh->prepare( $sql );  
+		$stmt->bindValue(":tag_id", $tag_id);
+		$stmt->execute();
+		$question = $stmt->fetchAll();
 
 		return $question;			
 	}
