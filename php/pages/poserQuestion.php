@@ -149,7 +149,7 @@
 				</div>
 				<div>
 					<label for="contenuQuestion">Votre question :</label>
-					<textarea name="contenu" id="contenuQuestion"><?= $contenu;?></textarea>
+					<textarea name="contenu" id="contenuQuestion" class="editeur"><?= $contenu;?></textarea>
 					<span class="errors"><?= $error['contenu']?></span>
 				</div>
 				<div>

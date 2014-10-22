@@ -22,3 +22,10 @@
 			die("VOUS N'AVEZ PAS LE DROIT D'ACCÉDER À CETTE PAGE SANS ÊTRE CONNECTÉ À CE COMPTE!<br>VOUS SEREZ REDIRIGÉ VERS LA PAGE D'ACCUEIL DANS 10 SECONDES.");
 		}
 	}
+
+
+		// Fonction qui redirige vers l'url
+	function goBack($url) {
+		header("Location: $url");
+		die(); 
+	}

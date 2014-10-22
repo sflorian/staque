@@ -16,7 +16,8 @@
 	function getReponsesByIdQuestion($id) {
 		global $dbh;
 		$sql = "SELECT * FROM rep
-				WHERE quest_id = :id AND published = 1";
+				WHERE quest_id = :id AND published = 1
+				ORDER BY scoreRep DESC";
 		$stmt = $dbh->prepare( $sql );  
 		$stmt->bindValue(":id", $id);
 		$stmt->execute();
