@@ -101,10 +101,19 @@
 				$stmt->bindValue(":published", 1);
 				$stmt->execute();
 
+				// ### 1ère solution, renvoie simplement du html
 				$validate = "Votre commentaire est posté !";
 				//goBack($url);
 				//goHome();
 				//die();
+
+				// ### 2ème solution, renvoie une réponse AJAX "ok" et ensuite on fait les actions en js
+				//die("ok");
+
+				// ### 3ème solution, renvoie un tableau JSon 
+				//$monArray = array ("mesdonnees" => "", "cle2" => "val2");
+				//header("Content-type: application/json");
+				//echo json_encode($monArray);
 			
 			}
 

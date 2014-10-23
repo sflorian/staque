@@ -26,6 +26,28 @@
 		return $reponses;			
 	}
 
+	function updateScoreUserAfterAnswer($id_utilisateur) {
+		// récupère le score de l'utilisateur
+		global $dbh;
+		$sql = "SELECT score FROM utilisateur
+				WHERE id = :id";
+		$stmt = $dbh->prepare( $sql );  
+		$stmt->bindValue(":id", $id_utilisateur);
+		$stmt->execute();
+		$score = $stmt->fetch();
+
+		$score = $score['score'] + 4;
+
+		// met à jour le score de l'utilisateur
+		$sql = "UPDATE utilisateur
+				SET score = :score
+				WHERE id = :id";
+		$stmt = $dbh->prepare( $sql );
+		$stmt->bindValue(":score", $score);
+		$stmt->bindValue(":id", $id_utilisateur);
+		$stmt->execute();	
+	}
+
 	function userVoteOnHisAnswer($id_utilisateur, $id_rep) {
 		global $dbh;
 		$sql = "SELECT user_id FROM rep

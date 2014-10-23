@@ -74,6 +74,8 @@
 			$stmt->bindValue(":best", 0,  PDO::PARAM_INT);
 			$stmt->execute();
 
+			updateScoreUserAfterAnswer($id_utilisateur);
+
 			$validate = "Réponse postée !";
 
 		}

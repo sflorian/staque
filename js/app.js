@@ -202,10 +202,13 @@ vote = {
 	},
 
 	check: function() {
+		// Traitement des infos du formulaire
+		var ok = $("#hidden").val()
 
 		$.ajax({
 			type: "POST",
 			url: vote.url, 
+			data: {hidden: ok},
 			success: function(server_response) {
 				popup.afficher($(server_response).find("#formVote"))
 				if ( $(".validates").html() != "" ) {

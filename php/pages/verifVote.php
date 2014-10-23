@@ -60,10 +60,11 @@
 	// si le formulaire a été soumis et que tout est ok (hasVoted et pas sa propre rep)
 	if (!empty($_POST) && empty($error['submit'])) {
 
-		$utilisateur = getUserById($id_utilisateur);
+
+		//$utilisateur = getUserById($id_utilisateur);
 		
 			// Si l'utilisateur existe
-		if ($utilisateur) {
+		//if ($utilisateur) {
 
 			// Update score de la réponse (+/- 1) ATTENTION si -1 enlève aussi -1 au voteur !
 			updateScoreRep($id_rep, $point);
@@ -84,7 +85,7 @@
 			//goHome();
 			//die();
 		
-		}
+		//}
 
 		
 
@@ -98,6 +99,7 @@
 			<form action="?<?= $_SERVER['QUERY_STRING']; ?>" id="formVote" method="POST" novalidate>  <!-- < ?= $_SERVER['QUERY_STRING']; ?> -->
 				<div class="ajouteVote">
 					<div>
+						<input type="hidden" name="hidden" id="hidden" value="ok"/>
 						<span class="titreVote">Etes-vous sûr(e) de faire ce vote ?</span>
 						<input type="submit" id="submitVote" value="OUI"/>
 						<span class="nonFermeture">NON</span>

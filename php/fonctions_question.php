@@ -4,11 +4,21 @@
 	function getRecentQuestions($nb) {
 
 		global $dbh;
-		$sql = "SELECT quest.id AS id, quest.titre AS titre, quest.user_id AS user_id, quest.scorequest AS scorequest, quest.vues AS vues, quest.dateCreated AS dateCreated, quest.dateModified AS dateModified, rep.dateModified AS repDateModified, utilisateur.score AS utilisateurScore, utilisateur.pseudo AS utilisateurPseudo 
+		$sql = "SELECT quest.id AS id, 
+						quest.titre AS titre, 
+						quest.user_id AS user_id, 
+						quest.scorequest AS scorequest, 
+						quest.vues AS vues, 
+						quest.dateCreated AS dateCreated, 
+						quest.dateModified AS dateModified, 
+						/*rep.dateModified AS repDateModified, */
+						utilisateur.score AS utilisateurScore, 
+						utilisateur.pseudo AS utilisateurPseudo 
 				FROM quest
-				LEFT JOIN rep ON rep.quest_id = quest.id
+				/*LEFT JOIN rep ON rep.quest_id = quest.id*/
 				JOIN utilisateur ON quest.user_id = utilisateur.id
 				WHERE quest.published = 1
+				/*GROUP BY quest.id*/
 				ORDER BY quest.dateModified DESC
 				LIMIT :nbQuestions";
 		$stmt = $dbh->prepare( $sql );  
@@ -17,7 +27,6 @@
 		$questions = $stmt->fetchAll();
 
 		return $questions;
-
 	}
 
 	function getTags() {
@@ -121,5 +130,27 @@
 		$question = $stmt->fetchAll();
 
 		return $question;			
+	}
+
+	function updateScoreUserAfterQuestion($id_utilisateur) {
+		// récupère le score de l'utilisateur
+		global $dbh;
+		$sql = "SELECT score FROM utilisateur
+				WHERE id = :id";
+		$stmt = $dbh->prepare( $sql );  
+		$stmt->bindValue(":id", $id_utilisateur);
+		$stmt->execute();
+		$score = $stmt->fetch();
+
+		$score = $score['score'] + 2;
+
+		// met à jour le score de l'utilisateur
+		$sql = "UPDATE utilisateur
+				SET score = :score
+				WHERE id = :id";
+		$stmt = $dbh->prepare( $sql );
+		$stmt->bindValue(":score", $score);
+		$stmt->bindValue(":id", $id_utilisateur);
+		$stmt->execute();		
 	}
 

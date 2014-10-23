@@ -91,6 +91,9 @@
 			$stmt->bindValue(":published", 1, PDO::PARAM_INT);
 			$stmt->execute();
 
+			// On update le score de celui qui a posé la question (+2)
+			updateScoreUserAfterQuestion($id_utilisateur);
+
 			$id_question = $dbh->lastInsertId();
 
 			$sql = "INSERT INTO tag (tagname, dateCreated)
