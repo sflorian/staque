@@ -169,3 +169,24 @@
 		$stmt->execute();		
 	}
 
+	function updateVuesAfterLoading($id){
+		// récupère les vues de la question
+		global $dbh;
+		$sql = "SELECT vues FROM quest
+				WHERE id = :id";
+		$stmt = $dbh->prepare( $sql );  
+		$stmt->bindValue(":id", $id);
+		$stmt->execute();
+		$vues = $stmt->fetch();
+
+		$vues = $vues['vues'] + 1;
+
+		// met à jour les vues de la question
+		$sql = "UPDATE quest
+				SET vues = :vues
+				WHERE id = :id";
+		$stmt = $dbh->prepare( $sql );
+		$stmt->bindValue(":vues", $vues);
+		$stmt->bindValue(":id", $id);
+		$stmt->execute();		
+	}

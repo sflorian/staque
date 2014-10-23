@@ -156,7 +156,7 @@
 					<span class="errors"><?= $error['contenu']?></span>
 				</div>
 				<div>
-					<input type="text" name="tags" id="tagsQuestion" placeholder="Ecrivez ici vos tags en les séparant par des virgules (minimum 1 tag, maximum 5 tags)" value="<?= $tags;?>">
+					<input type="text" name="tags" id="tagsQuestion" placeholder="Ecrivez ici vos tags en les séparant par des virgules (minimum 1 tag, maximum 5 tags)" value="<?= $tags;?>" class="autocomplete">
 					<span class="errors"><?= $error['tags']?></span>
 				</div>
 				<input type="submit" id="submitPoserQuestion" value="Posez votre question">
