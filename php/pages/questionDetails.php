@@ -86,6 +86,8 @@
 
 	} // fin du if formulaire soumis ?
 
+	updateVuesAfterLoading($id);
+
 
 ?>	
 

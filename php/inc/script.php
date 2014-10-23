@@ -1,8 +1,9 @@
 		<!-- NE PAS OUBLIER D'ACTIVER LES LINK DANS LE HEAD -->		
+		<script src="../js/jquery.js"></script>
 		<!-- JQUERY 2.1.1 -->
 		<!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> --> 
 		<!-- JQUERY 1.11.1 -->
-		<!-- <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/jquery-ui.min.js"></script> -->
+		<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
 		<!-- JQUERYUI 1.11.1 -->
 		<!-- <script src="//ajax.googleapis.com/ajax/libs/jquerymobile/1.4.3/jquery.mobile.min.js"></script> -->
 		<!-- JQUERY MOBILE -->
@@ -11,7 +12,6 @@
 		<!-- Jquery 2.1.1, à toi de voir si tu veux le CDN ou le fichier directement dans le dossier -->
 
 		<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places"></script>
-		<script src="../js/jquery.js"></script>
 		<!-- Editeur de texte -->
 		<!-- <script src="//tinymce.cachefly.net/4.1/tinymce.min.js"></script> -->
 		<script type="text/javascript" src="../js/tinymce/tinymce.min.js"></script>
@@ -29,6 +29,15 @@
 		<script src="../js/app.js"></script>
 		<script src="../js/fonction.js"></script>
 		<noscript>Your browser does not support JavaScript! | Votre navigateur ne supporte pas Javascript!</noscript>
+
+		<script>
+			//var tab = [<?php foreach($arrayTags as $tag) { echo '"' . $tag['tagname'] . '",';}?>]
+			//auto = function(){
+				$( ".autocomplete" ).autocomplete({source: [<?php foreach($tabTags as $tag) { echo '"' . $tag['tagname'] . '",';}?>]})
+			//	console.log(tab)
+			//}
+			/*console.log(tab)*/
+		</script>
 
 		<script src="../js/syntaxhighlighter/scripts/shCore.js"></script>
 		<!-- Themes SyntaxHighlighter -->		

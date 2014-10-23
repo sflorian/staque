@@ -14,6 +14,8 @@
 	if (!empty($_GET['page'])) {
 		$page = $_GET['page'];
 	}
+	
+	$tabTags = getTags();
 
 	// Si c'est de l'ajax !
 	if(!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest') {
