@@ -1,7 +1,8 @@
 <?php
 
 		// Vérification qu'on a bien un id sinon ACCUEIL
-	if (empty($_GET['id']) && $_GET['id'] != 0) { 
+
+	if (empty($_GET['id']) || $_GET['id'] == 0) { 
 		goHome();
 	}
 	
