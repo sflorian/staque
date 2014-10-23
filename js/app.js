@@ -66,11 +66,29 @@ popup = {
 		$(".popup").fadeOut({
 			duration: 1500,
 			complete: function() {
-				$(".popup").remove()
 				// rechargement de la page
-				if( $(".validates").html() != "" ) {
+				if( $(".validates").html() != "" ) { /* != */
 					location.reload()
+					/*var urlBack = window.location.href
+					urlBack = "?" +urlBack.split('?')[1]
+					console.log("urlBack = " +urlBack)
+					$.ajax({
+						url: urlBack, 
+						success: function(server_response) {
+							var retour = $(server_response).find("#mainQuestionDetails").html()
+							console.log("retour = " +retour)
+							$("#mainQuestionDetails").html("").append(retour)
+							console.log("succès requête ajax dans fonction popup.fermer")
+						},
+						error: function() {
+							console.log("erreur dans fonction popup.fermer")
+						}
+					})
+					console.log("apres lancement ajax dans fonction popup.fermer")
+					// Prevent Default
+					return false*/
 				}
+				$(".popup").remove()
 			}
 		})
 	}
@@ -262,6 +280,109 @@ vote = {
 
 }
 
+best = {
+
+	init: function(where) {
+		console.log("best.init")
+
+		// Je crée la popup
+		this.popjs = $("<div>", {
+			css: {
+				position: "absolute",
+				top: "150px",
+				left: "0",
+				backgroundColor: "#000",
+				display: "block",
+				width: "100%",
+				zIndex: 1
+			},
+			addClass: "popupjs"
+		})
+		//this.popjs.addClass("popupjs")
+
+		// Je crée une div question : 
+		this.divjs = $("<div>", {
+			css: {
+				color: "#fff"
+			},
+			html: "BEST?"
+		})
+		// Je crée les boutons oui et non
+		this.ouijs = $("<div>", {
+			css: {
+				background: "#505E5E",
+				border: "2px outset buttonface",
+				borderRadius: "5px",
+				color: "#fff",
+				cursor: "pointer",
+				fontSize: "0.8em",
+				margin: "5px 12px",
+				padding: "2px"
+			},
+			html: "OUI",
+			addClass: "boutOUI"
+		})
+		this.nonjs = $("<div>", {
+			css: {
+				background: "#505E5E",
+				border: "2px outset buttonface",
+				borderRadius: "5px",
+				color: "#fff",
+				cursor: "pointer",
+				fontSize: "0.8em",
+				margin: "5px 12px",
+				padding: "2px"
+			},
+			html: "NON",
+			addClass: "boutNON"
+		})
+
+		// Je passe ma div reponseDetails en position relative
+		where.css({position: "relative"})
+
+		// J'ajoute au DOM
+		$(this.popjs).append( this.divjs )
+		$(this.popjs).append( this.ouijs )
+		$(this.popjs).append( this.nonjs )
+		where.append( this.popjs )
+
+		// On écoute le click sur croix fermeture
+		$(this.ouijs).on("click", this.check)
+		$(this.nonjs).on("click", this.fermer)
+
+	},
+
+	confirme: function() {
+		console.log("best.confirme")
+
+		// Charger la popup en JS !
+		this.where = $(this).parent()
+		console.log("where div = " +where)
+		best.init(where)
+
+
+	},
+
+	check: function() {
+		console.log("best.check")
+
+		var id_rep = best.where.parent().find(".hidden").html()
+		console.log("id_rep = " +id_rep)
+
+	},
+
+	fermer: function() {
+		console.log("best.fermer")
+		$(".popupjs").fadeOut({
+			duration: 1500,
+			complete: function() {
+				$(".popjs").remove()
+			}
+		})		
+	}
+
+}
+
 /************************
  * 	 Objet principal 	*
  ************************/
@@ -284,6 +405,7 @@ app = {
 		$(document).on("click", "#reponseDetails .votePlus", vote.ajoute)
 		$(document).on("submit", "#formVote", vote.check)
 		$(document).on("click", "#reponseDetails .voteMoins", vote.enleve)
+		$(document).on("click", "#reponseDetails .favoris", best.confirme)
 
 	}
 

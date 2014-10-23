@@ -78,6 +78,10 @@
 
 			$validate = "Réponse postée !";
 
+			// TO DO = recharger le contenu de la page...
+			$url = "?" .$_SERVER['QUERY_STRING'] ."&message=reponsePostee";
+			goBack($url);
+
 		}
 
 
@@ -193,8 +197,9 @@
 						<div class="clear"></div>
 						<?php $reponseComments = getCommentsByIdReponse($reponse['id']); ?>
 						<div class="zoneComment">
+						<?php if ($reponseComments): ?>
 							<div class="borderTop"></div>
-							<?php if ($reponseComments) {foreach ($reponseComments as $reponseComment): ?>
+							<?php foreach ($reponseComments as $reponseComment): ?>
 							<div class="comment">
 								<?php $utilisateur = getUserById($reponseComment['user_id']); ?>
 								<span><?= $reponseComment['contenu'] ?></span>
@@ -209,17 +214,19 @@
 									echo '<span class="actiontemps">' . $temps . " </span>";
 								?>
 							</div>
-							<?php endforeach; }	 ?>
+							<?php endforeach; ?>
+						<?php endif; ?>
 						</div>
 					</div>
 					<div class="boutonComment">
 						<div class="left ajoutComment">Ajouter un commentaire</div>
 					</div>
+					<div class="clear borderBottomReponse"></div>
 				</div>
 				<?php endforeach; ?>
 			</div>
-			<div class="clear"></div>
-			<div id="saut" class="borderBottom"></div>
+			<!-- <div class="clear"></div> -->
+			<!-- <div id="saut" class="borderBottom"></div> -->
 			<?php endif; ?>
 
 			<div id="votreReponse">
@@ -245,7 +252,7 @@
 						<a href="?page=questionParTag&id=<?= $tag['id']; ?>&tagname=<?= $tag['tagname']; ?>"><span class='tagname'><?= $tag['tagname'] ?></span></a>
 					<?php } ?>
 				</span>
-				<br />ou <a href="?page=poserQuestion">posez vous-même votre question</a>.</p>
+				ou <a href="?page=poserQuestion">posez vous-même votre question</a>.</p>
 			</div>
 
 		</main>

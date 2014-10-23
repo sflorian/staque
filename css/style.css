@@ -44,6 +44,12 @@ h1 {
 	border-color: #000;
 }
 
+.borderBottomReponse {
+	border-style: solid;
+	border-width: 0 0 2px 0;
+	border-color: #999;
+}
+
 #mceu_20{
 	display: none;
 }
@@ -51,38 +57,6 @@ h1 {
 .hidden {
 	visibility: hidden;
 }
-
-/* PAGINATION */
-
-#pagination {
-	text-align: center;
-	padding: 20px;
-}
-
-#pagination a{
-	text-decoration: none;
-	color: black;
-}
-
-#pagination #premierepage,
-#pagination #pageprec,
-#pagination .numpage,
-#pagination #pagesuiv,
-#pagination #dernierepage{
-	background-color: yellow;
-	border-radius: 20px;
-	margin: 5px;
-}
-
-#pagination .numpage {
-	padding: 0 5px;
-}
-
-#pagination #pageprec,
-#pagination #pagesuiv {
-	padding: 0 4px;
-}
-
 
 
 
@@ -591,6 +565,7 @@ h1 {
 #questionDetails div.ajoutComment {
 	border-radius: 2px;
 	color: #999;
+	margin-bottom: 20px;
 	padding: 5px 10px;
 }
 
@@ -613,7 +588,7 @@ h1 {
 }
 
 .reponse div.details {
-	padding: 20px 0;
+	padding-top: 20px;
 	min-height: 230px;
 	width: 90%;
 }
@@ -621,14 +596,15 @@ h1 {
 .reponse div.votePlus {
 	border-color: transparent transparent #999;
 	border-style: solid;
-	border-width: 25px;
-	width: 20%;
+	border-width: 15px;
+	margin-top: -10px;
 }
 
 .reponse div.voteMoins {
 	border-color: #999 transparent transparent;
 	border-style: solid;
-	border-width: 25px;
+	border-width: 15px;
+	margin-top: -4px;
 }
 
 /*.reponse div.stop {
@@ -645,7 +621,7 @@ h1 {
 	color: #999;
 	font-size: 2em;
 	font-weight: 700;
-	margin: 10px auto;
+	margin: -12px auto 0 auto;
 	padding: 5px 0;
 }
 
@@ -653,15 +629,19 @@ h1 {
 	background-image: url(../img/apparences/coche_valid.png);
 	background-repeat: no-repeat;
 	background-position: center center;
-	height: 50px;
-	margin: auto;
-	width: 50px;
+	cursor: pointer;
+	height: 55px;
+	margin: -15px auto 0 auto;
+	width: 55px;
+	box-shadow: 0px 0px 10px rgba(0,0,0,0.8);
+	opacity: 0.5;
 	/*visibility: hidden;*/
 }
 
 .reponse div.ajoutComment {
 	border-radius: 2px;
 	color: #999;
+	margin-bottom: 20px;
 	padding: 5px 10px;
 }
 
@@ -1229,6 +1209,46 @@ h1 {
 	color: #0f0;
 	text-align: center;
 }
+
+
+
+/* ___________________________________________________________________________________________________________ */
+
+/***************************************************************************************************************
+ ************************************************ PAGINATION ***************************************************
+/****************************************************************************************************************/
+
+/* ___________________________________________________________________________________________________________ */
+
+#pagination {
+	text-align: center;
+	padding: 20px;
+}
+
+#pagination a{
+	text-decoration: none;
+	color: black;
+}
+
+#pagination #premierepage,
+#pagination #pageprec,
+#pagination .numpage,
+#pagination #pagesuiv,
+#pagination #dernierepage{
+	background-color: yellow;
+	border-radius: 20px;
+	margin: 5px;
+}
+
+#pagination .numpage {
+	padding: 0 5px;
+}
+
+#pagination #pageprec,
+#pagination #pagesuiv {
+	padding: 0 4px;
+}
+
 
 
 

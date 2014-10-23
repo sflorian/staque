@@ -49,12 +49,12 @@
 
 		// variable utilisateur 
 
-	if (empty($_SESSION['utilisateur'])){
+	if (!userIsLogged()){
 		$error['submit'] = "Connectez-vous !";
 	}
 
 	$id_utilisateur = "";
-	if (!empty($_SESSION['utilisateur'])) {
+	if (userIsLogged()) {
 		$id_utilisateur = $_SESSION['utilisateur']["id"];
 	}
 
