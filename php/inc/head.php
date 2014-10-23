@@ -6,7 +6,7 @@
 			</div>
 			<div id="menu">
 				<ul>
-					<li><form action="index.php" method="GET"><input type="hidden" name="page" value="recherche"><input type="text" name="motsclefs" id="inputrecherche" placeholder="Recherche" size="10" maxlength="8" class="autocomplete" /></form>
+					<li><form action="index.php" method="GET"><input type="hidden" name="page" value="recherche"><input type="text" name="motsclefs" id="inputrecherche" placeholder="Recherche" size="10" class="autocomplete" /></form>
 						<img src="../img/apparences/Search.png" id="recherche"></li>
 					<?php if(!userIsLogged()) { ?>
 					<li class="boutonMenu"><a href="?page=connexion">Connexion</a></li>
