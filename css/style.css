@@ -445,7 +445,7 @@ h1 {
 }
 
 #questionDetails div.details {
-	padding: 20px 0;
+	padding-top: 20px;
 	width: 90%;
 }
 
@@ -539,7 +539,7 @@ h1 {
 
 #questionDetails div.zoneComment,
 .reponse div.zoneComment {
-	margin: 20px 0;
+	margin-top: 20px;
 }
 
 #questionDetails div.comment,
@@ -800,6 +800,20 @@ h1 {
 	font-weight: 700;
 	margin-top: 10px;
 	padding: 5px;
+}
+
+.ajouteVote .nonFermeture {
+	background: #505E5E;
+	border: 2px outset buttonface;
+	border-radius: 5px;
+	color: #fff;
+	cursor: pointer;
+	font: -webkit-small-control;
+	font-size: 2em;
+	font-weight: 700;
+	margin-top: 10px;
+	margin-left: 10px;
+	padding: 6px;
 }
 
 /* ___________________________________________________________________________________________________________ */

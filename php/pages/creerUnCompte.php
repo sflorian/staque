@@ -204,8 +204,8 @@
 			$stmt->bindValue(":langue", $langue);
 			$stmt->bindValue(":metier", $metier);
 			$stmt->bindValue(":lien", $lien);
-			$stmt->bindValue(":score", 0);
-			$stmt->bindValue(":published", 1);
+			$stmt->bindValue(":score", 5,  PDO::PARAM_INT);
+			$stmt->bindValue(":published", 1,  PDO::PARAM_INT);
 			$stmt->execute();
 
 			$Sent = true;

@@ -14,7 +14,7 @@ popup = {
 				top: "0",
 				left: "0",
 				backgroundColor: "#000",
-				display: "block",
+				display: "none",
 				width: "90%",
 				zIndex: 1
 			}
@@ -46,6 +46,7 @@ popup = {
 
 		// On écoute le click sur croix fermeture
 		$(this.ferme).on("click", this.fermer)
+		$(document).on("click", ".nonFermeture", this.fermer)
 
 	},
 
@@ -53,6 +54,9 @@ popup = {
 	afficher: function(x) {
 		if( $("#formAjouteComment").length ) {
 			$("#formAjouteComment").remove()
+		}
+		if( $("#formVote").length ) {
+			$("#formVote").remove()
 		}
 		$(".popup").append(x).fadeIn()
 	},
@@ -64,7 +68,9 @@ popup = {
 			complete: function() {
 				$(".popup").remove()
 				// rechargement de la page
-				location.reload()
+				if( $(".validates").html() != "" ) {
+					location.reload()
+				}
 			}
 		})
 	}
@@ -167,6 +173,7 @@ vote = {
 		// Charger la popup
 		var where = $(this).parent().parent().find(".details")
 		popup.init(where)
+		$(".popup").css({width: "490px"})
 
 		var reponse = $(this).parent().parent()
 		console.log("reponse = " +reponse)
@@ -174,30 +181,80 @@ vote = {
 		console.log("id_rep = " +id_rep)
 		var score =reponse.find(".scorerep").html()
 		console.log("score = " +score)
+		var point = "plus"
+		console.log("point = " +point)
 
-		var id_rep = 1
-		vote.url = "?page=verifVote&id_rep="+id_rep
+		vote.url = "?page=verifVote&id_rep="+id_rep+"&point="+point
 		$.ajax({
 			url: vote.url, 
 			success: function(server_response) {
 				popup.afficher($(server_response).find("#formVote"))
-				console.log("succès requête ajax dans fonction comment.vote")
+				console.log("succès requête ajax dans fonction vote.ajoute")
 			},
 			error: function() {
-				console.log("erreur dans fonction comment.vote")
+				console.log("erreur dans fonction vote.ajoute")
 			}
 
 		})
-		console.log("apres lancement ajax dans fonction comment.vote")
+		console.log("apres lancement ajax dans fonction vote.ajoute")
+		// Prevent Default
+		return false
+	},
+
+	check: function() {
+
+		$.ajax({
+			type: "POST",
+			url: vote.url, 
+			success: function(server_response) {
+				popup.afficher($(server_response).find("#formVote"))
+				if ( $(".validates").html() != "" ) {
+					popup.fermer()
+				}
+				console.log("succès requête ajax dans fonction vote.check")
+			},
+			error: function() {
+				console.log("erreur dans fonction vote.check")
+			}
+
+		})
+		console.log("apres lancement ajax dans fonction vote.check")
 		// Prevent Default
 		return false
 	},
 
 	enleve: function() {
 		console.log("vote.enleve")
-		console.log(this)
-		
 
+		// Charger la popup
+		var where = $(this).parent().parent().find(".details")
+		popup.init(where)
+		$(".popup").css({width: "490px"})
+
+		var reponse = $(this).parent().parent()
+		console.log("reponse = " +reponse)
+		var id_rep =reponse.find(".hidden").html()
+		console.log("id_rep = " +id_rep)
+		var score =reponse.find(".scorerep").html()
+		console.log("score = " +score)
+		var point = "moins"
+		console.log("point = " +point)
+
+		vote.url = "?page=verifVote&id_rep="+id_rep+"&point="+point
+		$.ajax({
+			url: vote.url, 
+			success: function(server_response) {
+				popup.afficher($(server_response).find("#formVote"))
+				console.log("succès requête ajax dans fonction vote.enleve")
+			},
+			error: function() {
+				console.log("erreur dans fonction vote.enleve")
+			}
+
+		})
+		console.log("apres lancement ajax dans fonction vote.enleve")
+		// Prevent Default
+		return false		
 	}
 
 }
@@ -222,6 +279,7 @@ app = {
 		$(document).on("click", ".ajoutComment", comment.ajoute)
 		$(document).on("submit", "#formAjouteComment", comment.check)
 		$(document).on("click", "#reponseDetails .votePlus", vote.ajoute)
+		$(document).on("submit", "#formVote", vote.check)
 		$(document).on("click", "#reponseDetails .voteMoins", vote.enleve)
 
 	}

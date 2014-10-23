@@ -85,7 +85,7 @@
 			$stmt = $dbh->prepare( $sql ); 
 			$stmt->bindValue(":titre", $titre);
 			$stmt->bindValue(":contenu", $contenu);
-			$stmt->bindValue(":user_id", $id_utilisateur);
+			$stmt->bindValue(":user_id", $id_utilisateur);   // to do update score utilisateur
 			$stmt->bindValue(":scorequest", 0, PDO::PARAM_INT);
 			$stmt->bindValue(":vues", 0, PDO::PARAM_INT);
 			$stmt->bindValue(":published", 1, PDO::PARAM_INT);
