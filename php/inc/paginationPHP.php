@@ -26,7 +26,7 @@
 			quest.user_id AS user_id, 
 			quest.scorequest AS scorequest, 
 			quest.dateModified AS dateModified, 
-			quest.dateCreated AS 	dateCreated, 
+			quest.dateCreated AS dateCreated, 
 			rep.dateModified AS repDateModified, 
 			utilisateur.score AS utilisateurScore, 
 			utilisateur.pseudo AS utilisateurPseudo 

@@ -89,6 +89,5 @@
 				</div>
 				<?php endforeach; }	 ?>
 			</div>
-			
-			<?php include("inc/paginationHTML.php"); ?>
+			<div id="pagination"><?php include("inc/paginationHTML.php"); ?></div>
 		</main>
