@@ -26,13 +26,12 @@
 		<nav id="nav">
 			<section id="sectionNav">
 				<div id="listeNav" class="right">
-						<li <?php if($_SERVER['QUERY_STRING']== "page=accueil") {echo 'class="active"';} ?>><a href="?page=accueil">Questions</a></li>
-						<li <?php if($_SERVER['QUERY_STRING']== "page=tag") {echo 'class="active"';} ?>><a href="?page=tag">Tags</a></li>
+						<li <?php if($_GET["page"] == "accueil") {echo 'class="active"';} ?>><a href="?page=accueil">Questions</a></li>
+						<li <?php if($_GET["page"] == "tag" || $_GET["page"] == "questionParTag") {echo 'class="active"';} ?>><a href="?page=tag">Tags</a></li>
 						<li><a href="?page=accueil">Utilisateurs</a></li>
 						<li><a href="?page=accueil">Badges</a></li>
-						<li <?php if($_SERVER['QUERY_STRING']== "page=poserQuestion") {echo 'class="active"';} ?>><a href="?page=poserQuestion">Poser une question</a></li>
+						<li <?php if($_GET["page"] == "poserQuestion") {echo 'class="active"';} ?>><a href="?page=poserQuestion">Poser une question</a></li>
 				</div>
 			</section>
 		</nav>
 	</header>
-
