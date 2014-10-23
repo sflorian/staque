@@ -31,7 +31,7 @@
 	//}
 
 	$id_utilisateur = "";
-	if (!empty($_SESSION['utilisateur'])) {
+	if (userIsLogged()) {
 		$id_utilisateur = $_SESSION['utilisateur']["id"];
 	}
 	else {

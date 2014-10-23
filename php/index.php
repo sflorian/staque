@@ -15,8 +15,19 @@
 		$page = $_GET['page'];
 	}
 
+	// Si c'est de l'ajax !
+	if(!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest') {
+		// Toujours nommer mes fichiers comme la page
+		$path = "pages/".$page.".php"; // path ajax...
+		if (file_exists($path)) {
+			include($path);
+		}	
+		die();	
+	}
+
 	include("inc/top.php");
 	include("inc/head.php");
+
 
 	// Toujours nommer mes fichiers comme la page
 	$path = "pages/".$page.".php";

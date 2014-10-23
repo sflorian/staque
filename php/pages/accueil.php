@@ -34,6 +34,8 @@
 							$arrayTags = getTagsByIdQuestion($question['id']);
 							//print_r($arrayTags);
 							$nbReponses = getNbReponsesByIdQuestion($question['id']); 
+							//$test = isThereTheGoodAnswer($question['id']);
+							//die($test['best']);
 							if (isThereTheGoodAnswer($question['id'])) {
 								$theone = true;
 							}

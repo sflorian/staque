@@ -18,7 +18,7 @@
 		$sql = "SELECT * FROM rep
 				WHERE quest_id = :id AND published = 1
 				/*ORDER BY best ASC*/
-				ORDER BY scoreRep DESC";
+				ORDER BY scoreRep, best DESC";
 		$stmt = $dbh->prepare( $sql );  
 		$stmt->bindValue(":id", $id);
 		$stmt->execute();

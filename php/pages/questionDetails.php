@@ -19,7 +19,6 @@
 
 
 
-
 /************************************************************************
 *                         FORMULAIRE ESPACE CLIENT                      *
 *************************************************************************/
@@ -172,7 +171,20 @@
 						<div class="votePlus"></div>
 						<div class="scorerep"><?= $reponse["scoreRep"];?></div>
 						<div class="voteMoins"></div>
-						<div class="favoris"></div>
+						<?php 
+							$thereisonebest = false;
+							if (isThereTheGoodAnswer($question['id'])) {
+								$thereisonebest = true;
+							}
+							$classFav = "favoris0";
+							if ($reponse["best"] == 1) {
+								$classFav = "favoris1";
+							}
+							if ($id_utilisateur == $question['user_id'] && $reponse["best"] == 0 && !$thereisonebest) {
+								$classFav = "favoris2";
+							}
+						?>
+						<div class="<?= $classFav; ?>"></div>
 					</div>
 					<div class="left details">
 						<div><?= $reponse["contenu"];?></div>

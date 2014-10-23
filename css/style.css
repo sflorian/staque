@@ -625,7 +625,28 @@ h1 {
 	padding: 5px 0;
 }
 
-.reponse div.favoris {
+.reponse div.favoris0 {
+	background-image: url(../img/apparences/coche_valid.png);
+	background-repeat: no-repeat;
+	background-position: center center;
+	cursor: pointer;
+	height: 55px;
+	margin: -15px auto 0 auto;
+	width: 55px;
+	visibility: hidden;
+}
+
+.reponse div.favoris1 {
+	background-image: url(../img/apparences/coche_valid.png);
+	background-repeat: no-repeat;
+	background-position: center center;
+	cursor: pointer;
+	height: 55px;
+	margin: -15px auto 0 auto;	
+	width: 55px;
+}
+
+.reponse div.favoris2 {
 	background-image: url(../img/apparences/coche_valid.png);
 	background-repeat: no-repeat;
 	background-position: center center;
@@ -635,7 +656,6 @@ h1 {
 	width: 55px;
 	box-shadow: 0px 0px 10px rgba(0,0,0,0.8);
 	opacity: 0.5;
-	/*visibility: hidden;*/
 }
 
 .reponse div.ajoutComment {

@@ -303,9 +303,11 @@ best = {
 		// Je crée une div question : 
 		this.divjs = $("<div>", {
 			css: {
-				color: "#fff"
+				color: "#fff",
+				fontWeight: "700",
+				padding: "2px"
 			},
-			html: "BEST?"
+			html: "BEST ?"
 		})
 		// Je crée les boutons oui et non
 		this.ouijs = $("<div>", {
@@ -352,13 +354,13 @@ best = {
 
 	},
 
-	confirme: function() {
-		console.log("best.confirme")
+	affiche: function() {
+		console.log("best.affiche")
 
 		// Charger la popup en JS !
-		this.where = $(this).parent()
-		console.log("where div = " +where)
-		best.init(where)
+		best.where = $(this).parent()
+		console.log("where div = " +best.where)
+		best.init(best.where)
 
 
 	},
@@ -368,15 +370,33 @@ best = {
 
 		var id_rep = best.where.parent().find(".hidden").html()
 		console.log("id_rep = " +id_rep)
+		url = "?page=verifBest&id_rep="+id_rep
+		$.ajax({
+			url: url, 
+			success: function(server_response) {
+				console.log("server_response = " +server_response)
+				if (server_response == "ok") {
+					console.log("on peut fermer popupjs!")
+					best.fermer()
+					location.reload() // A améliorer en rechargeant juste la div reponse !
+				}
+				console.log("succès requête ajax dans fonction best.check")
+			},
+			error: function() {
+				console.log("erreur dans fonction best.check")
+			}
+
+		})
+		console.log("apres lancement ajax dans fonction best.check")
 
 	},
 
 	fermer: function() {
 		console.log("best.fermer")
 		$(".popupjs").fadeOut({
-			duration: 1500,
+			duration: 600,
 			complete: function() {
-				$(".popjs").remove()
+				$(".popupjs").remove()
 			}
 		})		
 	}
@@ -405,7 +425,7 @@ app = {
 		$(document).on("click", "#reponseDetails .votePlus", vote.ajoute)
 		$(document).on("submit", "#formVote", vote.check)
 		$(document).on("click", "#reponseDetails .voteMoins", vote.enleve)
-		$(document).on("click", "#reponseDetails .favoris", best.confirme)
+		$(document).on("click", "#reponseDetails .favoris2", best.affiche)
 
 	}
 

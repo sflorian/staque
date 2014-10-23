@@ -78,10 +78,12 @@
 		$stmt = $dbh->prepare( $sql );  
 		$stmt->bindValue(":quest_id", $quest_id);
 		$stmt->execute();
-		$verify = $stmt->fetch();
+		$reps = $stmt->fetchAll();
 
-		if ($verify['best'] == 1) {
-			return true;		
+		foreach ($reps as $rep) {
+			if ($rep['best'] == 1) {
+				return true;		
+			}
 		}
 		return false;
 	}
