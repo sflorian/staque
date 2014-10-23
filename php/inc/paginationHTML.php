@@ -16,7 +16,7 @@
 
 	<?php //lien vers la page précédente ?>
 	<?php if ($p < $totalPages){ ?>
-	<a href="?page=accueil&p=<?php echo $p + 1; ?>&dir=<?php echo strtolower($direction); ?>">></a>
+	<a href="?page=accueil&p=<?php echo $p + 1; ?>&dir=<?php echo strtolower($direction); ?> "id="pagesuiv">></a>
 	<?php } ?>
 	
 	<?php //lien vers la dernière page ?>

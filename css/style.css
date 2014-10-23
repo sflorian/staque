@@ -52,7 +52,36 @@ h1 {
 	visibility: hidden;
 }
 
+/* PAGINATION */
 
+#pagination {
+	text-align: center;
+	padding: 20px;
+}
+
+#pagination a{
+	text-decoration: none;
+	color: black;
+}
+
+#pagination #premierepage,
+#pagination #pageprec,
+#pagination .numpage,
+#pagination #pagesuiv,
+#pagination #dernierepage{
+	background-color: yellow;
+	border-radius: 20px;
+	margin: 5px;
+}
+
+#pagination .numpage {
+	padding: 0 5px;
+}
+
+#pagination #pageprec,
+#pagination #pagesuiv {
+	padding: 0 4px;
+}
 
 
 
@@ -137,27 +166,6 @@ h1 {
 	color: blue;
 }
 
-#pagination {
-	text-align: center;
-	padding: 20px;
-}
-
-#pagination a{
-	text-decoration: none;
-	color: black;
-}
-
-#pagination #premierepage,
-#pagination .numpage,
-#pagination #dernierepage{
-	background-color: yellow;
-	border-radius: 10px;
-	margin: 5px;
-}
-
-#pagination .numpage{
-	padding: 0 5px;
-}
 
 /* ___________________________________________________________________________________________________________ */
 
