@@ -1,6 +1,9 @@
 <?php
 	
-	// Initialisation des variables
+
+	include("inc/paginationPHP.php");
+
+	/*// Initialisation des variables
 	$nbReponses = 0;
 	$theone = false;
 
@@ -8,7 +11,7 @@
 	$temps = "";
 
 
-	$questions = getRecentQuestions(5);
+	$questions = getRecentQuestions(5);*/
 	//print_r($questions);
 	//die();
 
@@ -86,5 +89,6 @@
 				</div>
 				<?php endforeach; }	 ?>
 			</div>
-
+			
+			<?php include("inc/paginationHTML.php"); ?>
 		</main>

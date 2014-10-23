@@ -240,7 +240,7 @@
 				<span class="tag">
 					<?php 
 					foreach ($tags as $tag) { ?>
-						<a href="?page=questionParTag&amp;id=<?= $tag['id']; ?>"><span class='tagname'><?= $tag['tagname'] ?></span></a>
+						<a href="?page=questionParTag&id=<?= $tag['id']; ?>&tagname=<?= $tag['tagname']; ?>"><span class='tagname'><?= $tag['tagname'] ?></span></a>
 					<?php } ?>
 				</span>
 				<br />ou <a href="?page=poserQuestion">posez vous-même votre question</a>.</p>
