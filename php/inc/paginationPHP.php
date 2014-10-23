@@ -28,6 +28,8 @@
 			quest.dateModified AS dateModified, 
 			quest.dateCreated AS 	dateCreated, 
 			/*rep.dateModified AS repDateModified,*/ 
+			quest.dateCreated AS dateCreated, 
+			rep.dateModified AS repDateModified, 
 			utilisateur.score AS utilisateurScore, 
 			utilisateur.pseudo AS utilisateurPseudo 
 			FROM quest
