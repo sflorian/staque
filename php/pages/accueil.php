@@ -67,9 +67,10 @@
 						</div>
 						<div class="right">
 							<?php 
-								if ($question['repDateModified']) {
+								if ($nbReponses != 0) {
+									$dateLastAnswer = getDateLastAnswerByIdQuestion($question['id']);
 									$action = "répondue";
-									$temps = dateFr($question['repDateModified']);
+									$temps = dateFr($dateLastAnswer);
 								}
 								elseif ($question['dateModified'] != $question['dateCreated']) {
 									$action = "modifiée";

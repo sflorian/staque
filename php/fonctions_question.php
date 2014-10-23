@@ -1,7 +1,7 @@
 <?php
 
 
-	function getRecentQuestions($nb) {
+	/*function getRecentQuestions($nb) {
 
 		global $dbh;
 		$sql = "SELECT quest.id AS id, 
@@ -11,14 +11,13 @@
 						quest.vues AS vues, 
 						quest.dateCreated AS dateCreated, 
 						quest.dateModified AS dateModified, 
-						/*rep.dateModified AS repDateModified, */
+						rep.dateModified AS repDateModified, 
 						utilisateur.score AS utilisateurScore, 
 						utilisateur.pseudo AS utilisateurPseudo 
 				FROM quest
-				/*LEFT JOIN rep ON rep.quest_id = quest.id*/
+				LEFT JOIN rep ON rep.quest_id = quest.id
 				JOIN utilisateur ON quest.user_id = utilisateur.id
 				WHERE quest.published = 1
-				/*GROUP BY quest.id*/
 				ORDER BY quest.dateModified DESC
 				LIMIT :nbQuestions";
 		$stmt = $dbh->prepare( $sql );  
@@ -27,6 +26,20 @@
 		$questions = $stmt->fetchAll();
 
 		return $questions;
+	}*/
+
+
+	function getDateLastAnswerByIdQuestion($id) {
+		global $dbh;
+		$sql = "SELECT dateModified FROM rep
+				WHERE quest_id = :id AND published = 1
+				ORDER BY dateModified DESC";
+		$stmt = $dbh->prepare( $sql );  
+		$stmt->bindValue(":id", $id);
+		$stmt->execute();
+		$reponses = $stmt->fetchAll();
+
+		return $reponses[0]['dateModified'];
 	}
 
 	function getTags() {
