@@ -82,10 +82,12 @@ strong {
 }
 
 #statrix {
+	color: #0EE21E;
+	text-decoration: none;
 	position: relative;
 	top: 15px;
 	left: 20px;
-	font-size: 40px;
+	font-size: 3em;
 	overflow: hidden;
 } 
 
@@ -123,7 +125,7 @@ strong {
 	background-color: #646464;
 	position: relative;
 	right: -150px;
-	top: -2px;
+	top: -7px;
 	margin-left: -105px;
 	border-style: solid;
 	border-style: solid;
@@ -136,7 +138,7 @@ strong {
 
 #recherche{
 	position: relative;
-	top: -42px;
+	top: -47px;
 }
 
 #menu ul li.session {

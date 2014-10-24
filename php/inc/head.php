@@ -1,7 +1,7 @@
 <body>
 	<header>
 		<section id="sectionHeader">
-			<span class="left" id="statrix"><h1>< STATRIX ></h1></span>
+			<a href="index.php" class="left" id="statrix"><h1>< STATRIX ></h1></a>
 			<div id="menu">
 				<ul>
 					<li><form action="index.php" method="GET"><input type="hidden" name="page" value="recherche"><input type="text" name="motsclefs" id="inputrecherche" placeholder="Recherche" size="10" class="autocomplete" /></form>

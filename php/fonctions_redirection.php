@@ -26,9 +26,11 @@
 		$interdit = true;
 		$url = "?page=accueil";
 		header('refresh:10; url='.$url);
-		die("<div id='lamatrice'></div><img id='morpheus' src='../img/matrix/morpheus.png'/>");
+		echo "<div id='lamatrice'></div><img id='morpheus' src='../img/matrix/morpheus.png'/><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>";
+		include('inc/footer.php');
+		include('inc/script.php');
+		die(); 
 	}
-//<?php include('../inc/footer.php')
 
 		// Fonction qui redirige vers l'url
 	function goBack($url) {
