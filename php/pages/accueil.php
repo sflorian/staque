@@ -71,7 +71,7 @@
 							<a href=""><span class='tagname'>tag2</span></a>
 							<a href=""><span class='tagname'>tag3</span></a> -->
 						</div>
-						<div class="right">
+						<div class="right scoredemerde">
 							<?php 
 								if ($nbReponses != 0) {
 									$dateLastAnswer = getDateLastAnswerByIdQuestion($question['id']);

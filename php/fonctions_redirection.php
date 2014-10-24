@@ -25,10 +25,10 @@
 	function forbidden(){
 		$interdit = true;
 		$url = "?page=accueil";
-		header('refresh:5; url='.$url);
-		die("VOUS N'AVEZ PAS LE DROIT D'ACCÉDER À CETTE PAGE SANS ÊTRE CONNECTÉ À CE COMPTE!<br>VOUS SEREZ REDIRIGÉ VERS LA PAGE D'ACCUEIL DANS 5 SECONDES.");
+		header('refresh:10; url='.$url);
+		die("<div id='lamatrice'></div><img id='morpheus' src='../img/matrix/morpheus.png'/>");
 	}
-
+//<?php include('../inc/footer.php')
 
 		// Fonction qui redirige vers l'url
 	function goBack($url) {

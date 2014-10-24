@@ -1,9 +1,7 @@
 <body>
 	<header>
 		<section id="sectionHeader">
-			<div class="left">
-				<img src="../img/apparences/logo.png" id="logo">
-			</div>
+			<span class="left" id="statrix"><h1>< STATRIX ></h1></span>
 			<div id="menu">
 				<ul>
 					<li><form action="index.php" method="GET"><input type="hidden" name="page" value="recherche"><input type="text" name="motsclefs" id="inputrecherche" placeholder="Recherche" size="10" class="autocomplete" /></form>
