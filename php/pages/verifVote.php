@@ -40,7 +40,7 @@
 
 	// On vérifie que l'utilisateur n'a pas déjà voté pour cette réponse !
 	if ( hasAlreadyVoted($id_utilisateur, $id_rep) ) {
-		$error['submit'] = "Vous avez déjà voté pour cette réponse !";
+		$error['submit'] = "Vous avez déjà pris la pilule !";
 		//goBack($url);
 		//goHome();
 		//die("déjà voté");
@@ -48,7 +48,7 @@
 
 	// On vérifie que l'utilisateur ne vote pas pour sa propre réponse
 	if ( userVoteOnHisAnswer($id_utilisateur, $id_rep) ) {
-		$error['submit'] = "Vous ne pouvez voter pour votre propre réponse !";
+		$error['submit'] = "Morpheus n'a pas le droit de prendre sa propre pilule !";
 		//goBack($url);
 		//goHome();
 		//die("déjà voté");

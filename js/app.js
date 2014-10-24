@@ -10,6 +10,7 @@ popup = {
 		// Je crée une popup
 		this.overlay = $("<div>", {
 			css: {
+				border: "5px solid #0EE21E",
 				position: "absolute",
 				top: "0",
 				left: "0",
@@ -64,7 +65,7 @@ popup = {
 	fermer: function() {
 		console.log("popup.fermer")
 		$(".popup").fadeOut({
-			duration: 1500,
+			duration: 3000,
 			complete: function() {
 				// rechargement de la page
 				if( $(".validates").html() != "" ) { /* != */
@@ -142,6 +143,9 @@ comment = {
 			url: comment.url, 
 			success: function(server_response) {
 				popup.afficher($(server_response).find("#formAjouteComment"))
+				if ( $(".errors2").html() != "" ) {
+					popup.fermer()
+				}
 				console.log("succès requête ajax dans fonction comment.ajoute")
 			},
 			error: function() {
@@ -169,6 +173,9 @@ comment = {
 				if ( $(".validates").html() != "" ) {
 					popup.fermer()
 				}
+				/*if ( $(".errors").html() != "" ) {
+					popup.fermer()
+				}*/
 				console.log("succès requête ajax dans fonction comment.check")
 			},
 			error: function() {
@@ -191,7 +198,7 @@ vote = {
 		// Charger la popup
 		var where = $(this).parent().parent().find(".details")
 		popup.init(where)
-		$(".popup").css({width: "490px"})
+		$(".popup").css({width: "500px"})
 
 		var reponse = $(this).parent().parent()
 		console.log("reponse = " +reponse)
@@ -207,6 +214,9 @@ vote = {
 			url: vote.url, 
 			success: function(server_response) {
 				popup.afficher($(server_response).find("#formVote"))
+				if ( $(".errors").html() != "" ) {
+					popup.fermer()
+				}
 				console.log("succès requête ajax dans fonction vote.ajoute")
 			},
 			error: function() {
@@ -232,6 +242,9 @@ vote = {
 				if ( $(".validates").html() != "" ) {
 					popup.fermer()
 				}
+				if ( $(".errors").html() != "" ) {
+					popup.fermer()
+				}
 				console.log("succès requête ajax dans fonction vote.check")
 			},
 			error: function() {
@@ -250,7 +263,7 @@ vote = {
 		// Charger la popup
 		var where = $(this).parent().parent().find(".details")
 		popup.init(where)
-		$(".popup").css({width: "490px"})
+		$(".popup").css({width: "500px"})
 
 		var reponse = $(this).parent().parent()
 		console.log("reponse = " +reponse)
@@ -266,6 +279,9 @@ vote = {
 			url: vote.url, 
 			success: function(server_response) {
 				popup.afficher($(server_response).find("#formVote"))
+				if ( $(".errors").html() != "" ) {
+					popup.fermer()
+				}
 				console.log("succès requête ajax dans fonction vote.enleve")
 			},
 			error: function() {

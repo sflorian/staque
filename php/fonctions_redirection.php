@@ -24,9 +24,9 @@
 		// Fonction qui redirige vers l'accueil si l'utilisateur veut accéder à une page sensible sans être connecté
 	function forbidden(){
 		$interdit = true;
-		die("VOUS N'AVEZ PAS LE DROIT D'ACCÉDER À CETTE PAGE SANS ÊTRE CONNECTÉ À CE COMPTE!<br>VOUS SEREZ REDIRIGÉ VERS LA PAGE D'ACCUEIL DANS 10 SECONDES.");
 		$url = "?page=accueil";
-		header('refresh:2; url='.$url);
+		header('refresh:5; url='.$url);
+		die("VOUS N'AVEZ PAS LE DROIT D'ACCÉDER À CETTE PAGE SANS ÊTRE CONNECTÉ À CE COMPTE!<br>VOUS SEREZ REDIRIGÉ VERS LA PAGE D'ACCUEIL DANS 5 SECONDES.");
 	}
 
 

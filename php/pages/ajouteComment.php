@@ -134,7 +134,7 @@
 					<div>
 						<input type="submit" id="submitComment" value="Poster !"/>
 						<span class="errors"><?= $error['comment']; ?></span>
-						<span class="errors"><?= $error['submit']; ?></span>
+						<span class="errors2"><?= $error['submit']; ?></span>
 						<span class="validates"><?= $validate; ?></span>
 					</div>
 				</div>

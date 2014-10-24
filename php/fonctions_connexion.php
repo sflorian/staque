@@ -188,3 +188,17 @@
 
 		return $foundUser;
 	}
+
+		// Fonction qui récupère tous les utilisateurs 
+	function getUsers() {
+
+		global $dbh;
+
+		$sql = "SELECT * FROM utilisateur  
+				";  
+		$stmt = $dbh->prepare( $sql ); 
+		$stmt->execute();
+		$utilisateurs = $stmt->fetchAll();
+
+		return $utilisateurs;
+	}

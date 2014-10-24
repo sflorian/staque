@@ -23,17 +23,20 @@
 				<?php if ($questions) {foreach ($questions as $question): ?>
 				<div class="question">
 					<div class="left compteur">
-						<a href="?page=questionDetails&amp;id=<?= $question['id']; ?>">
+						<a href="?page=profil&amp;id=<?= $question['user_id']; ?>">
 							<div class="left votes">
-								<span class="count"><?= $question['scorequest']; ?></span>
+								<!-- <span class="count">< ?= $question['scorequest']; ?></span> -->
+								<span class="count"><?= $question['utilisateurScore']; ?></span>
 								<!-- <span class="count">5</span>   -->
-								<br>Votes
+								<!-- <br>Votes -->	
+								<br><span><?= $question['utilisateurPseudo']; ?></span>
 							</div>
 						</a>
 						<?php 
 							$arrayTags = getTagsByIdQuestion($question['id']);
 							//print_r($arrayTags);
 							$nbReponses = getNbReponsesByIdQuestion($question['id']); 
+							$theone = false;
 							if (isThereTheGoodAnswer($question['id'])) {
 								$theone = true;
 							}

@@ -187,3 +187,18 @@
 		$stmt->bindValue(":reponse_id", $id_rep);
 		$stmt->execute();		
 	}
+
+
+
+
+	function getNbReponseByIdUser($id) {
+		global $dbh;
+		$sql = "SELECT COUNT(*) FROM rep
+				WHERE user_id = :id";
+		$stmt = $dbh->prepare( $sql );  
+		$stmt->bindValue(":id", $id);
+		$stmt->execute();
+		$nb = $stmt->fetchColumn();
+
+		return $nb;
+	}

@@ -170,6 +170,8 @@
 			}
 		}
 
+		$photos = array("profil_start1.png", "profil_start2.png", "profil_start3.png", "profil_start4.png", "profil_start5.png", "profil_start6.png");
+		$photo = $photos[rand(0,5)];
 		//print_r($errors);
 		//die();
 
@@ -190,8 +192,8 @@
 
 				// Connexion à la base
 			global $dbh;
-			$sql = "INSERT INTO utilisateur (pseudo, nom, prenom, email, password, salt, token, pays, langue, metier, lien, score, dateCreated, dateModified, dateLogged, published)
-					VALUES (:pseudo, :nom, :prenom, :email, :password, :salt, :token, :pays, :langue, :metier, :lien, :score, NOW(), NOW(), NOW(), :published)";
+			$sql = "INSERT INTO utilisateur (pseudo, nom, prenom, email, password, salt, token, pays, langue, metier, photo, lien, score, dateCreated, dateModified, dateLogged, published)
+					VALUES (:pseudo, :nom, :prenom, :email, :password, :salt, :token, :pays, :langue, :metier, :photo, :lien, :score, NOW(), NOW(), NOW(), :published)";
 			$stmt = $dbh->prepare( $sql ); 
 			$stmt->bindValue(":pseudo", $pseudo);
 			$stmt->bindValue(":nom", $nom);
@@ -203,6 +205,7 @@
 			$stmt->bindValue(":pays", $pays);
 			$stmt->bindValue(":langue", $langue);
 			$stmt->bindValue(":metier", $metier);
+			$stmt->bindValue(":photo", $photo);
 			$stmt->bindValue(":lien", $lien);
 			$stmt->bindValue(":score", 5,  PDO::PARAM_INT);
 			$stmt->bindValue(":published", 1,  PDO::PARAM_INT);

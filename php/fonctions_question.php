@@ -190,3 +190,29 @@
 		$stmt->bindValue(":id", $id);
 		$stmt->execute();		
 	}
+
+
+	function getNbQuestionByIdUser($id) {
+		global $dbh;
+		$sql = "SELECT COUNT(*) FROM quest
+				WHERE user_id = :id";
+		$stmt = $dbh->prepare( $sql );  
+		$stmt->bindValue(":id", $id);
+		$stmt->execute();
+		$nb = $stmt->fetchColumn();
+
+		return $nb;
+	}
+
+
+	function getNbCommentByIdUser($id) {
+		global $dbh;
+		$sql = "SELECT COUNT(*) FROM comment
+				WHERE user_id = :id";
+		$stmt = $dbh->prepare( $sql );  
+		$stmt->bindValue(":id", $id);
+		$stmt->execute();
+		$nb = $stmt->fetchColumn();
+
+		return $nb;
+	}
