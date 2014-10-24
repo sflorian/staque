@@ -5,6 +5,7 @@
 /* apply a natural box layout model to all elements, but allowing components to change */
 html {
   box-sizing: border-box;
+	height: 100%;
 }
 *, *:before, *:after {
   box-sizing: inherit;
@@ -14,7 +15,11 @@ html {
 
 body {
 	text-decoration: none;
-	background: #575757;
+	background-image: url(../img/matrix/matrix.gif);
+	background-repeat: repeat;
+	background-position: 0 0;
+	height: 100%;
+	width: 100%;
 	margin: auto;
 	width: 60%;
 	position: relative;
