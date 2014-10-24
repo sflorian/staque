@@ -102,7 +102,7 @@
 				$stmt->execute();
 
 				// ### 1ère solution, renvoie simplement du html
-				$validate = "Votre commentaire est posté !";
+				$validate = "Vous êtes rentrés dans la matrice !";
 				//goBack($url);
 				//goHome();
 				//die();

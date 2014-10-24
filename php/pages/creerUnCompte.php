@@ -68,7 +68,7 @@
 		}
 		// taille maximale du prénom
 		else if(strlen($prenom) > 50) {
-			$errors['nom'] = "Votre prénom est trop long !";
+			$errors['nom'] = "Votre prénom est trop long pour rentrer dans la matrice!";
 			$formIsValid = false;
 		}
 
@@ -78,12 +78,12 @@
 		}
 		// taille minimale du nom
 		else if(strlen($nom) < 2) {
-			$errors['nom'] = "Votre nom est court !";
+			$errors['nom'] = "Votre nom est trop court pour rentrer dans la matrice !";
 			$formIsValid = false;
 		}
 		// taille maximale du nom
 		else if(strlen($nom) > 100) {
-			$errors['nom'] = "Votre nom est trop long !";
+			$errors['nom'] = "Votre nom est trop long pour rentrer dans la matrice !";
 			$formIsValid = false;
 		}
 
@@ -93,12 +93,12 @@
 			$formIsValid = false;
 		}
 		else if(strlen($pseudo) > 50) {
-			$errors['pseudo'] = "Votre pseudo est trop long !";
+			$errors['pseudo'] = "Votre pseudo est trop long pour rentrer dans la matrice!";
 			$formIsValid = false;
 		}			
 		// S'agit-il bien d'un nouveau pseudo ?
 		else if (pseudoExists($pseudo)) {
-			$errors['pseudo'] = "Ce pseudo existe déjà !";
+			$errors['pseudo'] = "Ce pseudo existe déjà dans la matrice !";
 			$formIsValid = false;
 		}
 
@@ -108,12 +108,12 @@
 			$formIsValid = false;
 		}
 		else if ( !filter_var($email, FILTER_VALIDATE_EMAIL) ) {
-			$errors['email'] = "Votre email n'est pas valide !";
+			$errors['email'] = "Votre email n'est pas valide pour rentrer dans la matrice !";
 			$formIsValid = false;
 		}
 		// S'agit-il d'un nouvel utilisateur ?
 		else if (emailExists($email)) {
-			$errors['email'] = "Votre email existe déjà dans notre base de données !";
+			$errors['email'] = "Votre email existe déjà dans la matrice !";
 			$formIsValid = false;
 		}
 
@@ -212,7 +212,7 @@
 			$stmt->execute();
 
 			$Sent = true;
-			$validate = " Compte créé!";
+			$validate = " Vous pouvez entrer dans la matrice !";
 			// On connecte directement le nouvel utilisateur dans la SESSION
 
 			$lastId = $dbh->lastInsertId();

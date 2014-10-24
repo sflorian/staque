@@ -1270,7 +1270,7 @@ Fin du tagname title
 }
 
 #formModifUnCompte #prenomModif {
-	margin: 5px 5px 5px 80px;
+	margin: 5px 0px 5px 80px;
 	padding: 5px;
 	width: 19%;/*190px;*/
 	background: black;
@@ -1312,7 +1312,7 @@ Fin du tagname title
 
 
 #formModifUnCompte #submitModif {
-	background: #505E5E;
+	background: black;
 	border-radius: 5px;
 	color: #fff;
 	cursor: pointer;
@@ -1322,6 +1322,7 @@ Fin du tagname title
 	border-style: solid;
 	border-width: 2px;
 	border-color: #0EE21E;
+	color: #0EE21E;
 }
 
 
@@ -1712,6 +1713,10 @@ Fin du tagname title
 	padding: 5px;
 }
 
+#green{
+	color: #0EE21E;
+}
+
 /* ___________________________________________________________________________________________________________ */
 
 /***************************************************************************************************************
@@ -1737,3 +1742,4 @@ Fin du tagname title
 	top: 215px;
 	left: 50px;
 }
+

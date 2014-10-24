@@ -31,12 +31,12 @@
 
 		// ---------------- EMAIL OR NOM ----------------
 		if (empty($pseudoEmail)) {
-			$error['pseudoEmail'] = "Renseignez votre pseudo ou email !";
+			$error['pseudoEmail'] = "Renseignez votre pseudo ou email pour rentrer dans la matrice !";
 			$formIsValid = false;
 		}
 		// ---------------- PASSWORD ----------------
 		elseif (empty($password)) {
-			$error['password'] = "Renseignez votre mot de passe !";
+			$error['password'] = "Renseignez votre mot de passe pour rentrer dans la matrice !";
 			$formIsValid = false;
 		}
 		/*__________________ Fin de la validation ____________________*/
@@ -59,12 +59,12 @@
 					goHome();
 				} 
 				else {
-					$error['password'] = "Mot de passe non valide !";
+					$error['password'] = "Mot de passe non valide pour rentrer dans la matrice!";
 				}				
 			}
 			// Si l'utilisateur n'existe pas
 			else {
-				$error['pseudoEmail'] = "Pseudo ou email inconnu !";
+				$error['pseudoEmail'] = "Pseudo ou email inconnu de la matrice !";
 			}
 
 		}
