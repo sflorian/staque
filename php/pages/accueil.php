@@ -23,7 +23,7 @@
 				<?php if ($questions) {foreach ($questions as $question): ?>
 				<div class="question">
 					<div class="left compteur">
-						<a href="?page=questionDetails&amp;id=<?= $question['id']; ?>">
+						<a href="?page=profil&amp;id=<?= $question['user_id']; ?>">
 							<div class="left votes">
 								<!-- <span class="count">< ?= $question['scorequest']; ?></span> -->
 								<span class="count"><?= $question['utilisateurScore']; ?></span>
@@ -70,7 +70,7 @@
 							<a href=""><span class='tagname'>tag2</span></a>
 							<a href=""><span class='tagname'>tag3</span></a> -->
 						</div>
-						<div class="right">
+						<div class="right scoredemerde">
 							<?php 
 								if ($nbReponses != 0) {
 									$dateLastAnswer = getDateLastAnswerByIdQuestion($question['id']);

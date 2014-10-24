@@ -14,10 +14,12 @@ html {
 
 body {
 	text-decoration: none;
-	background: grey;
+	background: black;
 	margin: auto;
 	width: 60%;
 	position: relative;
+	font-family: Courier;
+	color: #0EE21E;
 }
 
 h1 {
@@ -41,13 +43,13 @@ h1 {
 .borderBottom{
 	border-style: solid;
 	border-width: 0 0 2px 0;
-	border-color: #000;
+	border-color: #0EE21E;
 }
 
 .borderBottomReponse {
 	border-style: solid;
 	border-width: 0 0 2px 0;
-	border-color: #999;
+	border-color: #0EE21E;
 }
 
 #mceu_20{
@@ -69,7 +71,7 @@ h1 {
 /* ___________________________________________________________________________________________________________ */
 
 #sectionHeader {
-	background: white;
+	background: black;
 	padding-right: 5%;
 	padding-left: 5%;
 	overflow: hidden;
@@ -95,9 +97,11 @@ h1 {
 }
 
 #menu li.boutonMenu {
-	background-color: #000;
+	background-color: black;
+	border-style: solid;
+	border-width: 2px;
 	border-radius: 2px;
-	color: #fff;
+	color: #0EE21E;
 	cursor: pointer;
 	display: inline-block;
 	margin: 40px 5px;
@@ -105,39 +109,41 @@ h1 {
 }
 
 #menu ul li a {
-	color: #fff;
+	color: #0EE21E;
 	text-decoration: none;
 }
 
 /* recherche */
 #inputrecherche{
-	height: 23px;
-	width: 95px;
+	height: 32px;
+	width: 150px;
+	background-color: #646464;
 	position: relative;
 	right: -150px;
 	top: -2px;
-	margin-left: -100px;
-	border-style: none;
-	border-left-style: solid;
-	border-left-width: 3px;
-	border-left-color: #e2e1e1;
+	margin-left: -105px;
+	border-style: solid;
+	border-style: solid;
+	border-width: 3px;
+	border-color: black;
+	border-radius: 20px;
 	z-index: 1;
 	padding-left: 10px;
 }
 
 #recherche{
 	position: relative;
-	top: -38px;
+	top: -42px;
 }
 
 #menu ul li.session {
-	color: #00f;
+	color: #0EE21E;
 	font-size: 1.2em;
 	margin: 48px 10px 0;
 }
 
 #menu ul li.session a {
-	color: blue;
+	color: #C2ECC6;
 }
 
 
@@ -150,7 +156,7 @@ h1 {
 /* ___________________________________________________________________________________________________________ */
 
 #nav {
-	background: white;
+	background: black;
 }
 
 #nav #sectionNav {
@@ -181,7 +187,7 @@ h1 {
 }
 
 #nav li.active {
-	background: orange;
+	background: #0DCC1C;
 }
 
 
@@ -194,16 +200,23 @@ h1 {
 /* ___________________________________________________________________________________________________________ */
 
 #listeQuestion {
-	background-color: #fff;
+	background-color: black;
 	margin: 10px 0 0 0;
 	overflow: hidden;
 	padding-bottom: 30px;
+	color: #0EE21E;
+	text-decoration: none;
+}
+
+#listeQuestion a {
+	text-decoration:none;
+	color: #0EE21E; 
 }
 
 #listeQuestion div.question{
 	border-style: solid;
 	border-width: 0 0 2px 0;
-	border-color: #000;
+	border-color: #0EE21E;
 	overflow: hidden;
 	padding: 20px;
 }
@@ -221,22 +234,26 @@ h1 {
 	width: 33%;
 }
 
+#listeQuestion div.votes {
+	color: #C2ECC6;
+}
+
 #listeQuestion div.reponses {
-	color: #9A4444;
+	color: #f90;
 }
 
 #listeQuestion div.repondu {
-	background: #75845c;
+	background: #318635;
 	color: #fff;
 }
 
 #listeQuestion div.theone {
-	background: #75845c;
+	background: #0EE21E;
 	color: #e1e818;
 }
 
 #listeQuestion div.vues {
-	color: #999;
+	color: #B7B5B7;
 }
 
 #listeQuestion span.count {
@@ -255,7 +272,7 @@ h1 {
 }
 
 #listeQuestion div.titrequestion a {
-	color: #00f;
+	color: #0EE21E;
 	text-decoration: none;
 }
 
@@ -268,11 +285,11 @@ h1 {
 }
 
 #listeQuestion div.tag a {
-	color: #000;
+	color: white;
 }
 
 #listeQuestion span.tagname {
-	background: #67D8CA;
+	background: #078111;
 	border-radius: 2px;
 	display: inline-block;
 	margin: 0px 5px;
@@ -280,7 +297,7 @@ h1 {
 }
 
 #listeQuestion span.tagname:hover {
-	background: #9CF0E5;
+	background: #0EE21E;
 }
 
 #listeQuestion span.actiontemps {
@@ -288,12 +305,16 @@ h1 {
 }
 
 #listeQuestion a.lienProfil {
-	color: #00f;
+	color: #C2ECC6;
 	text-decoration: none;
 }
 
 #listeQuestion a.lienProfil:hover {
 	text-decoration: underline;
+}
+
+#listeQuestion .scoredemerde{
+	color: #C2ECC6;
 }
 
 
@@ -307,7 +328,7 @@ h1 {
 
 
 #listeQuestionParTag {
-	background-color: #fff;
+	background-color: black;
 	margin: 10px 0;
 	overflow: hidden;
 	padding-bottom: 30px;
@@ -316,7 +337,7 @@ h1 {
 #listeQuestionParTag div.question{
 	border-style: solid;
 	border-width: 0 0 2px 0;
-	border-color: #000;
+	border-color: #0EE21E;;
 	overflow: hidden;
 	padding: 20px;
 }

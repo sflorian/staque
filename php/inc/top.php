@@ -12,7 +12,7 @@
 		<link rel="stylesheet" href="../css/style.css" />
 		<link rel="stylesheet" href="../js/tinymce/plugins/sh4tinymce/style/style.css" />
 		<!-- police -->
-		<link rel="stylesheet" href='http://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+		<!-- <link rel="stylesheet" href='http://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'> -->
 
 		
 		<!-- Jquery -->
