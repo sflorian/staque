@@ -1257,9 +1257,19 @@ Fin du tagname title
 	margin: 5px 5px 5px 80px;
 	padding: 5px;
 	width: 19%;/*190px;*/
+	background: black;
+	color: #0EE21E;	
+	border-style: solid;
+	border-width: 2px;
+	border-color: #0EE21E;
 }
 
 #formModifUnCompte #nomModif {
+	background: black;
+	color: #0EE21E;	
+	border-style: solid;
+	border-width: 2px;
+	border-color: #0EE21E;
 	margin-right: 5px;
 	padding: 5px;
 	width: 20%; /*200px;*/
@@ -1273,6 +1283,11 @@ Fin du tagname title
 #formModifUnCompte #langueModif,
 #formModifUnCompte #metierModif,
 #formModifUnCompte #lienModif {
+	background: black;
+	color: #0EE21E;	
+	border-style: solid;
+	border-width: 2px;
+	border-color: #0EE21E;
 	margin: 5px 5px 5px 80px;
 	padding: 5px;
 	width: 40%; /*400px;*/
