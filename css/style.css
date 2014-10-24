@@ -136,6 +136,11 @@ strong {
 	padding-left: 10px;
 }
 
+#inputrecherche::active,
+#inputrecherche::focus {
+	border: none;
+}
+
 #recherche{
 	position: relative;
 	top: -47px;
@@ -1609,7 +1614,7 @@ Fin du tagname title
 /* ___________________________________________________________________________________________________________ */
 
 #mainUtilisateur {
-	background: #fff;
+	background: black;
 	margin: 20px 0;
 	padding: 20px;
 }
@@ -1621,19 +1626,25 @@ Fin du tagname title
 #utilisateur div.utilisateur {
 	display: inline-block;
 	margin: 20px;
+	margin-left: 100px;
 	overflow: hidden;
 }
 
 #utilisateur img.photo {
-	height: 128px;
-	margin-right: 10px;
-	width: 128px;
+	height: 150px;
+	margin-right: 20px;
+	width: 150px;
+	border-radius: 150px;
+	border-style: solid;
+	border-width: 2px;
+	border-color: #0EE21E;
+
 }
 
 #utilisateur a.lienProfil {
-	color: #00f;
+	color: #C2ECC6;
 	display: inline-block;
-	margin-top: 5px;
+	margin-top: 10px;
 	text-decoration: none;
 }
 
@@ -1664,6 +1675,30 @@ Fin du tagname title
 #copyright {
 	font-size: 1.2em;
 	font-weight: 700;
+}
+
+#mainModifPhoto{
+	background: black;
+	margin: 20px 0;
+	padding: 20px;
+	color: #0EE21E;
+}
+
+#mainModifPhoto input{
+	background: black;
+	color: #0EE21E;
+	border-style: dotted;
+	border-width: 1px;
+	border-color: #0EE21E;
+	padding: 5px;
+}
+.upPhoto {
+	background: black;
+	color: #0EE21E;
+	border-style: dotted;
+	border-width: 1px;
+	border-color: #0EE21E;
+	padding: 5px;
 }
 
 /* ___________________________________________________________________________________________________________ */

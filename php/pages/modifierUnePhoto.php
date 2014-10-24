@@ -73,13 +73,13 @@ if(empty($_GET['id'])) {
 
 ?>
 	
-	<main>
+	<main id="mainModifPhoto">
 		<form enctype="multipart/form-data" method="POST">
 			<div>
 				<label for="image">Sélectionnez l'image que vous souhaitez utiliser en tant que photo de profil :</label><br />
-				<input type="file" name="image" id="image"/>
+				<input type="file" name="image" id="image" class="upPhoto" "/>
 			</div>
-			<input type="submit" value="Ajouter la photo de profil"/>
+			<input class="upPhoto" type="submit" value="Ajouter la photo de profil"/>
 		</form>
 	</main>
 

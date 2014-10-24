@@ -26,7 +26,7 @@
 				<div id="listeNav" class="right">
 						<li <?php if($_GET["page"] == "accueil" || $_GET["page"] == "questionDetails") {echo 'class="active"';} ?>><a href="?page=accueil">Questions</a></li>
 						<li <?php if($_GET["page"] == "tag" || $_GET["page"] == "questionParTag") {echo 'class="active"';} ?>><a href="?page=tag">Tags</a></li>
-						<li <?php if($_GET["page"] == "utilisateur" || $_GET["page"] == "creerUnCompte" || $_GET["page"] == "connexion") {echo 'class="active"';} ?>><a href="?page=utilisateur">Utilisateurs</a></li>
+						<li <?php if($_GET["page"] == "utilisateur" || $_GET["page"] == "creerUnCompte" || $_GET["page"] == "connexion" || $_GET["page"] == "profil") {echo 'class="active"';} ?>><a href="?page=utilisateur">Utilisateurs</a></li>
 						<!-- <li><a href="?page=accueil">Badges</a></li> -->
 						<li <?php if($_GET["page"] == "poserQuestion") {echo 'class="active"';} ?>><a href="?page=poserQuestion">Poser une question</a></li>
 				</div>
