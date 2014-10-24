@@ -90,6 +90,7 @@
 							?> 
 							<a href="?page=profil&amp;id=<?= $question['user_id']; ?>" class="lienProfil"><?= $question["utilisateurPseudo"];?></a>
 							<?= $question['utilisateurScore']; ?>
+							<img src="../img/uploads/profil32/<?= $question['utilisateurPhoto']; ?>" class="photopetite"/>
 						</div>
 						<!-- <div class="right">action temps <a href="?page=profil" class="lienProfil">Pseudo</a> score_user</div> -->
 					</div>

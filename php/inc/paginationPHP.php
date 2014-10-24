@@ -27,7 +27,8 @@
 			quest.dateModified AS dateModified, 
 			quest.dateCreated AS dateCreated, 
 			utilisateur.score AS utilisateurScore, 
-			utilisateur.pseudo AS utilisateurPseudo 
+			utilisateur.pseudo AS utilisateurPseudo,
+			utilisateur.photo AS utilisateurPhoto  
 			FROM quest
 			JOIN utilisateur ON quest.user_id = utilisateur.id
 			WHERE quest.published = 1

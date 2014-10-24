@@ -128,6 +128,7 @@
 						<div>
 							<a href="?page=profil&amp;id=<?= $question['user_id']; ?>" class="lienProfil"><?= $utilisateur['pseudo'];?></a>
 							<span> <?= $utilisateur['score']; ?></span>
+							<img src="../img/uploads/profil32/<?= $utilisateur['photo']; ?>" class="photopetite"/>
 						</div>
 					</div>
 					<div class="clear"></div>
@@ -207,6 +208,7 @@
 							<div>
 								<a href="?page=profil&amp;id=<?= $reponse['user_id']; ?>" class="lienProfil"><?= $utilisateur['pseudo'];?></a>
 								<span> <?= $utilisateur['score']; ?></span>
+								<img src="../img/uploads/profil32/<?= $utilisateur['photo']; ?>" class="photopetite"/>
 							</div>
 						</div>
 						<div class="clear"></div>
