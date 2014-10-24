@@ -68,7 +68,8 @@
 		<main id="mainMotDePasseOublie" class="containerCompte">
 			<form action="?page=motDePasseOublie" id="formMotDePasseOublie" method="POST" novalidate>
 				<!-- <input type="text" visibility="hidden" name="form_connexion" /> -->
-				<div class="formTitre">Nouveau mot de passe ?</div>
+				<div class="formTitre">Nouveau mot de passe dans la statrice
+ ?</div>
 				<div class="center">
 					<input type="text" name="emailOubli" id="emailOubli" placeHolder="Votre email ?" value="<?php echo $emailOubli; ?>"/>
 					<p class="errors"><?= $errors['emailOubli']; ?><p>

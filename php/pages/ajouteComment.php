@@ -50,7 +50,8 @@
 		// variable utilisateur 
 
 	if (!userIsLogged()){
-		$error['submit'] = "D'abord, ENTREZ dans la MATRICE !";
+		$error['submit'] = "D'abord, ENTREZ dans la statrice
+ !";
 	}
 
 	$id_utilisateur = "";
@@ -102,7 +103,8 @@
 				$stmt->execute();
 
 				// ### 1ère solution, renvoie simplement du html
-				$validate = "Vous êtes rentrés dans la matrice !";
+				$validate = "Vous êtes rentrés dans la statrice
+ !";
 				//goBack($url);
 				//goHome();
 				//die();

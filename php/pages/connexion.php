@@ -31,12 +31,14 @@
 
 		// ---------------- EMAIL OR NOM ----------------
 		if (empty($pseudoEmail)) {
-			$error['pseudoEmail'] = "Renseignez votre pseudo ou email pour rentrer dans la matrice !";
+			$error['pseudoEmail'] = "Renseignez votre pseudo ou email pour rentrer dans la statrice
+ !";
 			$formIsValid = false;
 		}
 		// ---------------- PASSWORD ----------------
 		elseif (empty($password)) {
-			$error['password'] = "Renseignez votre mot de passe pour rentrer dans la matrice !";
+			$error['password'] = "Renseignez votre mot de passe pour rentrer dans la statrice
+ !";
 			$formIsValid = false;
 		}
 		/*__________________ Fin de la validation ____________________*/
@@ -59,12 +61,14 @@
 					goHome();
 				} 
 				else {
-					$error['password'] = "Mot de passe non valide pour rentrer dans la matrice!";
+					$error['password'] = "Mot de passe non valide pour rentrer dans la statrice
+!";
 				}				
 			}
 			// Si l'utilisateur n'existe pas
 			else {
-				$error['pseudoEmail'] = "Pseudo ou email inconnu de la matrice !";
+				$error['pseudoEmail'] = "Pseudo ou email inconnu de la statrice
+ !";
 			}
 
 		}
@@ -78,7 +82,8 @@
 		<main id="mainConnexion" class="containerCompte">
 			<form action="?page=connexion" id="formConnexion" method="POST" novalidate>
 				<!-- <input type="text" visibility="hidden" name="form_connexion" /> -->
-				<div class="formTitre">CONNEXION</div>
+				<div class="formTitre">ENTRER DANS LA statrice
+</div>
 				<div class="center">
 					<input type="text" name="pseudoEmail" id="pseudoEmailConnex" placeHolder="Pseudo ou Email" value="<?php echo $pseudoEmail; ?>"/>
 					<p class="errors"><?= $error['pseudoEmail']; ?><p>

@@ -11,7 +11,8 @@
 		<main id="mainQuestionParTag">
 
 			<div id="listeQuestionParTag" >
-				<h1 class="borderBottom tag">Les questions portant votre tag : 
+				<h1 class="borderBottom tag">Les questions portant votre tag dans la statrice
+ : 
 				<!-- Début du tagname title -->
 					<span id="tagcontain">
 						<span class"tag">

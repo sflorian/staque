@@ -19,7 +19,7 @@
 		<main id="mainacceuil">
 
 			<div id="listeQuestion" >
-				<h1 class="borderBottom">Questions</h1>
+				<h1 class="borderBottom">Questions de la statrice</h1>
 				<?php if ($questions) {foreach ($questions as $question): ?>
 				<div class="question">
 					<div class="left compteur">

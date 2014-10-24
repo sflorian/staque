@@ -31,7 +31,8 @@
 	$validate = "";
 
 	if (!userIsLogged()){
-		$error['submit'] = "D'abord, ENTREZ dans la MATRICE !";
+		$error['submit'] = "D'abord, ENTREZ dans la statrice
+ !";
 	}
 
 	$id_utilisateur = "";
@@ -158,7 +159,8 @@
 					</div>
 				</div>
 				<div class="boutonComment">
-					<div class="left ajoutComment">Ajouter un commentaire dans la matrice</div>
+					<div class="left ajoutComment">Ajouter un commentaire dans la statrice
+</div>
 				</div>
 			</div>
 			<div class="clear"></div>
@@ -236,7 +238,8 @@
 						</div>
 					</div>
 					<div class="boutonComment">
-						<div class="left ajoutComment">Ajouter un commentaire dans la matrice</div>
+						<div class="left ajoutComment">Ajouter un commentaire dans la statrice
+</div>
 					</div>
 					<div class="clear borderBottomReponse"></div>
 				</div>
@@ -269,7 +272,8 @@
 						<a href="?page=questionParTag&id=<?= $tag['id']; ?>&tagname=<?= $tag['tagname']; ?>"><span class='tagname'><?= $tag['tagname'] ?></span></a>
 					<?php } ?>
 				</span>
-				ou <a href="?page=poserQuestion">posez vous-même votre question dans la matrice</a>.</p>
+				ou <a href="?page=poserQuestion">posez vous-même votre question dans la statrice
+</a>.</p>
 			</div>
 
 		</main>

@@ -268,7 +268,8 @@ if(empty($_GET['id'])) {
 		<main id="mainModifCompte" class="containerModifCompte"> 
 			<form action="?page=modifierUnCompte&id=<?= $id; ?>" id="formModifUnCompte" method="POST" novalidate>
 				<!-- <input type="text" visibility="hidden" name="form_creerUnCompte" /> -->
-				<div class="modifFormTitre">Modifier son compte</div>
+				<div class="modifFormTitre">Modifier son compte dans la statrice
+</div>
 				<div>
 					<input type="text" name="prenom" id="prenomModif" placeHolder="Prénom" value="<?= $prenom; ?>"/>
 					<input type="text" name="nom" id="nomModif" placeHolder="Nom" value="<?= $nom; ?>"/>

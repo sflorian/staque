@@ -15,7 +15,8 @@
 		<main id="mainQuestionParTag">
 
 			<div id="listeQuestionParTag" >
-				<h1 class="borderBottom tag">Les questions résultants de votre recherche : <?= $recherche;?></h1>
+				<h1 class="borderBottom tag">Les questions résultants de votre recherche dans la statrice
+ : <?= $recherche;?></h1>
 				<?php if ($resultRecherche) {foreach ($resultRecherche as $question): ?>
 				<div class="question">
 					<div class="left compteur">

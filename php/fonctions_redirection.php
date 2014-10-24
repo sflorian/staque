@@ -26,7 +26,8 @@
 		$interdit = true;
 		$url = "?page=accueil";
 		header('refresh:10; url='.$url);
-		echo "<div id='lamatrice'></div><img id='morpheus' src='../img/matrix/morpheus.png'/><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>";
+		echo "<div id='lastatrice
+'></div><img id='morpheus' src='../img/matrix/morpheus.png'/><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>";
 		include('inc/footer.php');
 		include('inc/script.php');
 		die(); 

@@ -5,7 +5,8 @@
 ?>
 
 <main id="mainUtilisateur">
-	<h1 class="borderBottom">Utilisateurs</h1>
+	<h1 class="borderBottom">Les Utilisateurs de la statrice
+</h1>
 	<div id="utilisateur">
 		<?php foreach ($utilisateurs as $utilisateur): ?>
 			<div class="utilisateur">

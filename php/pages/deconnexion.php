@@ -9,4 +9,5 @@
 	unset($_SESSION);
 	// Je réoriente sur la page d'accueil
 	header("Location: index.php");
-	die("<span id='green'>VOUS SORTEZ DE LA MATRICE</span>");
+	die("<span id='green'>VOUS SORTEZ DE LA statrice
+</span>");

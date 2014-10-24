@@ -17,7 +17,7 @@
 	);
 
 	if (empty($_SESSION['utilisateur'])){
-		$error['submit'] = "ENTREZ DANS LA MATRICE D'ABORD!";
+		$error['submit'] = "Entrez dans la statrice d'abord!";
 	}
 
 	$id_utilisateur = "";
@@ -143,7 +143,8 @@
 
 
 		<main id="mainPoserQuestion">
-			<h1 class="borderBottom">La question que tout le monde se pose :</h1>
+			<h1 class="borderBottom">La question que tout le monde se pose dans la statrice
+ :</h1>
 			<form action="?page=poserQuestion" id="formPoserQuestion" method="POST" novalidate>
 				<div>
 					<input type="text" name="titre" id="titreQuestion" placeholder="Titre clair de votre question" value="<?= $titre;?>">

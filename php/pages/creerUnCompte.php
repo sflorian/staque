@@ -68,7 +68,8 @@
 		}
 		// taille maximale du prénom
 		else if(strlen($prenom) > 50) {
-			$errors['nom'] = "Votre prénom est trop long pour rentrer dans la matrice!";
+			$errors['nom'] = "Votre prénom est trop long pour rentrer dans la statrice
+!";
 			$formIsValid = false;
 		}
 
@@ -78,12 +79,14 @@
 		}
 		// taille minimale du nom
 		else if(strlen($nom) < 2) {
-			$errors['nom'] = "Votre nom est trop court pour rentrer dans la matrice !";
+			$errors['nom'] = "Votre nom est trop court pour rentrer dans la statrice
+ !";
 			$formIsValid = false;
 		}
 		// taille maximale du nom
 		else if(strlen($nom) > 100) {
-			$errors['nom'] = "Votre nom est trop long pour rentrer dans la matrice !";
+			$errors['nom'] = "Votre nom est trop long pour rentrer dans la statrice
+ !";
 			$formIsValid = false;
 		}
 
@@ -93,12 +96,14 @@
 			$formIsValid = false;
 		}
 		else if(strlen($pseudo) > 50) {
-			$errors['pseudo'] = "Votre pseudo est trop long pour rentrer dans la matrice!";
+			$errors['pseudo'] = "Votre pseudo est trop long pour rentrer dans la statrice
+!";
 			$formIsValid = false;
 		}			
 		// S'agit-il bien d'un nouveau pseudo ?
 		else if (pseudoExists($pseudo)) {
-			$errors['pseudo'] = "Ce pseudo existe déjà dans la matrice !";
+			$errors['pseudo'] = "Ce pseudo existe déjà dans la statrice
+ !";
 			$formIsValid = false;
 		}
 
@@ -108,12 +113,14 @@
 			$formIsValid = false;
 		}
 		else if ( !filter_var($email, FILTER_VALIDATE_EMAIL) ) {
-			$errors['email'] = "Votre email n'est pas valide pour rentrer dans la matrice !";
+			$errors['email'] = "Votre email n'est pas valide pour rentrer dans la statrice
+ !";
 			$formIsValid = false;
 		}
 		// S'agit-il d'un nouvel utilisateur ?
 		else if (emailExists($email)) {
-			$errors['email'] = "Votre email existe déjà dans la matrice !";
+			$errors['email'] = "Votre email existe déjà dans la statrice
+ !";
 			$formIsValid = false;
 		}
 
@@ -212,7 +219,8 @@
 			$stmt->execute();
 
 			$Sent = true;
-			$validate = " Vous pouvez entrer dans la matrice !";
+			$validate = " Vous pouvez entrer dans la statrice
+ !";
 			// On connecte directement le nouvel utilisateur dans la SESSION
 
 			$lastId = $dbh->lastInsertId();
@@ -233,7 +241,8 @@
 		<main id="mainCompte" class="containerCompte"> 
 			<form action="?page=creerUnCompte" id="formCreerUnCompte" method="POST" novalidate>
 				<!-- <input type="text" visibility="hidden" name="form_creerUnCompte" /> -->
-				<div class="formTitre">CREER UN COMPTE</div>
+				<div class="formTitre">CREER UN COMPTE DANS LA statrice
+</div>
 				<div>
 					<input type="text" name="prenom" id="prenom" placeHolder="Prénom" value="<?php echo $prenom; ?>"/>
 					<input type="text" name="nom" id="nom" placeHolder="Nom" value="<?php echo $nom; ?>"/>

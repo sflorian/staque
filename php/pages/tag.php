@@ -6,7 +6,8 @@
 		<main id="mainTags">
 
 			<div id="listeTags" >
-				<h1 class="borderBottom">Tags</h1>
+				<h1 class="borderBottom">Tags dans la statrice
+</h1>
 				<div id="tagcontain">
 					<div class"tag">
 						<?php 
