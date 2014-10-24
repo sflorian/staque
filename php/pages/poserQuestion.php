@@ -17,7 +17,7 @@
 	);
 
 	if (empty($_SESSION['utilisateur'])){
-		$error['submit'] = "Connectez-vous non?!";
+		$error['submit'] = "ENTREZ DANS LA MATRICE D'ABORD!";
 	}
 
 	$id_utilisateur = "";
