@@ -195,7 +195,7 @@
 		global $dbh;
 
 		$sql = "SELECT * FROM utilisateur  
-				";  
+				ORDER BY score DESC";  
 		$stmt = $dbh->prepare( $sql ); 
 		$stmt->execute();
 		$utilisateurs = $stmt->fetchAll();
