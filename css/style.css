@@ -875,9 +875,9 @@ Fin du tagname title
 }
 
 #submitReponse {
-	background: #505E5E;
+	background: black;
 	border-radius: 5px;
-	color: #fff;
+	color: #0EE21E;
 	cursor: pointer;
 	font-weight: 700;
 	margin: 15px 5px 15px 20px;
@@ -1006,12 +1006,17 @@ Fin du tagname title
 	min-height: 100px;
 	padding: 5px;
 	width: 100%; 
+	background: black;
+	color: #0EE21E;
+	border-style: solid;
+	border-width: 2px;
+	border-color: #0EE21E;
 }
 
 .ajouteComment #submitComment {
-	background: #505E5E;
+	background: black;
 	border-radius: 5px;
-	color: #fff;
+	color: #0EE21E;
 	cursor: pointer;
 	margin-top: 10px;
 	padding: 5px;
@@ -1038,9 +1043,9 @@ Fin du tagname title
 } 
 
 .ajouteVote #submitVote {
-	background: #505E5E;
+	background: black;
 	border-radius: 5px;
-	color: #fff;
+	color: #0EE21E;
 	cursor: pointer;
 	font-size: 2em;
 	font-weight: 700;
@@ -1052,10 +1057,10 @@ Fin du tagname title
 }
 
 .ajouteVote .nonFermeture {
-	background: #505E5E;
+	background: black;
 	border: 2px outset buttonface;
 	border-radius: 5px;
-	color: #fff;
+	color: #0EE21E;
 	cursor: pointer;
 	font: -webkit-small-control;
 	font-size: 2em;
@@ -1356,9 +1361,9 @@ Fin du tagname title
 
 
 #formConnexion #submitConnex {
-	background: #505E5E;
+	background: black;
 	border-radius: 5px;
-	color: #fff;
+	color: #0EE21E;
 	cursor: pointer;
 	margin: 15px 0;
 	padding: 5px;
@@ -1402,13 +1407,18 @@ Fin du tagname title
 	margin: 5px 0;
 	padding: 5px;
 	width: 80%; 
+	background: black;
+	color: #0EE21E;
+	border-style: solid;
+	border-width: 2px;
+	border-color: #0EE21E;
 }
 
 
 #formMotDePasseOublie #submitOubli {
-	background: #505E5E;
+	background: black;
 	border-radius: 5px;
-	color: #fff;
+	color: #0EE21E;
 	cursor: pointer;
 	margin: 15px 0;
 	padding: 5px;
@@ -1532,13 +1542,18 @@ Fin du tagname title
 	margin: 5px 0;
 	padding: 5px;
 	width: 60%; 
+	background: black;
+	color: #0EE21E;
+	border-style: solid;
+	border-width: 2px;
+	border-color: #0EE21E;
 }
 
 
 #formMotDePasseEnvoi #submitOubli2 {
 	background: black;
 	border-radius: 5px;
-	color: #fff;
+	color: #0EE21E;
 	cursor: pointer;
 	margin: 15px 0;
 	padding: 5px;
