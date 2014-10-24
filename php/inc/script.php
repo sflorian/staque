@@ -31,12 +31,7 @@
 		<noscript>Your browser does not support JavaScript! | Votre navigateur ne supporte pas Javascript!</noscript>
 
 		<script>
-			//var tab = [<?php foreach($arrayTags as $tag) { echo '"' . $tag['tagname'] . '",';}?>]
-			//auto = function(){
-				$( ".autocomplete" ).autocomplete({source: [<?php foreach($tabTags as $tag) { echo '"' . $tag['tagname'] . '",';}?>]})
-			//	console.log(tab)
-			//}
-			/*console.log(tab)*/
+				$( ".autocomplete" ).autocomplete({source: [<?php foreach($tabTags as $tabTag) { echo '"' . $tabTag['tagname'] . '",';}?>]})
 		</script>
 
 		<script src="../js/syntaxhighlighter/scripts/shCore.js"></script>

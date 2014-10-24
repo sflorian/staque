@@ -25,9 +25,11 @@
 					<div class="left compteur">
 						<a href="?page=questionDetails&amp;id=<?= $question['id']; ?>">
 							<div class="left votes">
-								<span class="count"><?= $question['scorequest']; ?></span>
+								<!-- <span class="count">< ?= $question['scorequest']; ?></span> -->
+								<span class="count"><?= $question['utilisateurScore']; ?></span>
 								<!-- <span class="count">5</span>   -->
-								<br>Votes
+								<!-- <br>Votes -->	
+								<br><span><?= $question['utilisateurPseudo']; ?></span>
 							</div>
 						</a>
 						<?php 
