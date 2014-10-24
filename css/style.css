@@ -14,7 +14,7 @@ html {
 
 body {
 	text-decoration: none;
-	background: black;
+	background: #575757;
 	margin: auto;
 	width: 60%;
 	position: relative;
@@ -78,12 +78,12 @@ h1 {
 	width: 100%;
 }
 
-#logo {
- 	margin: 20px;
- 	margin-top: 25px;
- 	margin-left: 50px;
- 	height: 130px;
- 	width: 200px;
+#statrix {
+	position: relative;
+	top: 15px;
+	left: 20px;
+	font-size: 40px;
+	overflow: hidden;
 } 
 
 /* recherche + connexion */
@@ -326,8 +326,125 @@ h1 {
 
 /* ___________________________________________________________________________________________________________ */
 
-
 #listeQuestionParTag {
+	background-color: black;
+	margin: 10px 0 0 0;
+	overflow: hidden;
+	padding-bottom: 30px;
+	color: #0EE21E;
+	text-decoration: none;
+}
+
+#listeQuestionParTag a {
+	text-decoration:none;
+	color: #0EE21E; 
+}
+
+#listeQuestionParTag div.question{
+	border-style: solid;
+	border-width: 0 0 2px 0;
+	border-color: #0EE21E;
+	overflow: hidden;
+	padding: 20px;
+}
+
+#listeQuestionParTag div.compteur {
+	width: 20%;
+}
+
+#listeQuestionParTag div.votes,
+#listeQuestionParTag div.reponses,
+#listeQuestionParTag div.vues {
+	/*cursor: pointer;*/
+	padding: 5px;
+	text-align: center;
+	width: 33%;
+}
+
+#listeQuestionParTag div.votes {
+	color: #C2ECC6;
+}
+
+#listeQuestionParTag div.reponses {
+	color: #f90;
+}
+
+#listeQuestionParTag div.repondu {
+	background: #f90;
+	color: #fff;
+}
+
+#listeQuestionParTag div.theone {
+	background: #f90;
+	color: #e1e818;
+}
+
+#listeQuestionParTag div.vues {
+	color: #B7B5B7;
+}
+
+#listeQuestionParTag span.count {
+	font-size: 1.5em;
+	font-weight: 700;
+}
+
+/* CONTENU QUESTION */
+#listeQuestionParTag div.detailquest {
+	width: 80%
+}
+
+#listeQuestionParTag div.titrequestion {
+	font-size: 1.5em;
+	font-weight: 700;
+}
+
+#listeQuestionParTag div.titrequestion a {
+	color: #0EE21E;
+	text-decoration: none;
+}
+
+#listeQuestionParTag div.titrequestion a:hover {
+	text-decoration: underline;
+}
+
+#listeQuestionParTag div.tag {
+	margin: 10px 0px;
+}
+
+#listeQuestionParTag div.tag a {
+	color: white;
+}
+
+#listeQuestionParTag span.tagname {
+	background: #078111;
+	border-radius: 2px;
+	display: inline-block;
+	margin: 0px 5px;
+	padding: 5px;
+}
+
+#listeQuestionParTag span.tagname:hover {
+	background: #0EE21E;
+}
+
+#listeQuestionParTag span.actiontemps {
+	color: #999;
+}
+
+#listeQuestionParTag a.lienProfil {
+	color: #C2ECC6;
+	text-decoration: none;
+}
+
+#listeQuestionParTag a.lienProfil:hover {
+	text-decoration: underline;
+}
+
+#listeQuestionParTag .scoredemerde{
+	color: #C2ECC6;
+}
+
+/* #listeQuestionParTag {
 	background-color: black;
 	margin: 10px 0;
 	overflow: hidden;
@@ -349,7 +466,7 @@ h1 {
 #listeQuestionParTag div.votes,
 #listeQuestionParTag div.reponses,
 #listeQuestionParTag div.vues {
-	/*cursor: pointer;*/
+	cursor: pointer;
 	padding: 5px;
 	text-align: center;
 	width: 33%;
@@ -378,7 +495,7 @@ h1 {
 	font-weight: 700;
 }
 
-/* CONTENU QUESTION */
+CONTENU QUESTION
 #listeQuestionParTag div.detailquest {
 	width: 80%
 }
@@ -413,7 +530,7 @@ h1 {
 	padding: 5px;
 }
 
-/* Début du tagname title */
+Début du tagname title
 #listeQuestionParTag span.tag {
 	margin: 10px 0px;
 }
@@ -430,7 +547,7 @@ h1 {
 #listeQuestionParTag span.tagname:hover {
 	background: #9CF0E5;
 }
-/* Fin du tagname title */
+Fin du tagname title
 
 #listeQuestionParTag span.actiontemps {
 	color: #999;
@@ -444,7 +561,7 @@ h1 {
 #listeQuestionParTag a.lienProfil:hover {
 	text-decoration: underline;
 }
-
+ */
 /* ___________________________________________________________________________________________________________ */
 
 /***************************************************************************************************************
@@ -454,7 +571,7 @@ h1 {
 /* ___________________________________________________________________________________________________________ */
 
 #mainQuestionDetails{
-	background-color: #fff;
+	background-color: black;
 	margin: 10px 0;
 }
 
@@ -513,7 +630,28 @@ h1 {
 	visibility: hidden;
 }
 
+
 #questionDetails div.tag {
+	margin: 10px 0px;
+}
+
+#questionDetails div.tag a {
+	color: white;
+}
+
+#questionDetails span.tagname {
+	background: #078111;
+	border-radius: 2px;
+	display: inline-block;
+	margin: 0px 5px;
+	padding: 5px;
+}
+
+#questionDetails span.tagname:hover {
+	background: #0EE21E;
+}
+
+/* #questionDetails div.tag {
 	margin: 20px 0px;
 }
 
@@ -530,8 +668,8 @@ h1 {
 }
 
 #questionDetails span.tagname:hover {
-	background: #9CF0E5;
-}
+	background: #0EE21E;
+} */
 
 #questionDetails div.who,
 .reponse div.who {
@@ -546,7 +684,7 @@ h1 {
 
 #questionDetails a.lienProfil,
 .reponse a.lienProfil {
-	color: #00f;
+	color: #C2ECC6;
 	text-decoration: none;
 }
 
@@ -720,22 +858,51 @@ h1 {
 	margin: 15px 5px 15px 20px;
 	padding: 5px 10px;
 	text-transform: uppercase; 
+	border-style: solid;
+	border-width: 2px;
+	border-color: #0EE21E;
 }
 
 #remarques {
 	padding: 20px 0 80px 40px;
 }
 
+#questionDetails div.favoris {
+	visibility: hidden;
+}
+
+
+/* #questionDetails div.tag {
+	margin: 10px 0px;
+}
+
+#questionDetails div.tag a {
+	color: white;
+}
+
+#questionDetails span.tagname {
+	background: #078111;
+	border-radius: 2px;
+	display: inline-block;
+	margin: 0px 5px;
+	padding: 5px;
+}
+
+#questionDetails span.tagname:hover {
+	background: #0EE21E;
+}
+ */
+
 #remarques span.tag {
 	margin: 20px 0px;
 }
 
 #remarques span.tag a {
-	color: #000;
+	color: white;
 }
 
 #remarques span.tagname {
-	background: #67D8CA;
+	background: #078111;
 	border-radius: 2px;
 	display: inline-block;
 	margin: 0px 5px;
@@ -743,7 +910,7 @@ h1 {
 }
 
 #remarques span.tagname:hover {
-	background: #9CF0E5;
+	background: #0EE21E;
 }
 
 #remarques p {
@@ -752,7 +919,7 @@ h1 {
 }
 
 #remarques p a {
-	color: #00f;
+	color: #C2ECC6;
 	text-decoration: none;
 }
 
@@ -769,7 +936,7 @@ h1 {
 /* ___________________________________________________________________________________________________________ */
 
 #mainTags{
-	background-color: #fff;
+	background-color: black; 
 	margin: 10px 0;
 	overflow: hidden;
 	padding-bottom: 30px;
@@ -781,16 +948,16 @@ h1 {
 }
 
 #listeTags span.tagname {
-	background: #67D8CA;
+	background: #078111;
 	border-radius: 2px;
 	display: inline-block;
 	margin: 0px 5px;
 	padding: 5px;
-	color: #000;
+	color: white;
 }
 
 #listeTags span.tagname:hover{
-	background: #9CF0E5;
+	background: #0EE21E;
 }
 
 /* ___________________________________________________________________________________________________________ */
@@ -823,6 +990,9 @@ h1 {
 	cursor: pointer;
 	margin-top: 10px;
 	padding: 5px;
+	border-style: solid;
+	border-width: 2px;
+	border-color: #0EE21E;
 }
 
 /* ___________________________________________________________________________________________________________ */
@@ -851,6 +1021,9 @@ h1 {
 	font-weight: 700;
 	margin-top: 10px;
 	padding: 5px;
+	border-style: solid;
+	border-width: 2px;
+	border-color: #0EE21E;
 }
 
 .ajouteVote .nonFermeture {
@@ -876,7 +1049,7 @@ h1 {
 /* ___________________________________________________________________________________________________________ */
 
 #mainPoserQuestion {
-	background-color: #fff;
+	background-color: black;
 	margin: 10px 0;
 }
 
@@ -889,6 +1062,11 @@ h1 {
 	margin: 20px 0;
 	padding: 10px;
 	width: 60%;
+	background: black;
+	color: #0EE21E;	
+	border-style: solid;
+	border-width: 2px;
+	border-color: #0EE21E;
 }
 
 #formPoserQuestion label {
@@ -899,23 +1077,36 @@ h1 {
 
 #contenuQuestion {
 	min-height: 200px;
+	background: black;
+	color: #0EE21E;	
+	border-style: solid;
+	border-width: 2px;
+	border-color: #0EE21E;
 }
 
 #tagsQuestion {
 	margin: 20px 0;
 	padding: 10px;
 	width: 60%;
+	background: black;
+	color: #0EE21E;	
+	border-style: solid;
+	border-width: 2px;
+	border-color: #0EE21E;
 }
 
 #submitPoserQuestion {
-	background: #505E5E;
+	background: black;
 	border-radius: 5px;
-	color: #fff;
+	color: #0EE21E;
 	cursor: pointer;
 	font-weight: 700;
 	margin-bottom: 50px;
 	padding: 5px 10px;
 	text-transform: uppercase; 
+	border-style: solid;
+	border-width: 2px;
+	border-color: #0EE21E;
 }
 
 
@@ -936,10 +1127,11 @@ h1 {
 	margin: auto;
 	padding: 20px;
 	width: 80%; /*950px;*/
+	color: #0EE21E;
 }	
 
 .formTitre {
-	color: #D6CBCB;
+	color: #0EE21E;
 	font-size: 1.5em;
 	/*margin-left: 10%;*/ /*120px;*/
 	padding-bottom: 20px;
@@ -947,40 +1139,71 @@ h1 {
 }
 
 #formCreerUnCompte #prenom {
-	margin: 5px 5px 5px 80px;
+	margin: 5px -3px 5px 80px;
 	padding: 5px;
 	width: 19%;/*190px;*/
+	background: black;
+	color: #0EE21E;	
+	border-style: solid;
+	border-width: 2px;
+	border-color: #0EE21E;
 }
 
 #formCreerUnCompte #nom {
 	margin-right: 5px;
 	padding: 5px;
 	width: 20%; /*200px;*/
+
+	background: black;
+	color: #0EE21E;	
+	border-style: solid;
+	border-width: 2px;
+	border-color: #0EE21E;
 }
 
 #formCreerUnCompte #pseudo,
 #formCreerUnCompte #email,
 #formCreerUnCompte #password,
 #formCreerUnCompte #password2,
-#formCreerUnCompte #pays,
-#formCreerUnCompte #langue,
 #formCreerUnCompte #metier,
 #formCreerUnCompte #lien {
 	margin: 5px 5px 5px 80px;
 	padding: 5px;
 	width: 40%; /*400px;*/
 
+	background: black;
+	color: #0EE21E;	
+	border-style: solid;
+	border-width: 2px;
+	border-color: #0EE21E;
+
 }
 
 
+#formCreerUnCompte #pays,
+#formCreerUnCompte #langue {
+	margin: 5px 5px 5px 80px;
+	padding: 5px;
+	width: 40%; /*400px;*/
+
+	background: black;
+	color: #A7A7A7;	
+	border-style: solid;
+	border-width: 2px;
+	border-color: #0EE21E;
+}
+
 #formCreerUnCompte #submitCreer {
-	background: #505E5E;
+	background: black;
 	border-radius: 5px;
-	color: #fff;
+	color: #0EE21E;
 	cursor: pointer;
 	margin: 15px 5px 15px 80px;
 	padding: 5px;
 	width: 20%; /*200px;*/
+	border-style: solid;
+	border-width: 2px;
+	border-color: #0EE21E;
 }
 
 .errors {
@@ -1055,6 +1278,9 @@ h1 {
 	margin: 15px 5px 15px 80px;
 	padding: 5px;
 	width: 30%; /*200px;*/
+	border-style: solid;
+	border-width: 2px;
+	border-color: #0EE21E;
 }
 
 
@@ -1078,6 +1304,12 @@ h1 {
 	margin: 5px 0;
 	padding: 5px;
 	width: 80%; 
+
+	background: black;
+	color: #0EE21E;	
+	border-style: solid;
+	border-width: 2px;
+	border-color: #0EE21E;
 }
 
 
@@ -1089,10 +1321,13 @@ h1 {
 	margin: 15px 0;
 	padding: 5px;
 	width: 40%; 
+	border-style: solid;
+	border-width: 2px;
+	border-color: #0EE21E;
 }
 
 #oubliConnex a {
-	color: #fff;
+	color: #0EE21E;
 	display: inline-block;
 	margin: 5px 0 15px 0;
 }
@@ -1136,6 +1371,9 @@ h1 {
 	margin: 15px 0;
 	padding: 5px;
 	width: 40%; 
+	border-style: solid;
+	border-width: 2px;
+	border-color: #0EE21E;
 }
 
 #formMotDePasseOublie div.center {
@@ -1171,25 +1409,38 @@ h1 {
 
 /* ___________________________________________________________________________________________________________ */
 
-#mainPoserQuestion {
+#mainProfil {
+	background: black;
 	overflow: hidden;
+	margin: 20px 0;
 }
 
 #containerPhoto {
 	height: 300px;
-	width: 128px;
+	width: 150px;
 	padding-top: 5px;
-	margin-right: 25px;
+	margin-left: 50px;
+	margin-right: 50px;
 	text-align: center;
 }
 
+#containerPhoto span {
+	position: relative;
+	top: 20px;
+}
+
 #profilePic {
-	height: 128px;
-	width: 128px;
+	height: 150px;
+	width: 150px;
+	border-radius: 150px;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #0EE21E;
+	padding: auto;
 }
 
 .labelOfLabel {
-	margin-top: 10px;
+	margin-top: 20px;
 }
 
 .infoLabel {
@@ -1200,6 +1451,23 @@ h1 {
 
 .info {
 	margin-left: 100px;
+}
+
+#modifPhoto{
+	color: #0EE21E;
+	text-decoration: none;
+	border-style: dotted;
+	border-width: 2px;
+	border-color: #0EE21E;
+	padding: 5px;
+}
+#modifProf{
+	color: #0EE21E;
+	text-decoration: none;
+	border-style: dotted;
+	border-width: 2px;
+	border-color:#0EE21E;
+	padding: 5px;
 }
 
 
@@ -1226,13 +1494,16 @@ h1 {
 
 
 #formMotDePasseEnvoi #submitOubli2 {
-	background: #505E5E;
+	background: black;
 	border-radius: 5px;
 	color: #fff;
 	cursor: pointer;
 	margin: 15px 0;
 	padding: 5px;
 	width: 30%; 
+	border-style: solid;
+	border-width: 2px;
+	border-color: #0EE21E;
 }
 
 #formMotDePasseEnvoi div.center {
@@ -1262,12 +1533,26 @@ h1 {
 /* ___________________________________________________________________________________________________________ */
 
 #pagination {
+	margin: 20px 0;
 	text-align: center;
 	padding: 20px;
+	background: black;
+	font-weight: bold;
 }
 
 #pagination a{
 	text-decoration: none;
+	color: #0EE21E;
+}
+
+#pagination #premierepage:hover,
+#pagination #pageprec:hover,
+#pagination .numpage:hover,
+#pagination #pagesuiv:hover,
+#pagination #dernierepage:hover{
+	background-color: #0EE21E;
+	border-radius: 20px;
+	margin: 5px;
 	color: black;
 }
 
@@ -1276,7 +1561,6 @@ h1 {
 #pagination .numpage,
 #pagination #pagesuiv,
 #pagination #dernierepage{
-	background-color: yellow;
 	border-radius: 20px;
 	margin: 5px;
 }
@@ -1301,7 +1585,7 @@ h1 {
 
 /* ___________________________________________________________________________________________________________ */
 #footer {
-	background: white;
+	background: black;
 	padding: 50px;
 	text-align: center;
 	width: 100%;
@@ -1310,4 +1594,28 @@ h1 {
 #copyright {
 	font-size: 1.2em;
 	font-weight: 700;
+}
+
+/* ___________________________________________________________________________________________________________ */
+
+/***************************************************************************************************************
+ ************************************************ EASTER EGG ***************************************************
+ ***************************************************************************************************************/
+
+/* ___________________________________________________________________________________________________________ */
+
+
+
+/* La matrice */
+#lamatrice {
+	background-image: url(../img/matrix/matrix.gif);
+	background-repeat: repeat;
+	position: relative;
+	height: 300px;
+	width: 100%;
+}
+
+#morpheus {
+	position: absolute;
+	top: 268px;
 }
