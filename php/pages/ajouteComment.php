@@ -50,7 +50,7 @@
 		// variable utilisateur 
 
 	if (!userIsLogged()){
-		$error['submit'] = "Connectez-vous !";
+		$error['submit'] = "D'abord, ENTREZ dans la MATRICE !";
 	}
 
 	$id_utilisateur = "";

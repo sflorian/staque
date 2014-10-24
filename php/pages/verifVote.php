@@ -35,7 +35,7 @@
 		$id_utilisateur = $_SESSION['utilisateur']["id"];
 	}
 	else {
-		$error['submit'] = "Connectez-vous !";
+		$error['submit'] = "D'abord, ENTREZ dans la MATRICE !";
 	}
 
 	// On vérifie que l'utilisateur n'a pas déjà voté pour cette réponse !

@@ -31,7 +31,7 @@
 	$validate = "";
 
 	if (!userIsLogged()){
-		$error['submit'] = "Connectez-vous SVP !";
+		$error['submit'] = "D'abord, ENTREZ dans la MATRICE !";
 	}
 
 	$id_utilisateur = "";

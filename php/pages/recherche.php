@@ -30,6 +30,7 @@
 							$arrayTags = getTagsByIdQuestion($question['id']);
 							//print_r($arrayTags);
 							$nbReponses = getNbReponsesByIdQuestion($question['id']); 
+							$theone = false;
 							if (isThereTheGoodAnswer($question['id'])) {
 								$theone = true;
 							}

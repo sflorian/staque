@@ -380,11 +380,11 @@ strong {
 }
 
 #listeQuestionParTag div.reponses {
-	color: #f90;
+	color: #fff;
 }
 
 #listeQuestionParTag div.repondu {
-	background: #f90;
+	background: #318635;
 	color: #fff;
 }
 
@@ -767,17 +767,28 @@ Fin du tagname title
 }
 
 .reponse div.votePlus {
-	border-color: transparent transparent #999;
+	background-image: url(../img/apparences/pilule_bleue.png);
+	background-repeat: no-repeat;
+	background-position: center center;
+	height: 50px;
+	width: 100%;
+/*	border-color: transparent transparent #999;
 	border-style: solid;
 	border-width: 15px;
-	margin-top: -10px;
+	margin-top: -10px;*/
 }
 
 .reponse div.voteMoins {
-	border-color: #999 transparent transparent;
+	background-image: url(../img/apparences/pilule_rouge.png);
+	background-repeat: no-repeat;
+	background-position: center center;
+	height: 50px;
+	width: 100%;
+	margin-top: -10px;
+/*	border-color: #999 transparent transparent;
 	border-style: solid;
 	border-width: 15px;
-	margin-top: -4px;
+	margin-top: -4px;*/
 }
 
 /*.reponse div.stop {
