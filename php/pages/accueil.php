@@ -38,6 +38,7 @@
 							$nbReponses = getNbReponsesByIdQuestion($question['id']); 
 							//$test = isThereTheGoodAnswer($question['id']);
 							//die($test['best']);
+							$theone = false;
 							if (isThereTheGoodAnswer($question['id'])) {
 								$theone = true;
 							}

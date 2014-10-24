@@ -112,7 +112,6 @@
 					insertTag_quest($id_tag, $id_question);
 				}
 			}
-			die($id_question);
 			goHome();
 
 		}

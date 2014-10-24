@@ -73,8 +73,8 @@
 			}
 
 			// Update le score du proprio de la réponse ! (+/- 5)
-			$idOwnerAnswer = getIdUserByIdRep($id_rep, $point);
-			updateScoreOwnerAnswer($idOwnerAnswer);
+			$idOwnerAnswer = getIdUserByIdRep($id_rep);
+			updateScoreOwnerAnswer($idOwnerAnswer, $point);
 
 			// Insertion dans hasVoted
 			insertIntoHasvoted($id_utilisateur, $id_rep);

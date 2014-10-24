@@ -17,8 +17,7 @@
 		global $dbh;
 		$sql = "SELECT * FROM rep
 				WHERE quest_id = :id AND published = 1
-				/*ORDER BY best ASC*/
-				ORDER BY scoreRep, best DESC";
+				ORDER BY best DESC, scoreRep DESC";
 		$stmt = $dbh->prepare( $sql );  
 		$stmt->bindValue(":id", $id);
 		$stmt->execute();
@@ -139,6 +138,18 @@
 
 		return $user['user_id'];	
 	}
+
+	/*function updateScoreOwnerAnswertest($idOwnerAnswer) {
+		// récupère le score de l'utilisateur
+		global $dbh;
+		$sql = "SELECT score FROM utilisateur
+				WHERE id = :id";
+		$stmt = $dbh->prepare( $sql );  
+		$stmt->bindValue(":id", $idOwnerAnswer);
+		$stmt->execute();
+		$score = $stmt->fetch();
+		return $score['score'];
+	}*/
 
 	function updateScoreOwnerAnswer($idOwnerAnswer, $point) {
 		// récupère le score de l'utilisateur

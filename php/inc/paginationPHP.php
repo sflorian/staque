@@ -26,11 +26,9 @@
 			quest.scorequest AS scorequest, 
 			quest.dateModified AS dateModified, 
 			quest.dateCreated AS dateCreated, 
-			/*rep.dateModified AS repDateModified,*/ 
 			utilisateur.score AS utilisateurScore, 
 			utilisateur.pseudo AS utilisateurPseudo 
 			FROM quest
-			/*LEFT JOIN rep ON rep.quest_id = quest.id*/
 			JOIN utilisateur ON quest.user_id = utilisateur.id
 			WHERE quest.published = 1
 			ORDER BY dateCreated $direction 

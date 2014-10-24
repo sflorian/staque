@@ -4,7 +4,7 @@
 	
 	function dateFr($date) {
 
-		$dateFr = date('d-m-Y', strtotime($date));
+		$dateFr = date('d-m-Y H:i:s', strtotime($date));
 		return $dateFr;
 	}
 
