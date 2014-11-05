@@ -24,7 +24,9 @@
 		<!-- <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jquerymobile/1.4.3/jquery.mobile.min.css" /> -->
 		<!-- JQUERY MOBILE -->
 
-		<link rel="stylesheet" href="../js/syntaxhighlighter/styles/shThemeMidnight.css"/>
-		<link rel="stylesheet" href="../js/syntaxhighlighter/styles/shCoreMidnight.css"/>
+		<!-- <link rel="stylesheet" href="../js/syntaxhighlighter/styles/shThemeMidnight.css"/> -->
+		<!-- <link rel="stylesheet" href="../js/syntaxhighlighter/styles/shCoreMidnight.css"/> -->
+		<link rel="stylesheet" href="../js/syntaxhighlighter/styles/shCoreDjango.css"/>
+		<link rel="Stylesheet" href="../js/syntaxhighlighter/styles/shThemeDjango.css"/>
 
 	</head>
